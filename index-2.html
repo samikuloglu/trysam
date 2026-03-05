@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam — AI That Answers Questions So Your Team Doesn't Have To</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --light-bg: #f8f9fb;
+            --border: #e5e7eb;
+            --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+        /* Nav */
+        nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--text); text-decoration: none; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links a { color: var(--muted); text-decoration: none; margin-left: 32px; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text); }
+        .nav-links .nav-cta { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 6px; margin-left: 32px; }
+        .nav-links .nav-cta:hover { background: var(--accent-hover); color: #fff; }
+
+        /* Hero */
+        .hero { padding: 100px 0 80px; text-align: center; }
+        .hero-tag { display: inline-block; background: #eff6ff; color: var(--accent); font-size: 0.82rem; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 0.3px; }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; max-width: 800px; margin: 0 auto 20px; letter-spacing: -0.5px; }
+        .hero h1 em { font-style: normal; color: var(--accent); }
+        .hero p { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-cta { display: inline-block; background: var(--accent); color: #fff; padding: 16px 36px; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+        .hero-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .hero-sub { font-size: 0.85rem; color: var(--muted); margin-top: 14px; }
+
+        /* Verticals */
+        .verticals { padding: 80px 0; background: var(--light-bg); }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; }
+        .section-header p { font-size: 1.05rem; color: var(--muted); max-width: 550px; margin: 0 auto; }
+
+        .verticals-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .vertical-card { background: #fff; border-radius: 12px; padding: 36px; border: 1px solid var(--border); transition: all 0.3s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
+        .vertical-card:hover { border-color: var(--accent); box-shadow: 0 8px 30px rgba(37,99,235,0.08); transform: translateY(-2px); }
+        .vertical-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+        .vertical-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+        .vertical-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+        .vertical-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+        .vertical-card:hover .vertical-link { text-decoration: underline; }
+
+        /* Problem */
+        .problem { padding: 80px 0; }
+        .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 50px; }
+        .problem-item { text-align: center; padding: 0 12px; }
+        .problem-item .icon { font-size: 2.2rem; margin-bottom: 16px; }
+        .problem-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+        .problem-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+
+        /* How it works */
+        .how-it-works { padding: 80px 0; background: var(--light-bg); }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 50px; }
+        .step-item { text-align: center; padding: 32px 20px; background: #fff; border-radius: 12px; border: 1px solid var(--border); }
+        .step-num { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--accent); color: #fff; border-radius: 50%; font-weight: 700; font-size: 1rem; margin-bottom: 20px; }
+        .step-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+        .step-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+
+        /* Stats */
+        .stats { padding: 60px 0; background: var(--text); }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+        .stats-grid h3 { font-size: 2.4rem; font-weight: 800; color: var(--accent); margin-bottom: 6px; }
+        .stats-grid p { font-size: 0.85rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* CTA */
+        .cta { padding: 100px 0; text-align: center; background: #fff; }
+        .cta h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; }
+        .cta p { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin: 0 auto 32px; }
+
+        /* Footer */
+        footer { padding: 32px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .verticals-grid, .problem-grid, .steps-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-logo"><span>S</span> Sam</a>
+            <div class="nav-links">
+                <a href="/daycare">Childcare</a>
+                <a href="/k-12">Schools</a>
+                <a href="/property">Property</a>
+                <a href="/venues">Venues</a>
+                <a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request&body=Hi%20Sami%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Sam%20for%20my%20business.%0A%0ABusiness%20name%3A%20%0AIndustry%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!" class="nav-cta">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-tag">AI-Powered Customer Service for Small Businesses</div>
+            <h1>Your customers have questions.<br><em>Sam answers them instantly.</em></h1>
+            <p>Sam is an AI assistant that lives on your website and answers customer questions about your business — accurately, 24/7 — so your team can focus on what matters.</p>
+            <a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request&body=Hi%20Sami%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Sam%20for%20my%20business.%0A%0ABusiness%20name%3A%20%0AIndustry%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!" class="hero-cta">Book a Free Demo</a>
+            <div class="hero-sub">Free demo · No commitment · Set up in one week</div>
+        </div>
+    </section>
+
+    <!-- Verticals -->
+    <section class="verticals">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for businesses that answer the same questions every day.</h2>
+                <p>Sam is trained on your specific business, so it answers questions exactly the way you would.</p>
+            </div>
+            <div class="verticals-grid">
+                <a href="/daycare" class="vertical-card">
+                    <span class="vertical-icon">🧒</span>
+                    <h3>Childcare & Daycare Centers</h3>
+                    <p>Answer parent questions about enrollment, schedules, tuition, and policies — so your staff can focus on the kids.</p>
+                    <span class="vertical-link">Learn more →</span>
+                </a>
+                <a href="/k-12" class="vertical-card">
+                    <span class="vertical-icon">🎓</span>
+                    <h3>Private Schools (K-12)</h3>
+                    <p>Convert prospective families browsing your website at night into campus tour bookings and admissions inquiries.</p>
+                    <span class="vertical-link">Learn more →</span>
+                </a>
+                <a href="/property" class="vertical-card">
+                    <span class="vertical-icon">🏢</span>
+                    <h3>Property Management</h3>
+                    <p>Answer tenant and prospect questions about rent, maintenance, leasing, and availability — without tying up your office.</p>
+                    <span class="vertical-link">Learn more →</span>
+                </a>
+                <a href="/venues" class="vertical-card">
+                    <span class="vertical-icon">💒</span>
+                    <h3>Wedding & Event Venues</h3>
+                    <p>Give couples instant answers about availability, packages, pricing, and capacity — before they move on to the next venue.</p>
+                    <span class="vertical-link">Learn more →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2>You're losing customers while you sleep.</h2>
+                <p>Most people research businesses after hours — when no one's there to answer. Every unanswered question is a missed opportunity.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div class="icon">📞</div>
+                    <h3>Same questions, all day</h3>
+                    <p>"What are your hours?" "How much does it cost?" "Do you have availability?" Your team answers these on repeat, every single day.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="icon">🌙</div>
+                    <h3>70% browse after hours</h3>
+                    <p>Most customers research evenings and weekends — when no one is there to respond. By morning, they've already moved on.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="icon">⏳</div>
+                    <h3>Inquiries slip through</h3>
+                    <p>Voicemails pile up, emails go unanswered during busy hours. By the time you respond, they've already chosen your competitor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Up and running in one week. Not months.</h2>
+                <p>We handle everything. You just approve the final result.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <h3>Send us your info</h3>
+                    <p>Your website, handbook, pricing, FAQ — anything customers ask about. We train Sam on your specific business.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <h3>We build your assistant</h3>
+                    <p>Sam learns your rates, policies, hours, services — everything. It answers questions exactly the way you would.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <h3>One line of code</h3>
+                    <p>We add a small chat widget to your website. Customers get instant answers. Your phone stops ringing for the same 10 questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <h3>70%</h3>
+                    <p>of routine questions<br>answered without staff</p>
+                </div>
+                <div>
+                    <h3>24/7</h3>
+                    <p>availability — evenings<br>weekends, holidays</p>
+                </div>
+                <div>
+                    <h3>1 week</h3>
+                    <p>from signup to live<br>on your website</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>See what Sam looks like for your business.</h2>
+            <p>Book a 15-minute call. We'll show you a live demo built with your real business info — no commitment.</p>
+            <a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request&body=Hi%20Sami%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Sam%20for%20my%20business.%0A%0ABusiness%20name%3A%20%0AIndustry%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!" class="hero-cta">Book Your Free Demo</a>
+            <div class="hero-sub">Free demo · No commitment · Set up in one week</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            © 2026 Sam · trysam.co · Built in New Jersey.
+        </div>
+    </footer>
+
+</body>
+</html>
