@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam — AI for Private Schools & K-12</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --light-bg: #f8f9fb;
+            --border: #e5e7eb;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+        /* Nav */
+        nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+        nav .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--text); text-decoration: none; }
+        .nav-logo span { color: var(--accent); }
+        .nav-cta { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .nav-cta:hover { background: var(--accent-hover); }
+
+        /* Hero */
+        .hero { padding: 80px 0 60px; text-align: center; }
+        .hero-tag { display: inline-block; color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; letter-spacing: 0.5px; }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.3px; }
+        .hero h1 em { font-style: italic; }
+        .hero > .container > p { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+        .hero-cta { display: inline-block; background: var(--accent); color: #fff; padding: 14px 32px; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+        .hero-cta:hover { background: var(--accent-hover); }
+        .hero-sub { font-size: 0.85rem; color: var(--muted); margin-top: 12px; }
+
+        /* Chat Demo */
+        .chat-demo { max-width: 420px; margin: 50px auto 0; background: #fff; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; text-align: left; }
+        .chat-header { background: var(--accent); color: #fff; padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+        .chat-avatar { width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+        .chat-header-info .chat-name { font-weight: 600; font-size: 0.95rem; }
+        .chat-header-info .chat-status { font-size: 0.75rem; opacity: 0.8; }
+        .chat-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+        .msg { padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; line-height: 1.5; max-width: 85%; }
+        .msg-user { background: var(--accent); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+        .msg-bot { background: var(--light-bg); color: var(--text); align-self: flex-start; border-bottom-left-radius: 4px; }
+
+        /* Sections */
+        .section { padding: 70px 0; }
+        .section-alt { background: var(--light-bg); }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+        .section-header p { font-size: 1rem; color: var(--muted); max-width: 550px; margin: 0 auto; }
+
+        /* Problem */
+        .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .problem-item { text-align: center; padding: 0 8px; }
+        .problem-item .icon { font-size: 2rem; margin-bottom: 14px; }
+        .problem-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .problem-item p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+        /* Steps */
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .step-item { text-align: center; padding: 28px 16px; background: #fff; border-radius: 12px; border: 1px solid var(--border); }
+        .step-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--accent); color: #fff; border-radius: 50%; font-weight: 700; font-size: 0.9rem; margin-bottom: 16px; }
+        .step-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+        .step-item p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+        /* Stats */
+        .stats { padding: 50px 0; background: var(--text); text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .stats-grid h3 { font-size: 2.2rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .stats-grid p { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Pricing */
+        .pricing-card { max-width: 480px; margin: 0 auto; background: #fff; border: 2px solid var(--accent); border-radius: 16px; padding: 40px; text-align: center; }
+        .pricing-tag { display: inline-block; background: #eff6ff; color: var(--accent); font-size: 0.8rem; font-weight: 600; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .pricing-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+        .price-old { font-size: 1.1rem; color: var(--muted); text-decoration: line-through; margin-bottom: 4px; }
+        .price-new { font-size: 2.8rem; font-weight: 800; color: var(--text); }
+        .price-new span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+        .price-note { font-size: 0.85rem; color: var(--muted); margin: 4px 0 24px; }
+        .pricing-list { text-align: left; list-style: none; padding: 0; margin: 0 0 28px; }
+        .pricing-list li { padding: 8px 0; font-size: 0.92rem; color: var(--text); border-bottom: 1px solid var(--border); }
+        .pricing-list li:last-child { border: none; }
+        .pricing-list li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+        .faq-item:last-child { border: none; }
+        .faq-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; cursor: pointer; }
+        .faq-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+
+        /* CTA */
+        .cta { padding: 80px 0; text-align: center; }
+        .cta h2 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+        .cta p { font-size: 1rem; color: var(--muted); max-width: 500px; margin: 0 auto 28px; }
+
+        footer { padding: 28px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .problem-grid, .steps-grid, .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo"><span>S</span> Sam</a>
+            <a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20School&body=Hi%20Sami%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Sam%20for%20my%20school.%0A%0ASchool%20name%3A%20%0ALocation%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!" class="nav-cta">Book a Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-tag">Built for Private Schools & Academies</div>
+            <h1>Prospective families visit your website at 10 PM. <em>No one is there to answer.</em></h1>
+            <p>Sam is an AI admissions assistant that lives on your school's website and answers parent questions about tuition, programs, enrollment, and campus life — instantly, 24/7 — so your admissions team never misses a prospective family.</p>
+            <a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20School&body=Hi%20Sami%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Sam%20for%20my%20school.%0A%0ASchool%20name%3A%20%0ALocation%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!" class="hero-cta">See It In Action</a>
+            <div class="hero-sub">Free demo · No commitment · Set up in one week</div>
+
+            <!-- Chat Demo -->
+            <div class="chat-demo">
+                <div class="chat-header">
+                    <div class="chat-avatar">S</div>
+                    <div class="chat-header-info">
+                        <div class="chat-name">Sam · Admissions Assistant</div>
+                        <div class="chat-status">Online now</div>
+                    </div>
+                </div>
+                <div class="chat-body">
+                    <div class="msg msg-user">Do you have openings for 9th grade next year?</div>
+                    <div class="msg msg-bot">Yes, we do have limited availability for 9th grade! We offer 35 AP & Honors courses, and 92% of our graduates are accepted to top-50 universities. Tuition is $23,900/year, and financial aid is available. Would you like to schedule a campus tour? I can also connect you with our admissions team directly.</div>
+                    <div class="msg msg-user">What about financial aid?</div>
+                    <div class="msg msg-bot">We're committed to making our education accessible. Financial aid is available for grades K-12 through Blackbaud Financial Aid Management. We also offer a 10% sibling discount and a Board of Trustees Scholarship of up to $8,000 for qualifying 9th graders. Want me to walk you through the application steps?</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your admissions team can't be online 24/7. Sam can.</h2>
+                <p>Private schools lose prospective families to slow response times. Sam fixes that.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div class="icon">📞</div>
+                    <h3>Repetitive inquiries</h3>
+                    <p>"What's tuition?" "Do you offer financial aid?" "How do I apply?" Your admissions team answers the same questions hundreds of times each enrollment season.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="icon">🌙</div>
+                    <h3>Parents browse at night</h3>
+                    <p>70% of families research schools in the evening and on weekends — when your admissions office is closed. Every unanswered inquiry is a lost enrollment.</p>
+                </div>
+                <div class="problem-item">
+                    <div class="icon">🏃</div>
+                    <h3>Families move fast</h3>
+                    <p>Parents compare 3-5 schools at once. The first school to respond with helpful, specific information wins the campus tour — and usually the enrollment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Up and running in one week. Not months.</h2>
+                <p>We handle everything. You just approve the final result.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <h3>Send us your info</h3>
+                    <p>Your website, handbook, tuition sheet, enrollment forms, program details — anything families ask about. We train Sam on your specific school.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <h3>We build your assistant</h3>
+                    <p>Sam learns your tuition, programs, admissions process, financial aid, campus life — everything. It answers questions exactly the way your admissions team would.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <h3>One line of code</h3>
+                    <p>We add a chat widget to your website. Families get instant answers. Your admissions team gets warm leads with contact info already captured.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <h3>70%</h3>
+                    <p>of routine questions<br>answered without staff</p>
+                </div>
+                <div>
+                    <h3>24/7</h3>
+                    <p>availability — evenings<br>weekends, holidays</p>
+                </div>
+                <div>
+                    <h3>1 week</h3>
+                    <p>from signup to live<br>on your website</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Limited spots for early partners.</h2>
+                <p>We're onboarding our first 10 schools with a locked-in rate and white-glove setup.</p>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-tag">Founding Rate</div>
+                <h3>Everything you need</h3>
+                <div class="price-old">$299/mo</div>
+                <div class="price-new">$149<span>/month</span></div>
+                <div class="price-note">Locked for 6 months · Only 10 spots</div>
+                <ul class="pricing-list">
+                    <li>AI assistant trained on your school's info</li>
+                    <li>Answers tuition, programs, admissions, financial aid, and campus life questions</li>
+                    <li>Chat widget installed on your website</li>
+                    <li>Captures prospective family contact info for follow-up</li>
+                    <li>24/7 availability — never miss an inquiry</li>
+                    <li>Weekly report on what families are asking</li>
+                    <li>White-glove setup — we do everything for you</li>
+                    <li>Updates anytime you change tuition, programs, or policies</li>
+                </ul>
+                <a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20School&body=Hi%20Sami%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Sam%20for%20my%20school.%0A%0ASchool%20name%3A%20%0ALocation%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!" class="hero-cta">Claim Your Founding Spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>You're probably wondering...</h2>
+            </div>
+            <div class="faq-item">
+                <h3>What if Sam gives a parent wrong information?</h3>
+                <p>Sam only answers based on the documents and information you provide. It doesn't make things up. If a question is outside what it knows, it tells the parent to contact your admissions office directly. You approve everything before it goes live.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need to be technical to use this?</h3>
+                <p>Not at all. We handle the entire setup. You just send us your handbook, tuition sheet, and any other info families usually ask about. We do the rest, including adding the chat widget to your website.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can Sam help with admissions conversion?</h3>
+                <p>Yes. Sam is designed to gently guide conversations toward scheduling a campus tour or contacting admissions — the two highest-converting actions. It also captures parent names and emails for your admissions team to follow up with.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I update the information Sam knows?</h3>
+                <p>Absolutely. Whenever tuition changes, you add a program, or policies update — just let us know and we'll update Sam within 24 hours. It's included in your plan.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happens after the 6-month founding rate?</h3>
+                <p>After 6 months, the standard rate of $299/month applies. But as a founding partner, you'll always get priority support and input on new features we build.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I cancel anytime?</h3>
+                <p>Yes. No contracts, no cancellation fees. If Sam isn't saving your admissions team time, you can cancel anytime with 30 days notice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>See what Sam looks like for your school.</h2>
+            <p>Book a 15-minute call. We'll show you exactly what Sam would look like on your website — with your real school info.</p>
+            <a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20School&body=Hi%20Sami%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Sam%20for%20my%20school.%0A%0ASchool%20name%3A%20%0ALocation%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!" class="hero-cta">Book Your Free Demo</a>
+            <div class="hero-sub">Free demo · No commitment · Set up in one week</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            © 2026 Sam · trysam.co · Built in New Jersey.
+        </div>
+    </footer>
+
+</body>
+</html>
