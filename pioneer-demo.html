@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pioneer Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --navy: #1B2A4A;
+            --navy-dark: #0F1D35;
+            --gold: #C8A951;
+            --gold-light: #D4BA6A;
+            --white: #FFFFFF;
+            --off-white: #F8F7F4;
+            --gray-light: #E8E6E1;
+            --gray: #6B7280;
+            --text-dark: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--navy-dark);
+            color: var(--white);
+            font-size: 0.8rem;
+            padding: 8px 0;
+            letter-spacing: 0.5px;
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar a {
+            color: var(--gold);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .top-bar a:hover { color: var(--gold-light); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .logo-area img {
+            height: 52px;
+            width: auto;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            display: block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            margin-left: 28px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--gold); }
+        nav .cta-btn {
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 4px;
+            margin-left: 28px;
+            transition: background 0.2s;
+        }
+        nav .cta-btn:hover { background: var(--gold); color: var(--navy); }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://cdn.prod.website-files.com/61c52b1cf164120cc3c2f1f1/620f25365464dedcd8baddb9_high-school.webp') center/cover;
+            opacity: 0.25;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 0 24px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(200, 169, 81, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 28px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            font-weight: 300;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy-dark);
+            padding: 14px 32px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+        .btn-outline {
+            border: 2px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            padding: 12px 32px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--navy);
+            padding: 40px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .stat-item p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 0;
+        }
+        .section-alt {
+            background: var(--off-white);
+        }
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .section-header .gold-line {
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            margin: 20px auto 0;
+        }
+
+        /* Program Cards */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .program-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .program-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        .program-card .card-img {
+            height: 180px;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+        .program-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+        .program-card .card-body {
+            padding: 24px;
+        }
+        .program-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .program-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Blue Ribbon Banner */
+        .ribbon-banner {
+            background: linear-gradient(135deg, var(--navy) 0%, #253d6b 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .ribbon-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .ribbon-banner p {
+            color: rgba(255,255,255,0.75);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 24px;
+            line-height: 1.7;
+        }
+        .ribbon-badge {
+            display: inline-block;
+            background: rgba(200,169,81,0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        /* College Logos */
+        .college-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 36px;
+            margin-top: 30px;
+            opacity: 0.7;
+        }
+        .college-logos span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--navy-dark);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 40px 0 24px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-inner a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* Demo Banner */
+        .demo-banner {
+            background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            text-align: center;
+            padding: 12px 24px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .demo-banner strong {
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .programs-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 2.4rem; }
+            nav { display: none; }
+        }
+        @media (max-width: 600px) {
+            .programs-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero { height: 500px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        ✨ <strong>Demo:</strong> This is a preview of Sam, an AI admissions assistant for Pioneer Academy. Try chatting with Sam in the bottom right corner!
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>National Blue Ribbon School of Excellence — U.S. Department of Education</span>
+            <div>
+                <a href="#">Veracross SIS</a>
+                <a href="#">Calendar</a>
+                <a href="#">Apply</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <div class="logo-area">
+                <img src="https://cdn.prod.website-files.com/61c52b1cf164120cc3c2f1f1/620c669d6175990196477512_pioneer-academy-logo.webp" alt="Pioneer Academy Logo">
+                <div class="logo-text">
+                    PIONEER ACADEMY
+                    <span>Pre-K through 12 &bull; Wayne, NJ</span>
+                </div>
+            </div>
+            <nav>
+                <a href="#">About</a>
+                <a href="#">Academics</a>
+                <a href="#">Admissions</a>
+                <a href="#">Athletics</a>
+                <a href="#">Student Life</a>
+                <a href="#" class="cta-btn">Apply Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Ranked #1 in Passaic County &bull; 8 Consecutive Years</div>
+            <h1>Preparing Students for Exceptional Lives of Purpose</h1>
+            <p>Pioneer Academy is an independent, college-preparatory day and boarding school offering a rigorous, ethics-driven PreK–12 education that empowers young people to achieve personal and academic success.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Schedule a Visit</a>
+                <a href="#" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>College<br>Acceptance Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8:1</h3>
+                    <p>Student to<br>Faculty Ratio</p>
+                </div>
+                <div class="stat-item">
+                    <h3>$6.1M</h3>
+                    <p>Scholarships<br>Awarded 2025</p>
+                </div>
+                <div class="stat-item">
+                    <h3>35</h3>
+                    <p>AP & Honors<br>Courses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Programs Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Academic Programs</h2>
+                <p>From Montessori Pre-K through college-preparatory Upper School, Pioneer offers a full spectrum of outstanding academic programs.</p>
+                <div class="gold-line"></div>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="card-img">
+                        <img src="https://cdn.prod.website-files.com/61c52b1cf164120cc3c2f1f1/620f2536767ac94951cbfec8_middle-school.webp" alt="Pre-K">
+                    </div>
+                    <div class="card-body">
+                        <h3>Montessori Pre-K</h3>
+                        <p>Full-day program for ages 3–5 with certified Montessori educators fostering curiosity and independence.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="card-img">
+                        <img src="https://cdn.prod.website-files.com/61c52b1cf164120cc3c2f1f1/6211b354d21edafe1897cd29_chemistry_lab.webp" alt="Lower School">
+                    </div>
+                    <div class="card-body">
+                        <h3>Lower School (K–4)</h3>
+                        <p>Inquiry-based learning building confidence, social-emotional intelligence, and a love of discovery.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="card-img">
+                        <img src="https://cdn.prod.website-files.com/61c52b1cf164120cc3c2f1f1/6211b6de5b76a99e9b1d487a_college_guidance.webp" alt="Middle School">
+                    </div>
+                    <div class="card-body">
+                        <h3>Middle School (5–8)</h3>
+                        <p>STEAM-driven curriculum nurturing academic mastery, creative thinking, and collaborative skills.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="card-img">
+                        <img src="https://cdn.prod.website-files.com/61c52b1cf164120cc3c2f1f1/622bb48def804dacdfd8c2e5_graduation_hall.webp" alt="Upper School">
+                    </div>
+                    <div class="card-body">
+                        <h3>Upper School (9–12)</h3>
+                        <p>35 AP & Honors courses, NJIT Dual Degree, and personalized college counseling to top universities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blue Ribbon Banner -->
+    <section class="ribbon-banner">
+        <div class="container">
+            <div class="ribbon-badge">U.S. Department of Education 2024</div>
+            <h2 style="margin-top: 20px;">National Blue Ribbon School of Excellence</h2>
+            <p>The only K-12 school in New Jersey recognized as a National Blue Ribbon School by the U.S. Department of Education in 2024.</p>
+        </div>
+    </section>
+
+    <!-- College Results -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Path to the Top</h2>
+                <p>92% of Pioneer students are accepted to Top 50 colleges. From Harvard to Stanford, the results speak for themselves.</p>
+                <div class="gold-line"></div>
+            </div>
+            <div class="college-logos">
+                <span>Harvard</span>
+                <span>Princeton</span>
+                <span>Yale</span>
+                <span>Stanford</span>
+                <span>UPenn</span>
+                <span>Cornell</span>
+                <span>Johns Hopkins</span>
+                <span>Brown</span>
+                <span>Columbia</span>
+                <span>NYU</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Begin Your Pioneer Journey</h2>
+            <p>Schedule a campus visit and see firsthand why Pioneer has been ranked the best private school in Passaic County for eight years running.</p>
+            <a href="#" class="btn-primary">Schedule a Visit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    164 Totowa Rd. Wayne, NJ 07470 &nbsp;|&nbsp; (973) 405-5169 &nbsp;|&nbsp; <a href="mailto:admissions@pioneeracademy.org">admissions@pioneeracademy.org</a>
+                </div>
+                <div>
+                    &copy; 2025 Pioneer Academy. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sam Chatbot Widget -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="e5uJ5w_uxFRG1UM7lTcqL";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+
+</body>
+</html>
