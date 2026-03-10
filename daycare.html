@@ -9,6 +9,7 @@
     <meta property="og:description" content="Your front desk answers the same 10 parent questions 50 times a day. Sam handles it 24/7 so your staff can focus on the kids.">
     <meta property="og:url" content="https://trysam.co">
     <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
@@ -329,8 +330,20 @@
         }
 
         .pain-icon {
-            font-size: 1.8rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--peach);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1rem;
+        }
+
+        .pain-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--coral);
         }
 
         .pain-card h3 {
@@ -742,17 +755,23 @@
             <p class="section-subtitle">Parents want instant answers. Your team wants to focus on kids. Both are right.</p>
             <div class="pain-grid">
                 <div class="pain-card fade-up">
-                    <div class="pain-icon">📞</div>
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
                     <h3>Phone rings non-stop</h3>
                     <p>"What are your hours?" "Do you have infant openings?" "How much is tuition?" Your staff answers these on repeat, all day, every day.</p>
                 </div>
                 <div class="pain-card fade-up">
-                    <div class="pain-icon">🌙</div>
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </div>
                     <h3>Parents browse after hours</h3>
                     <p>70% of parents research childcare evenings and weekends — when no one is there to answer. Every unanswered inquiry is a lost enrollment.</p>
                 </div>
                 <div class="pain-card fade-up">
-                    <div class="pain-icon">⏳</div>
+                    <div class="pain-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><polyline points="12 6 12 12 16 14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                     <h3>Enrollment inquiries slip through</h3>
                     <p>During drop-off, pickup, and nap transitions, voicemails pile up. By the time you call back, that parent already called the center down the street.</p>
                 </div>
