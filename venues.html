@@ -14,17 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cream: #FDF8F4;
-            --warm-white: #FFFCFA;
+            --cream: #FAF6F1;
+            --warm-white: #FDFBF8;
             --accent-light: #F3E8DF;
             --accent-mid: #C9A88A;
             --accent: #9B6B4A;
             --accent-dark: #7D5538;
             --forest: #2C1810;
             --forest-light: #4A3228;
-            --charcoal: #2C1810;
-            --slate: #7A6860;
-            --light-gray: #F7F2EE;
+            --charcoal: #2E2320;
+            --slate: #6B5D52;
+            --light-gray: #F2EDE7;
             --shadow-soft: 0 2px 20px rgba(44, 24, 16, 0.08);
             --shadow-card: 0 4px 32px rgba(44, 24, 16, 0.10);
             --shadow-btn: 0 4px 16px rgba(155, 107, 74, 0.3);
@@ -34,11 +34,14 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); line-height: 1.6; overflow-x: hidden; }
 
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 252, 250, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(44, 24, 16, 0.06); transition: box-shadow 0.3s; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253, 251, 248, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(44, 24, 16, 0.06); transition: box-shadow 0.3s; }
         nav.scrolled { box-shadow: var(--shadow-soft); }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--forest); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
         .logo-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; display: inline-block; }
-        .nav-cta { background: var(--forest); color: white; padding: 0.65rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        .nav-links a { color: var(--slate); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--forest); }
+        .nav-cta { background: var(--forest); color: white !important; padding: 0.65rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; }
         .nav-cta:hover { background: var(--forest-light); transform: translateY(-1px); }
 
         .hero { padding: 10rem 2rem 6rem; max-width: 1100px; margin: 0 auto; text-align: center; }
@@ -135,8 +138,15 @@
 <body>
 
     <nav id="nav">
-        <a href="#" class="logo"><span class="logo-dot"></span>Sam</a>
-        <a href="#book" class="nav-cta">Book a Demo</a>
+        <a href="/" class="logo"><span class="logo-dot"></span>Sam</a>
+        <div class="nav-links">
+            <a href="/widget">Widget</a>
+            <a href="/daycare">Childcare</a>
+            <a href="/k-12">Schools</a>
+            <a href="/property">Property</a>
+            <a href="/venues">Venues</a>
+            <a href="#book" class="nav-cta">Book a Demo</a>
+        </div>
     </nav>
 
     <section class="hero">

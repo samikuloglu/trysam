@@ -14,20 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cream: #FFF9F0;
-            --warm-white: #FFFDFB;
-            --peach: #FFE8D6;
-            --peach-deep: #F4C5A0;
-            --coral: #E8734A;
-            --coral-dark: #D45A32;
-            --forest: #2D4A3E;
-            --forest-light: #3A6152;
-            --charcoal: #2B2B2B;
-            --slate: #5A5A5A;
-            --light-gray: #F5F0EB;
-            --shadow-soft: 0 2px 20px rgba(45, 74, 62, 0.08);
-            --shadow-card: 0 4px 32px rgba(45, 74, 62, 0.10);
-            --shadow-btn: 0 4px 16px rgba(232, 115, 74, 0.3);
+            --cream: #FAF6F1;
+            --warm-white: #FDFBF8;
+            --peach: #F0E4D4;
+            --peach-deep: #D4B896;
+            --coral: #B8860B;
+            --coral-dark: #9A7209;
+            --forest: #3B2617;
+            --forest-light: #5A3D28;
+            --charcoal: #2E2320;
+            --slate: #6B5D52;
+            --light-gray: #F2EDE7;
+            --shadow-soft: 0 2px 20px rgba(59, 38, 23, 0.08);
+            --shadow-card: 0 4px 32px rgba(59, 38, 23, 0.10);
+            --shadow-btn: 0 4px 16px rgba(184, 134, 11, 0.3);
         }
 
         * {
@@ -59,9 +59,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 253, 251, 0.9);
+            background: rgba(253, 251, 248, 0.9);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(45, 74, 62, 0.06);
+            border-bottom: 1px solid rgba(59, 38, 23, 0.06);
             transition: box-shadow 0.3s;
         }
 
@@ -87,12 +87,29 @@
             display: inline-block;
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--forest);
+        }
+
         .nav-cta {
             background: var(--forest);
-            color: white;
+            color: white !important;
             padding: 0.65rem 1.5rem;
             border-radius: 50px;
-            text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s;
@@ -166,7 +183,7 @@
         .hero-cta:hover {
             background: var(--coral-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(232, 115, 74, 0.35);
+            box-shadow: 0 6px 24px rgba(184, 134, 11, 0.35);
         }
 
         .hero-cta svg {
@@ -194,7 +211,7 @@
             border-radius: 20px;
             box-shadow: var(--shadow-card);
             overflow: hidden;
-            border: 1px solid rgba(45, 74, 62, 0.06);
+            border: 1px solid rgba(59, 38, 23, 0.06);
         }
 
         .chat-header {
@@ -320,7 +337,7 @@
             background: white;
             padding: 1.8rem;
             border-radius: 16px;
-            border: 1px solid rgba(45, 74, 62, 0.06);
+            border: 1px solid rgba(59, 38, 23, 0.06);
             transition: all 0.3s;
         }
 
@@ -714,8 +731,15 @@
 
     <!-- NAV -->
     <nav id="nav">
-        <a href="#" class="logo"><span class="logo-dot"></span>Sam</a>
-        <a href="#book" class="nav-cta">Book a Demo</a>
+        <a href="/" class="logo"><span class="logo-dot"></span>Sam</a>
+        <div class="nav-links">
+            <a href="/widget">Widget</a>
+            <a href="/daycare">Childcare</a>
+            <a href="/k-12">Schools</a>
+            <a href="/property">Property</a>
+            <a href="/venues">Venues</a>
+            <a href="#book" class="nav-cta">Book a Demo</a>
+        </div>
     </nav>
 
     <!-- HERO -->
