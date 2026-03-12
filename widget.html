@@ -10,20 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cream: #F5F3F0;
-            --warm-white: #FAFAF8;
-            --peach: #EDE5DB;
-            --peach-deep: #D9C6AD;
-            --coral: #CC7A3E;
-            --coral-dark: #B06832;
-            --forest: #111110;
-            --forest-light: #252320;
-            --charcoal: #1C1917;
-            --slate: #78716C;
-            --light-gray: #EFECEA;
-            --shadow-soft: 0 2px 20px rgba(17, 17, 16, 0.08);
-            --shadow-card: 0 4px 32px rgba(17, 17, 16, 0.10);
-            --shadow-btn: 0 4px 16px rgba(204, 122, 62, 0.3);
+            --cream: #F3F1EE;
+            --warm-white: #FAFAF9;
+            --peach: #E8E0D6;
+            --peach-deep: #C9B9A3;
+            --coral: #0D9488;
+            --coral-dark: #0F766E;
+            --forest: #17171C;
+            --forest-light: #27272E;
+            --charcoal: #1C1C22;
+            --slate: #6B7280;
+            --light-gray: #ECEAE7;
+            --shadow-soft: 0 2px 20px rgba(23, 23, 28, 0.08);
+            --shadow-card: 0 4px 32px rgba(23, 23, 28, 0.10);
+            --shadow-btn: 0 4px 16px rgba(13, 148, 136, 0.25);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,7 +31,7 @@
         body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--charcoal); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
         /* Nav */
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(250, 250, 248, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(17, 17, 16, 0.06); transition: box-shadow 0.3s; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(250, 250, 249, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(23, 23, 28, 0.06); transition: box-shadow 0.3s; }
         nav.scrolled { box-shadow: var(--shadow-soft); }
         .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--forest); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
         .logo-dot { width: 10px; height: 10px; background: var(--coral); border-radius: 50%; display: inline-block; }
@@ -46,11 +46,11 @@
 
         /* ===== 1. DARK HERO ===== */
         .dark-hero { background: var(--forest); padding: 10rem 2rem 5rem; text-align: center; position: relative; overflow: hidden; }
-        .dark-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(204, 122, 62, 0.06) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(237, 229, 219, 0.04) 0%, transparent 40%); }
+        .dark-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(13, 148, 136, 0.06) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(232, 224, 214, 0.04) 0%, transparent 40%); }
         .dark-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5.5vw, 3.6rem); color: white; line-height: 1.15; max-width: 750px; margin: 0 auto 1.5rem; position: relative; }
         .dark-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 550px; margin: 0 auto 2.5rem; line-height: 1.7; position: relative; }
         .hero-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--coral); color: white; padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: all 0.3s; box-shadow: var(--shadow-btn); position: relative; }
-        .hero-cta:hover { background: var(--coral-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(204, 122, 62, 0.35); }
+        .hero-cta:hover { background: var(--coral-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(13, 148, 136, 0.35); }
         .hero-cta svg { width: 18px; height: 18px; transition: transform 0.3s; }
         .hero-cta:hover svg { transform: translateX(3px); }
 
@@ -90,7 +90,7 @@
         .ai-intro .learn-link { color: var(--coral); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; }
         .ai-intro .learn-link:hover { text-decoration: underline; }
         .ai-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
-        .ai-card { background: white; border-radius: 16px; padding: 2rem 1.5rem; border: 1px solid rgba(17, 17, 16, 0.08); transition: all 0.3s; position: relative; }
+        .ai-card { background: white; border-radius: 16px; padding: 2rem 1.5rem; border: 1px solid rgba(23, 23, 28, 0.08); transition: all 0.3s; position: relative; }
         .ai-card:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
         .ai-card-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--peach); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
         .ai-card-icon svg { width: 24px; height: 24px; stroke: var(--coral); fill: none; }
@@ -109,7 +109,7 @@
         .section-learn { color: var(--coral); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; margin-bottom: 2.5rem; }
         .section-learn:hover { text-decoration: underline; }
         .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-        .channel-pill { display: flex; align-items: center; gap: 0.75rem; background: white; border: 1px solid rgba(17, 17, 16, 0.08); border-radius: 14px; padding: 1rem 1.25rem; transition: all 0.3s; }
+        .channel-pill { display: flex; align-items: center; gap: 0.75rem; background: white; border: 1px solid rgba(23, 23, 28, 0.08); border-radius: 14px; padding: 1rem 1.25rem; transition: all 0.3s; }
         .channel-pill:hover { box-shadow: var(--shadow-soft); transform: translateY(-2px); }
         .channel-pill-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--peach); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .channel-pill-icon svg { width: 20px; height: 20px; stroke: var(--coral); fill: none; }
@@ -136,7 +136,7 @@
         .prod-sidebar-dot.active svg { stroke: white; }
 
         .prod-accordion { }
-        .acc-item { border-bottom: 1px solid rgba(17, 17, 16, 0.1); }
+        .acc-item { border-bottom: 1px solid rgba(23, 23, 28, 0.1); }
         .acc-header { display: flex; align-items: center; gap: 0.75rem; padding: 1.2rem 0; cursor: pointer; }
         .acc-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--peach); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .acc-icon svg { width: 18px; height: 18px; stroke: var(--coral); fill: none; }
@@ -199,7 +199,7 @@
         .custom-text .learn-link { color: var(--coral); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
         .custom-text .learn-link:hover { text-decoration: underline; }
         .custom-cards-top { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-        .custom-card { background: white; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(17, 17, 16, 0.06); transition: all 0.3s; }
+        .custom-card { background: white; border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(23, 23, 28, 0.06); transition: all 0.3s; }
         .custom-card:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
         .custom-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--peach); display: flex; align-items: center; justify-content: center; margin-bottom: 0.8rem; }
         .custom-card-icon svg { width: 22px; height: 22px; stroke: var(--coral); fill: none; }
@@ -220,8 +220,8 @@
         .analytics-stat .stat-label { color: rgba(255,255,255,0.65); font-size: 0.85rem; }
         .analytics-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem; }
         .analytics-tag { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--slate); }
-        .analytics-tag .tag-check { width: 18px; height: 18px; border-radius: 50%; background: #EDE5DB; display: flex; align-items: center; justify-content: center; }
-        .analytics-tag .tag-check svg { width: 10px; height: 10px; stroke: #CC7A3E; fill: none; }
+        .analytics-tag .tag-check { width: 18px; height: 18px; border-radius: 50%; background: #E8E0D6; display: flex; align-items: center; justify-content: center; }
+        .analytics-tag .tag-check svg { width: 10px; height: 10px; stroke: #0D9488; fill: none; }
 
         /* ===== 8.5 INTEGRATIONS ===== */
         .integrations-section { padding: 5rem 2rem; background: var(--cream); }
@@ -230,7 +230,7 @@
         .integrations-text .learn-link { color: var(--coral); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
         .integrations-text .learn-link:hover { text-decoration: underline; }
         .integrations-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
-        .int-logo { background: white; border-radius: 12px; padding: 0.9rem 1.2rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; font-size: 0.9rem; color: var(--charcoal); border: 1px solid rgba(17, 17, 16, 0.06); transition: all 0.3s; white-space: nowrap; }
+        .int-logo { background: white; border-radius: 12px; padding: 0.9rem 1.2rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; font-size: 0.9rem; color: var(--charcoal); border: 1px solid rgba(23, 23, 28, 0.06); transition: all 0.3s; white-space: nowrap; }
         .int-logo:hover { box-shadow: var(--shadow-soft); transform: translateY(-2px); }
         .int-logo svg, .int-logo img { width: 22px; height: 22px; flex-shrink: 0; }
         .int-logo .logo-text { font-size: 0.85rem; font-weight: 700; }
@@ -243,7 +243,7 @@
         .industries-section { padding: 5rem 2rem; text-align: center; }
         .industries-inner { max-width: 1000px; margin: 0 auto; }
         .ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-        .ind-card { background: white; border-radius: 16px; padding: 2rem 1.5rem; border: 1px solid rgba(17, 17, 16, 0.08); text-align: center; transition: all 0.3s; }
+        .ind-card { background: white; border-radius: 16px; padding: 2rem 1.5rem; border: 1px solid rgba(23, 23, 28, 0.08); text-align: center; transition: all 0.3s; }
         .ind-card:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
         .ind-card-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--peach); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
         .ind-card-icon svg { width: 26px; height: 26px; stroke: var(--coral); fill: none; }
@@ -263,7 +263,7 @@
         .cta-secondary:hover { background: var(--forest); color: white; transform: translateY(-2px); }
 
         /* Footer */
-        footer { padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--slate); background: var(--cream); border-top: 1px solid rgba(17, 17, 16, 0.06); }
+        footer { padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--slate); background: var(--cream); border-top: 1px solid rgba(23, 23, 28, 0.06); }
 
         /* Animations */
         .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -283,7 +283,7 @@
             .custom-row2 { grid-template-columns: 1fr; }
             .analytics-banner { grid-template-columns: 1fr; }
             .ind-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 250, 248, 0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 1.5rem 2rem; gap: 1.2rem; border-bottom: 1px solid rgba(17, 17, 16, 0.08); box-shadow: var(--shadow-soft); }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 250, 249, 0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 1.5rem 2rem; gap: 1.2rem; border-bottom: 1px solid rgba(23, 23, 28, 0.08); box-shadow: var(--shadow-soft); }
             .nav-links.open { display: flex; }
             .hamburger { display: block; }
         }
@@ -347,10 +347,10 @@
                         <!-- Antenna stem -->
                         <path d="M58 38c0-8 0-14 0-18" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/>
                         <!-- Antenna ball -->
-                        <circle cx="58" cy="17" r="6" fill="#CC7A3E">
+                        <circle cx="58" cy="17" r="6" fill="#0D9488">
                             <animate attributeName="r" values="6;7;6" dur="2s" repeatCount="indefinite"/>
                         </circle>
-                        <circle cx="56" cy="15" r="2" fill="#D9C6AD" opacity="0.6"/>
+                        <circle cx="56" cy="15" r="2" fill="#5EEAD4" opacity="0.6"/>
                         <!-- Face area -->
                         <rect x="36" y="48" width="44" height="32" rx="14" fill="#3D3633" opacity="0.15"/>
                         <!-- Left eye white -->
@@ -374,9 +374,9 @@
                         <!-- Mouth -->
                         <path d="M50 76c2 4 6 6 8 6s6-2 8-6" stroke="#1C1917" stroke-width="2" stroke-linecap="round" fill="none"/>
                         <!-- Cheek blush left -->
-                        <ellipse cx="36" cy="72" rx="5" ry="3.5" fill="#CC7A3E" opacity="0.2"/>
+                        <ellipse cx="36" cy="72" rx="5" ry="3.5" fill="#0D9488" opacity="0.15"/>
                         <!-- Cheek blush right -->
-                        <ellipse cx="80" cy="72" rx="5" ry="3.5" fill="#CC7A3E" opacity="0.2"/>
+                        <ellipse cx="80" cy="72" rx="5" ry="3.5" fill="#0D9488" opacity="0.15"/>
                         <!-- Feet -->
                         <ellipse cx="44" cy="100" rx="10" ry="5" fill="#1C1917" opacity="0.9"/>
                         <ellipse cx="72" cy="100" rx="10" ry="5" fill="#1C1917" opacity="0.9"/>
@@ -879,7 +879,7 @@
                     <p>Sam works for any business that answers repeat questions. Reach out and we'll build yours.</p>
                     <a href="mailto:sami@trysam.co?subject=Sam%20for%20My%20Industry" class="learn-link" style="color: var(--coral-dark); font-weight: 600; font-size: 0.85rem; margin-top: 0.5rem; text-decoration: none;">Contact us →</a>
                 </div>
-                <div class="ind-card fade-up" style="border: 2px dashed rgba(17, 17, 16, 0.15); background: transparent; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div class="ind-card fade-up" style="border: 2px dashed rgba(23, 23, 28, 0.15); background: transparent; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                     <div class="ind-card-icon" style="background: white;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--coral)" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
                     </div>
