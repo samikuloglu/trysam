@@ -5,7 +5,7 @@ import Script from 'next/script';
 export default function SamWidget() {
   return (
     <Script
-      src="https://api.trysam.co/widget/embed.js"
+      src="https://widget.trysam.co/chat.js"
       data-tenant="trysam"
       strategy="lazyOnload"
     />
