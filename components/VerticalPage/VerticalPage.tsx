@@ -39,7 +39,7 @@ export default function VerticalPage({ data }: VerticalPageProps) {
             See It In Action
             <ArrowRight size={18} />
           </a>
-          <p className={styles.heroNote}>Free demo · No commitment · Set up in one week</p>
+          <p className={styles.heroNote}>Free demo · No commitment · We handle everything</p>
         </ScrollReveal>
         <div className={styles.chatWrapper}>
           <ScrollReveal delay={0.2}>

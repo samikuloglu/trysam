@@ -62,7 +62,7 @@ export default function HomePage() {
               <ArrowRight size={18} />
             </a>
           </div>
-          <p className={styles.heroNote}>Free demo · No commitment · Set up in one week</p>
+          <p className={styles.heroNote}>Free demo · No commitment · We handle everything</p>
         </ScrollReveal>
         <div className={styles.heroVisual}>
           <ScrollReveal delay={0.2}>
@@ -252,7 +252,7 @@ export default function HomePage() {
         subtitle="Book a 15-minute call. We'll show you a live demo built with your real business info — no commitment."
         buttonText="Book Your Free Demo"
         buttonHref={DEMO_MAILTO}
-        subText="Free demo · No commitment · Set up in one week"
+        subText="Free demo · No commitment · We handle everything"
         variant="teal"
       />
     </>
