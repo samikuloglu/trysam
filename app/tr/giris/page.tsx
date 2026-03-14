@@ -28,10 +28,10 @@ const stats = [
 
 const howItWorksSteps = [
   {
-    /* TRANSLATE: Send us your info */
-    title: 'Bilgilerinizi gönderin',
-    /* TRANSLATE: Your website, handbook, pricing, FAQ — anything customers ask about. We train Sam on your specific business. */
-    description: 'Web siteniz, fiyat listeniz, SSS, broşürleriniz — müşterilerinizin sorduğu her şey. Sam\'i sizin işletmenize özel eğitiyoruz.',
+    /* TRANSLATE: Give us your website URL */
+    title: 'Web sitenizin adresini verin',
+    /* TRANSLATE: That's all we need to get started. We pull your hours, services, pricing, and policies directly from your site. Want Sam to know something that isn't on your website? Just send it over — but it's completely optional. */
+    description: 'Başlamak için tek ihtiyacımız bu. Çalışma saatlerinizi, hizmetlerinizi, fiyatlarınızı ve politikalarınızı doğrudan sitenizden alıyoruz. Web sitenizde olmayan bir bilgi mi var? Gönderin yeter — ama tamamen isteğe bağlı.',
   },
   {
     /* TRANSLATE: We build your assistant */

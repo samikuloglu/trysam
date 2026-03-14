@@ -27,7 +27,7 @@ const integrations = [
 ];
 
 const howItWorksSteps = [
-  { title: 'Send us your content', description: 'Website pages, handbooks, FAQs, policies — any content your customers ask about. We handle the training.' },
+  { title: 'Give us your website URL', description: 'That\'s all we need to get started. We pull your hours, services, pricing, and policies directly from your site. Want Sam to know something that isn\'t on your website? Just send it over — but it\'s completely optional.' },
   { title: 'We customize your widget', description: 'We match Sam\'s appearance to your brand — colors, tone, greeting message. You approve before it goes live.' },
   { title: 'Paste one line of code', description: 'Add a single script tag to your site. Sam appears as a chat bubble in the corner. That\'s it — you\'re live.' },
 ];

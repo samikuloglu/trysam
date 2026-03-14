@@ -45,7 +45,7 @@ export const daycare: VerticalData = {
     { title: 'Enrollment inquiries slip through', description: 'During drop-off, pickup, and nap transitions, voicemails pile up. By the time you call back, that parent already called the center down the street.', icon: 'clock' },
   ],
   howItWorksSteps: [
-    { title: 'Send us your info', description: 'Your parent handbook, tuition sheet, enrollment forms, schedule — anything parents ask about. We train Sam on your specific center.' },
+    { title: 'Give us your website URL', description: 'That\'s all we need to get started. We pull your hours, programs, rates, and policies directly from your site. Want Sam to know something that isn\'t on your website? Just send it over — but it\'s completely optional.' },
     { title: 'We build your assistant', description: 'Sam learns your rates, policies, hours, programs, waitlist status — everything. It answers questions exactly the way you would.' },
     { title: 'One line of code on your website', description: 'We add a small chat widget to your site. Parents get instant answers. Your phone stops ringing for the same 10 questions.' },
   ],
@@ -82,7 +82,7 @@ export const k12: VerticalData = {
     { title: 'Families move fast', description: 'Parents compare 3-5 schools at once. The first school to respond with helpful, specific information wins the campus tour — and usually the enrollment.', icon: 'bolt' },
   ],
   howItWorksSteps: [
-    { title: 'Send us your info', description: 'Your website, handbook, tuition sheet, enrollment forms, program details — anything families ask about. We train Sam on your specific school.' },
+    { title: 'Give us your website URL', description: 'That\'s all we need to get started. We pull your programs, tuition, admissions info, and policies directly from your site. Want Sam to know something that isn\'t on your website? Just send it over — but it\'s completely optional.' },
     { title: 'We build your assistant', description: 'Sam learns your tuition, programs, admissions process, financial aid, campus life — everything. It answers questions exactly the way your admissions team would.' },
     { title: 'One line of code on your website', description: 'We add a chat widget to your website. Families get instant answers. Your admissions team gets warm leads with contact info already captured.' },
   ],
@@ -119,7 +119,7 @@ export const property: VerticalData = {
     { title: 'After-hours inquiries wait until tomorrow', description: 'Prospective tenants browse listings evenings and weekends. Response times stretch to 24–48 hours. By then, they\'ve signed elsewhere.', icon: 'moon' },
   ],
   howItWorksSteps: [
-    { title: 'Send us your property info', description: 'Lease agreements, tenant handbooks, pet policies, parking rules, maintenance procedures, rent schedules — anything tenants ask about. We train Sam on your specific properties.' },
+    { title: 'Give us your website URL', description: 'That\'s all we need to get started. We pull your rent info, policies, amenities, and maintenance procedures directly from your site. Want Sam to know something that isn\'t on your website? Just send it over — but it\'s completely optional.' },
     { title: 'We build your assistant', description: 'Sam learns your rent policies, maintenance procedures, amenities, lease terms, and office hours. It answers questions exactly the way your front desk would.' },
     { title: 'One line of code on your website', description: 'We add a chat widget to your property site. Tenants and prospects get instant answers. Your phone stops ringing for the same routine questions.' },
   ],
@@ -156,7 +156,7 @@ export const venues: VerticalData = {
     { title: 'Same questions, every inquiry', description: '"What\'s your capacity?" "Do you have June dates?" "What\'s included?" "Can we bring our own caterer?" Your events team answers these dozens of times a week.', icon: 'clipboard' },
   ],
   howItWorksSteps: [
-    { title: 'Send us your venue info', description: 'Packages, pricing tiers, capacity, availability calendar, catering options, vendor policies — anything couples and planners ask about. We train Sam on your specific venue.' },
+    { title: 'Give us your website URL', description: 'That\'s all we need to get started. We pull your packages, pricing, capacity, and venue details directly from your site. Want Sam to know something that isn\'t on your website? Just send it over — but it\'s completely optional.' },
     { title: 'We build your assistant', description: 'Sam learns your packages, availability, venue rules, and what makes your space special. It answers inquiries with the warmth and detail your couples expect.' },
     { title: 'One line of code on your website', description: 'We add a chat widget to your venue site. Couples get instant answers and tour scheduling. You wake up to qualified leads instead of missed inquiries.' },
   ],

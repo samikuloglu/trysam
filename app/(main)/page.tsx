@@ -28,8 +28,8 @@ const stats = [
 
 const howItWorksSteps = [
   {
-    title: 'Send us your info',
-    description: 'Your website, handbook, pricing, FAQ — anything customers ask about. We train Sam on your specific business.',
+    title: 'Give us your website URL',
+    description: 'That\'s all we need to get started. We pull your hours, services, pricing, and policies directly from your site. Want Sam to know something that isn\'t on your website? Just send it over — but it\'s completely optional.',
   },
   {
     title: 'We build your assistant',
