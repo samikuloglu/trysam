@@ -61,9 +61,6 @@ export default function HomePage() {
               Book a Free Demo
               <ArrowRight size={18} />
             </a>
-            <Link href="/demo" className={`${styles.heroBtn} ${styles.heroBtnSecondary}`}>
-              See Live Example
-            </Link>
           </div>
           <p className={styles.heroNote}>Free demo · No commitment · Set up in one week</p>
         </ScrollReveal>
