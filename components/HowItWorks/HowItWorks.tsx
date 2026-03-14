@@ -16,7 +16,7 @@ interface HowItWorksProps {
 
 export default function HowItWorks({
   label = 'How It Works',
-  title = 'Up and running in one week. Not months.',
+  title = 'Up and running fast. We handle everything.',
   subtitle = 'We handle everything. You just approve the final result.',
   steps,
 }: HowItWorksProps) {

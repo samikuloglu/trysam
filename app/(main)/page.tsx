@@ -23,7 +23,7 @@ const heroChat = [
 const stats = [
   { value: '70%', label: 'of routine questions answered without staff' },
   { value: '24/7', label: 'availability — evenings, weekends, holidays' },
-  { value: '1 week', label: 'from signup to live on your website' },
+  { value: '5 min', label: 'install — one line of code on your site' },
 ];
 
 const howItWorksSteps = [

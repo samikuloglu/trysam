@@ -50,7 +50,7 @@ export default function WidgetPage() {
             Ask Sam About Pricing
             <ArrowRight size={18} />
           </a>
-          <p className={styles.heroNote}>Custom-built for your business · Live in one week</p>
+          <p className={styles.heroNote}>Custom-built for your business · We handle everything</p>
         </ScrollReveal>
         <div className={styles.chatWrapper}>
           <ScrollReveal delay={0.2}>

@@ -11,8 +11,8 @@ export const STATS = {
   routineQuestionsLabel: 'of routine questions answered without staff',
   availability: '24/7',
   availabilityLabel: 'availability — evenings, weekends, holidays',
-  setupTime: '1 week',
-  setupTimeLabel: 'from signup to live on your website',
+  setupTime: '5 min',
+  setupTimeLabel: 'install — one line of code on your site',
 };
 
 export const DEMO_MAILTO = 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20business.%0A%0ABusiness%20name%3A%20%0AIndustry%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!';

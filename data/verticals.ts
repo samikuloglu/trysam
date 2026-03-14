@@ -52,7 +52,7 @@ export const daycare: VerticalData = {
   stats: [
     { value: '70%', label: 'of routine parent questions answered without staff' },
     { value: '24/7', label: 'availability — parents get answers evenings, weekends, holidays' },
-    { value: '1 week', label: 'from signup to live on your website' },
+    { value: '5 min', label: 'install — one line of code on your site' },
   ],
   ctaTitle: 'Stop answering the same questions. Let Sam handle it.',
   ctaSubtitle: 'Book a 15-minute call. We\'ll show you exactly what Sam would look like for your center — with your real info.',
@@ -89,7 +89,7 @@ export const k12: VerticalData = {
   stats: [
     { value: '70%', label: 'of routine questions answered without staff' },
     { value: '24/7', label: 'availability — families get answers evenings, weekends, holidays' },
-    { value: '1 week', label: 'from signup to live on your website' },
+    { value: '5 min', label: 'install — one line of code on your site' },
   ],
   ctaTitle: 'Stop losing families to slow responses. Let Sam handle it.',
   ctaSubtitle: 'Book a 15-minute call. We\'ll show you exactly what Sam would look like for your school — with your real info.',
@@ -126,7 +126,7 @@ export const property: VerticalData = {
   stats: [
     { value: '70%', label: 'of routine tenant questions answered without staff' },
     { value: '24/7', label: 'availability — tenants get answers evenings, weekends, holidays' },
-    { value: '1 week', label: 'from signup to live on your website' },
+    { value: '5 min', label: 'install — one line of code on your site' },
   ],
   ctaTitle: 'Stop answering the same questions. Let Sam handle it.',
   ctaSubtitle: 'Book a 15-minute call. We\'ll show you exactly what Sam would look like for your properties — with your real info.',
@@ -163,7 +163,7 @@ export const venues: VerticalData = {
   stats: [
     { value: '30%', label: 'more tour bookings from instant inquiry response' },
     { value: '24/7', label: 'availability — couples get answers evenings, weekends, holidays' },
-    { value: '1 week', label: 'from signup to live on your website' },
+    { value: '5 min', label: 'install — one line of code on your site' },
   ],
   ctaTitle: 'Stop losing bookings to slow responses. Let Sam handle it.',
   ctaSubtitle: 'Book a 15-minute call. We\'ll show you exactly what Sam would look like for your venue — with your real packages and info.',
