@@ -22,6 +22,8 @@ const stats = [
   { value: '%70', label: 'rutin soru, ekibinize gerek kalmadan yanıtlanır' },
   // TRANSLATE: 24/7 availability — evenings, weekends, holidays
   { value: '7/24', label: 'erişim — akşamlar, hafta sonları, tatiller' },
+  // TRANSLATE: 5 min install — one line of code on your site
+  { value: '5 dk', label: 'kurulum — web sitenize tek satır kod' },
 ];
 
 const howItWorksSteps = [
