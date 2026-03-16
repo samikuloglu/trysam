@@ -201,7 +201,7 @@ export const dental: VerticalData = {
   ],
   stats: [
     { value: '70%', label: 'of routine patient questions handled without staff' },
-    { value: '3x', label: 'faster response than phone callbacks or email' },
+    { value: '5 min', label: 'install — one line of code on your site' },
     { value: '24/7', label: 'availability — evenings, weekends, holidays' },
   ],
   midCtaTitle: 'See what Sam looks like for your practice.',
@@ -246,7 +246,7 @@ export const medicalAesthetics: VerticalData = {
   ],
   stats: [
     { value: '70%', label: 'of routine patient questions handled without staff' },
-    { value: '3x', label: 'faster response than phone callbacks or email' },
+    { value: '5 min', label: 'install — one line of code on your site' },
     { value: '24/7', label: 'availability — evenings, weekends, holidays' },
   ],
   midCtaTitle: 'See what Sam looks like for your practice.',
@@ -291,7 +291,7 @@ export const law: VerticalData = {
   ],
   stats: [
     { value: '70%', label: 'of routine patient questions handled without staff' },
-    { value: '3x', label: 'faster response than phone callbacks or email' },
+    { value: '5 min', label: 'install — one line of code on your site' },
     { value: '24/7', label: 'availability — evenings, weekends, holidays' },
   ],
   midCtaTitle: 'See what Sam looks like for your firm.',
