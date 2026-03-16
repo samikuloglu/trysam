@@ -130,6 +130,72 @@
   line-height: 1.6;
 }
 
+/* FAQ Section */
+.faqSection {
+  padding: var(--section-padding);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faqInner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faqList {
+  margin-top: 2rem;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--teal-light);
+  padding: 1.5rem 0;
+}
+
+.faqQuestion {
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--heading);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  padding: 0;
+}
+
+.faqToggle {
+  font-size: 1.4rem;
+  color: var(--teal);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faqItemOpen .faqToggle {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faqItemOpen .faqAnswer {
+  max-height: 300px;
+  padding-top: 1rem;
+}
+
+.faqAnswer p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 8rem 1.5rem 4rem;
@@ -141,5 +207,9 @@
 
   .painGrid {
     grid-template-columns: 1fr;
+  }
+
+  .faqSection {
+    padding: var(--section-padding-mobile);
   }
 }

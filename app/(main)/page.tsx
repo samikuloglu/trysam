@@ -9,7 +9,7 @@ import HowItWorks from '@/components/HowItWorks/HowItWorks';
 import CTASection from '@/components/CTASection/CTASection';
 import ChatMockup from '@/components/ChatMockup/ChatMockup';
 import DeviceMockup from '@/components/DeviceMockup/DeviceMockup';
-import { Phone, Moon, Clock, Users, GraduationCap, Building, MapPin, ArrowRight } from '@/components/Icons';
+import { Phone, Moon, Clock, Users, GraduationCap, MapPin, Tooth, Sparkles, Scale, ArrowRight } from '@/components/Icons';
 import { DEMO_MAILTO } from '@/lib/constants';
 import styles from './page.module.css';
 
@@ -200,16 +200,28 @@ export default function HomePage() {
                 <p>Convert prospective families browsing your website at night into campus tour bookings and admissions inquiries.</p>
                 <span className={styles.verticalLink}>Learn more →</span>
               </Link>
-              <Link href="/property" className={styles.verticalCard}>
-                <div className={styles.verticalIcon}><Building /></div>
-                <h3>Property Management</h3>
-                <p>Answer tenant and prospect questions about rent, maintenance, leasing, and availability — without tying up your office.</p>
-                <span className={styles.verticalLink}>Learn more →</span>
-              </Link>
               <Link href="/venues" className={styles.verticalCard}>
                 <div className={styles.verticalIcon}><MapPin /></div>
                 <h3>Wedding & Event Venues</h3>
                 <p>Give couples instant answers about availability, packages, and capacity — before they move on to the next venue.</p>
+                <span className={styles.verticalLink}>Learn more →</span>
+              </Link>
+              <Link href="/dental" className={styles.verticalCard}>
+                <div className={styles.verticalIcon}><Tooth /></div>
+                <h3>Dental & Orthodontic Practices</h3>
+                <p>Answer new patient questions about insurance, pricing, and availability — so your front desk can focus on the patients already in your chairs.</p>
+                <span className={styles.verticalLink}>Learn more →</span>
+              </Link>
+              <Link href="/medical-aesthetics" className={styles.verticalCard}>
+                <div className={styles.verticalIcon}><Sparkles /></div>
+                <h3>Medical Aesthetics & Skincare</h3>
+                <p>Give clients instant answers about treatments, pricing, and financing — before they book a consultation with your competitor.</p>
+                <span className={styles.verticalLink}>Learn more →</span>
+              </Link>
+              <Link href="/law" className={styles.verticalCard}>
+                <div className={styles.verticalIcon}><Scale /></div>
+                <h3>Small Law Firms</h3>
+                <p>Capture potential clients searching for legal help at 2 AM — when your office is closed but their problem feels urgent.</p>
                 <span className={styles.verticalLink}>Learn more →</span>
               </Link>
           </ScrollReveal>

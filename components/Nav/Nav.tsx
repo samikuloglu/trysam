@@ -10,8 +10,10 @@ import styles from './Nav.module.css';
 const industryLinks = [
   { href: '/daycare', label: 'Childcare' },
   { href: '/k-12', label: 'Schools' },
-  { href: '/property', label: 'Property' },
   { href: '/venues', label: 'Venues' },
+  { href: '/dental', label: 'Dental & Orthodontics' },
+  { href: '/medical-aesthetics', label: 'Medical Aesthetics' },
+  { href: '/law', label: 'Law Firms' },
 ];
 
 export default function Nav() {

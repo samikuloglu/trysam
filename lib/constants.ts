@@ -25,4 +25,10 @@ export const DEMO_MAILTO_PROPERTY = 'mailto:sami@trysam.co?subject=Sam%20Demo%20
 
 export const DEMO_MAILTO_VENUES = 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Wedding%20%2F%20Event%20Venue&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20venue.%0A%0AVenue%20name%3A%20%0ALocation%3A%20%0ATypes%20of%20events%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!';
 
+export const DEMO_MAILTO_DENTAL = 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Dental%20Practice&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20dental%20practice.%0A%0APractice%20name%3A%20%0AWebsite%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!';
+
+export const DEMO_MAILTO_AESTHETICS = 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Medical%20Aesthetics&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20aesthetics%20practice.%0A%0AClinic%20name%3A%20%0AWebsite%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!';
+
+export const DEMO_MAILTO_LAW = 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Law%20Firm&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20law%20firm.%0A%0AFirm%20name%3A%20%0AWebsite%3A%20%0APractice%20areas%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!';
+
 export const PORTAL_RESET_MAILTO = 'mailto:sami@trysam.co?subject=Portal%20Password%20Reset';

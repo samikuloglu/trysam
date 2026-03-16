@@ -243,6 +243,47 @@ export function WhatsApp({ size = 24, className }: IconProps) {
   );
 }
 
+export function UserX({ size = 24, className }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="8.5" cy="7" r="4"/>
+      <line x1="18" y1="8" x2="23" y2="13"/>
+      <line x1="23" y1="8" x2="18" y2="13"/>
+    </svg>
+  );
+}
+
+export function Tooth({ size = 24, className }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 2C9.5 2 8 3.5 7 5c-1 1.5-1.5 3-2 5-.5 2-.5 4 .5 6s2 3.5 2.5 5c.3.8.7 1 1 1s.7-.4 1-1.5c.5-1.5 1-3.5 2-3.5s1.5 2 2 3.5c.3 1.1.7 1.5 1 1.5s.7-.2 1-1c.5-1.5 1.5-3 2.5-5s1-4 .5-6c-.5-2-1-3.5-2-5-1-1.5-2.5-3-5-3z"/>
+    </svg>
+  );
+}
+
+export function Sparkles({ size = 24, className }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3z"/>
+      <path d="M19 15l.5 2 2 .5-2 .5-.5 2-.5-2-2-.5 2-.5.5-2z"/>
+      <path d="M5 17l.5 1.5L7 19l-1.5.5L5 21l-.5-1.5L3 19l1.5-.5L5 17z"/>
+    </svg>
+  );
+}
+
+export function Scale({ size = 24, className }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 3v18"/>
+      <path d="M5 7l7-4 7 4"/>
+      <path d="M5 7l-2 8h4c0-2.2-0.9-4-2-4l-2-4"/>
+      <path d="M19 7l2 8h-4c0-2.2 0.9-4 2-4l2-4"/>
+      <line x1="2" y1="21" x2="22" y2="21"/>
+    </svg>
+  );
+}
+
 export function Lock({ size = 24, className }: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>

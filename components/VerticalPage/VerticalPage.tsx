@@ -1,12 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import ChatMockup from '@/components/ChatMockup/ChatMockup';
 import StatsBar from '@/components/StatsBar/StatsBar';
 import HowItWorks from '@/components/HowItWorks/HowItWorks';
 import CTASection from '@/components/CTASection/CTASection';
-import { ArrowRight, Phone, Moon, Clock, Bolt, Building, Heart, Clipboard } from '@/components/Icons';
+import { ArrowRight, Phone, Moon, Clock, Bolt, Building, Heart, Clipboard, UserX } from '@/components/Icons';
 import type { VerticalData } from '@/data/verticals';
 import styles from './VerticalPage.module.css';
 
@@ -18,7 +19,23 @@ const iconMap: Record<string, React.ReactNode> = {
   building: <Building />,
   heart: <Heart />,
   clipboard: <Clipboard />,
+  userx: <UserX />,
 };
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`${styles.faqItem} ${open ? styles.faqItemOpen : ''}`}>
+      <button className={styles.faqQuestion} onClick={() => setOpen(!open)}>
+        {question}
+        <span className={styles.faqToggle}>+</span>
+      </button>
+      <div className={styles.faqAnswer}>
+        <p>{answer}</p>
+      </div>
+    </div>
+  );
+}
 
 interface VerticalPageProps {
   data: VerticalData;
@@ -77,6 +94,31 @@ export default function VerticalPage({ data }: VerticalPageProps) {
 
       {/* Stats */}
       <StatsBar stats={data.stats} />
+
+      {/* Mid-page CTA */}
+      {data.midCtaTitle && (
+        <CTASection
+          title={data.midCtaTitle}
+          subtitle={data.midCtaSubtitle || ''}
+          buttonText="Book Your Free Demo"
+          buttonHref={data.mailto}
+          variant="default"
+        />
+      )}
+
+      {/* FAQ */}
+      {data.faqItems && data.faqItems.length > 0 && (
+        <section className={styles.faqSection}>
+          <div className={styles.faqInner}>
+            <SectionHeader label="Questions" title="You're probably wondering..." />
+            <div className={styles.faqList}>
+              {data.faqItems.map((item, i) => (
+                <FaqItem key={i} question={item.question} answer={item.answer} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Final CTA */}
       <CTASection

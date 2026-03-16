@@ -17,6 +17,9 @@ export interface VerticalData {
   painCards: { title: string; description: string; icon: string }[];
   howItWorksSteps: { title: string; description: string }[];
   stats: { value: string; label: string }[];
+  midCtaTitle?: string;
+  midCtaSubtitle?: string;
+  faqItems?: { question: string; answer: string }[];
   ctaTitle: string;
   ctaSubtitle: string;
 }
@@ -167,4 +170,139 @@ export const venues: VerticalData = {
   ],
   ctaTitle: 'Stop losing bookings to slow responses. Let Sam handle it.',
   ctaSubtitle: 'Book a 15-minute call. We\'ll show you exactly what Sam would look like for your venue — with your real packages and info.',
+};
+
+export const dental: VerticalData = {
+  slug: 'dental',
+  badge: 'Built for Dental & Orthodontic Practices',
+  title: 'Your next patient is on your website right now.',
+  titleAccent: 'Is anyone answering their questions?',
+  subtitle: 'Sam answers questions about insurance, pricing, new patient intake, hours, and services — instantly, 24/7 — so your front desk isn\'t glued to the phone.',
+  mailto: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Dental%20Practice&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20dental%20practice.%0A%0APractice%20name%3A%20%0AWebsite%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!',
+  metaTitle: 'Sam — AI for Dental & Orthodontic Practices',
+  metaDescription: 'Sam answers patient questions about insurance, pricing, new patient intake, hours, and services — instantly, 24/7 — so your front desk can focus on patients.',
+  chatBusinessName: 'Bright Smile Dental',
+  chatMessages: [
+    { role: 'user', text: 'Do you accept Delta Dental PPO? And are you taking new patients?' },
+    { role: 'bot', text: 'Yes! We accept Delta Dental PPO and most major insurance plans. We\'re currently accepting new patients — would you like to schedule a first visit? I can help you get started.' },
+    { role: 'user', text: 'Yes please! What do I need for my first appointment?' },
+  ],
+  painTitle: 'Your front desk is overwhelmed. Your website isn\'t helping.',
+  painSubtitle: 'Most dental practices lose new patients before they ever pick up the phone.',
+  painCards: [
+    { title: 'Phones ring nonstop with the same questions', description: '\'Do you take my insurance?\' \'Are you accepting new patients?\' \'How much is a cleaning without insurance?\' Your staff answers these dozens of times a day.', icon: 'phone' },
+    { title: 'Patients research after hours', description: 'Most people search for a new dentist in the evening or on weekends — when your office is closed. By morning, they\'ve already booked somewhere else.', icon: 'moon' },
+    { title: 'New patient inquiries fall through the cracks', description: 'Voicemails go unreturned during busy days. Contact forms sit in inboxes. Every missed response is a patient worth $3,000+ in lifetime care.', icon: 'userx' },
+  ],
+  howItWorksSteps: [
+    { title: 'Share your website URL', description: 'We pull your services, insurance info, hours, policies, and pricing directly from your site. Have a new patient packet or FAQ page? Even better — but it\'s optional.' },
+    { title: 'We build your assistant', description: 'Sam learns everything a new patient would want to know — insurance, services, scheduling, what to expect at a first visit. It answers exactly the way your best front desk person would.' },
+    { title: 'One line of code', description: 'We add a small chat widget to your website. Patients get instant answers. Your phone stops ringing for the same 10 questions.' },
+  ],
+  stats: [
+    { value: '70%', label: 'of routine patient questions handled without staff' },
+    { value: '3x', label: 'faster response than phone callbacks or email' },
+    { value: '24/7', label: 'availability — evenings, weekends, holidays' },
+  ],
+  midCtaTitle: 'See what Sam looks like for your practice.',
+  midCtaSubtitle: 'Book a 15-minute call. We\'ll show you a live demo built with your real practice info — no commitment.',
+  faqItems: [
+    { question: 'What can Sam actually answer?', answer: 'Anything that\'s on your website or that you tell us about — insurance plans accepted, services and pricing, office hours, new patient process, location and parking, financial options, what to expect at a first visit. If a question requires clinical judgment, Sam lets the patient know to call your office.' },
+    { question: 'Is this HIPAA compliant?', answer: 'Sam only shares information you\'ve already made public on your website or given us to use. It doesn\'t access patient records, scheduling systems, or any protected health information. It\'s an informational assistant, not a medical records tool.' },
+    { question: 'Will it sound robotic or generic?', answer: 'No. Sam is trained on your specific practice, so it answers the way your team would — with your office name, your services, your policies. Patients won\'t feel like they\'re talking to a generic bot.' },
+    { question: 'What if someone asks something Sam doesn\'t know?', answer: 'Sam will let them know it doesn\'t have that information and direct them to call or email your office. It never guesses or makes things up.' },
+    { question: 'How long does setup take?', answer: 'Most practices are live within a few days. We handle everything — you just review and approve.' },
+  ],
+  ctaTitle: 'Stop losing patients to your voicemail.',
+  ctaSubtitle: 'Book a 15-minute demo and see Sam answer real questions about your practice — built with your actual info.',
+};
+
+export const medicalAesthetics: VerticalData = {
+  slug: 'medical-aesthetics',
+  badge: 'Built for Medical Aesthetics & Skincare Clinics',
+  title: 'Your clients are comparing you to competitors right now.',
+  titleAccent: 'What are they finding?',
+  subtitle: 'Sam answers questions about treatments, pricing, financing, and what to expect — instantly, 24/7 — so you capture the client before they book elsewhere.',
+  mailto: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Medical%20Aesthetics&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20aesthetics%20practice.%0A%0AClinic%20name%3A%20%0AWebsite%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!',
+  metaTitle: 'Sam — AI for Medical Aesthetics & Skincare Clinics',
+  metaDescription: 'Sam answers client questions about treatments, pricing, financing, and what to expect — instantly, 24/7 — so you capture clients before they book elsewhere.',
+  chatBusinessName: 'Glow Aesthetics',
+  chatMessages: [
+    { role: 'user', text: 'How much does Botox cost? And do you offer any financing options?' },
+    { role: 'bot', text: 'Our Botox treatments start at $12 per unit, with most patients needing 20-40 units depending on the treatment area. We do offer financing through Cherry and CareCredit — would you like to book a free consultation to get a personalized quote?' },
+    { role: 'user', text: 'That would be great! Do you have anything available this week?' },
+  ],
+  painTitle: 'Your clients are shopping around. Silence costs you.',
+  painSubtitle: 'Aesthetic treatments are elective — clients compare 3-4 providers before booking. The one who answers first wins.',
+  painCards: [
+    { title: 'Pricing questions flood your front desk', description: '\'How much is Botox?\' \'What\'s the difference between a chemical peel and microneedling?\' \'Do you offer financing?\' Your staff fields these all day, every day.', icon: 'phone' },
+    { title: 'Clients research after hours', description: 'Most people research cosmetic treatments in the evening from their couch. If your website can\'t answer their questions right then, they move on to the next provider.', icon: 'moon' },
+    { title: 'High-value consultations go unbooked', description: 'Every unanswered question is a consultation that never gets scheduled. A single client could be worth $5,000+ in lifetime treatments — and they\'re gone in minutes.', icon: 'userx' },
+  ],
+  howItWorksSteps: [
+    { title: 'Share your website URL', description: 'We pull your treatment menu, pricing, provider info, and policies directly from your site. Have a service guide or FAQ? Even better — but optional.' },
+    { title: 'We build your assistant', description: 'Sam learns your treatments, pricing, financing options, what to expect before and after — everything a potential client would want to know before booking.' },
+    { title: 'One line of code', description: 'We add a small chat widget to your website. Clients get instant answers. Your front desk stops repeating the same information all day.' },
+  ],
+  stats: [
+    { value: '70%', label: 'of routine patient questions handled without staff' },
+    { value: '3x', label: 'faster response than phone callbacks or email' },
+    { value: '24/7', label: 'availability — evenings, weekends, holidays' },
+  ],
+  midCtaTitle: 'See what Sam looks like for your practice.',
+  midCtaSubtitle: 'Book a 15-minute call. We\'ll show you a live demo built with your real treatment menu and pricing — no commitment.',
+  faqItems: [
+    { question: 'What can Sam answer?', answer: 'Treatment descriptions and comparisons, pricing and financing options, what to expect before and after procedures, provider credentials, office hours, and booking info. Anything you\'ve made public on your website or shared with us.' },
+    { question: 'Can it handle sensitive questions about procedures?', answer: 'Sam provides the informational answers you\'d put on your website — treatment overviews, general pricing, recovery expectations. For personalized medical advice or specific concerns, Sam directs clients to book a consultation with your team.' },
+    { question: 'Will it match our brand voice?', answer: 'Yes. Sam is trained on your specific practice, so it uses your clinic\'s name, your treatment names, your pricing. It doesn\'t sound like a generic chatbot — it sounds like your best front desk person.' },
+    { question: 'What if someone asks about a treatment we don\'t offer?', answer: 'Sam will let them know that service isn\'t available at your practice and suggest relevant alternatives you do offer, or direct them to contact your office.' },
+    { question: 'How long does setup take?', answer: 'Most practices are live within a few days. We handle everything — you just review and approve.' },
+  ],
+  ctaTitle: 'Stop losing clients to the provider who answered first.',
+  ctaSubtitle: 'Book a 15-minute demo and see Sam answer real questions about your treatments — built with your actual services and pricing.',
+};
+
+export const law: VerticalData = {
+  slug: 'law',
+  badge: 'Built for Small Law Firms',
+  title: 'Someone needs a lawyer right now.',
+  titleAccent: 'They\'re on your website. Are you answering?',
+  subtitle: 'Sam answers questions about your practice areas, consultations, and process — instantly, 24/7 — so you capture the client while their need is urgent.',
+  mailto: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Law%20Firm&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20law%20firm.%0A%0AFirm%20name%3A%20%0AWebsite%3A%20%0APractice%20areas%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!',
+  metaTitle: 'Sam — AI for Small Law Firms',
+  metaDescription: 'Sam answers questions about your practice areas, consultations, and process — instantly, 24/7 — so you capture clients while their need is urgent.',
+  chatBusinessName: 'Davis & Associates Law',
+  chatMessages: [
+    { role: 'user', text: 'I was in a car accident last week and the other driver\'s insurance is lowballing me. Do you handle these kinds of cases?' },
+    { role: 'bot', text: 'I\'m sorry to hear about your accident. Yes, we handle personal injury and car accident cases. We offer free initial consultations and work on a contingency basis — you don\'t pay unless we win. Would you like to schedule a consultation?' },
+    { role: 'user', text: 'Yes, what do I need to bring?' },
+  ],
+  painTitle: 'Legal problems don\'t happen during business hours.',
+  painSubtitle: 'People search for lawyers after accidents, arrests, disputes, and bad news — usually at night. If you\'re not answering, someone else is.',
+  painCards: [
+    { title: 'Potential clients search at 2 AM', description: 'Someone gets a DUI on a Saturday night. Someone gets served divorce papers after dinner. They\'re searching for a lawyer right now — and your website just shows a phone number with Monday hours.', icon: 'moon' },
+    { title: 'Same intake questions, every single call', description: '\'Do you handle custody cases?\' \'Do you offer free consultations?\' \'What are your fees?\' Your team answers these on repeat before they can even qualify the lead.', icon: 'phone' },
+    { title: 'One missed client can cost you thousands', description: 'A single personal injury, family law, or criminal defense client can be worth $5,000-$50,000 to your firm. When they can\'t get a quick answer, they call the next lawyer on the list.', icon: 'userx' },
+  ],
+  howItWorksSteps: [
+    { title: 'Share your website URL', description: 'We pull your practice areas, attorney bios, consultation process, and general information directly from your site. Have an FAQ page or intake guide? Even better — but optional.' },
+    { title: 'We build your assistant', description: 'Sam learns your practice areas, fee structure, consultation process, what clients should expect, and the basics of how your firm works. It answers the way your best intake coordinator would.' },
+    { title: 'One line of code', description: 'We add a small chat widget to your website. Potential clients get instant answers. Your phone stops ringing for the same qualifying questions.' },
+  ],
+  stats: [
+    { value: '70%', label: 'of routine patient questions handled without staff' },
+    { value: '3x', label: 'faster response than phone callbacks or email' },
+    { value: '24/7', label: 'availability — evenings, weekends, holidays' },
+  ],
+  midCtaTitle: 'See what Sam looks like for your firm.',
+  midCtaSubtitle: 'Book a 15-minute call. We\'ll show you a live demo built with your real practice areas and firm info — no commitment.',
+  faqItems: [
+    { question: 'What can Sam answer?', answer: 'Practice areas, consultation process, fee structures (contingency, hourly, flat fee), what clients should expect, attorney backgrounds, office hours and location, and general process questions. Anything you\'ve made public on your website or shared with us.' },
+    { question: 'Will it give legal advice?', answer: 'No. Sam provides informational answers about your firm and practice — not legal advice. For anything case-specific, Sam directs the visitor to schedule a consultation. This is clearly communicated in every interaction.' },
+    { question: 'Is client information secure?', answer: 'Sam doesn\'t access any case files, client records, or confidential information. It only uses information you\'ve made publicly available or explicitly provided. Conversations are informational, not privileged.' },
+    { question: 'What if someone has a case type we don\'t handle?', answer: 'Sam will let them know that\'s not a practice area your firm covers and suggest they contact the local bar association or another resource. It won\'t accept cases on your behalf.' },
+    { question: 'How long does setup take?', answer: 'Most firms are live within a few days. We handle everything — you just review and approve.' },
+  ],
+  ctaTitle: 'Stop losing clients to your competitors\' voicemail.',
+  ctaSubtitle: 'Book a 15-minute demo and see Sam answer real questions about your firm — built with your actual practice areas and info.',
 };
