@@ -244,8 +244,8 @@ export default function HomePage() {
                 <div className={styles.resultLabel}>of routine questions handled without staff involvement</div>
               </div>
               <div className={styles.resultCard}>
-                <div className={styles.resultValue}>3x</div>
-                <div className={styles.resultLabel}>faster response time vs. email or phone callbacks</div>
+                <div className={styles.resultValue}>5 min</div>
+                <div className={styles.resultLabel}>install — one line of code on your site</div>
               </div>
               <div className={styles.resultCard}>
                 <div className={styles.resultValue}>24/7</div>
