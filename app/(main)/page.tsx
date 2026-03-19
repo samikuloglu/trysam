@@ -220,7 +220,7 @@ export default function HomePage() {
               </Link>
               <Link href="/law" className={styles.verticalCard}>
                 <div className={styles.verticalIcon}><Scale /></div>
-                <h3>Small Law Firms</h3>
+                <h3>Law Firms</h3>
                 <p>Capture potential clients searching for legal help at 2 AM — when your office is closed but their problem feels urgent.</p>
                 <span className={styles.verticalLink}>Learn more →</span>
               </Link>

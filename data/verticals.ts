@@ -264,12 +264,12 @@ export const medicalAesthetics: VerticalData = {
 
 export const law: VerticalData = {
   slug: 'law',
-  badge: 'Built for Small Law Firms',
+  badge: 'Built for Law Firms',
   title: 'Someone needs a lawyer right now.',
   titleAccent: 'They\'re on your website. Are you answering?',
   subtitle: 'Sam answers questions about your practice areas, consultations, and process — instantly, 24/7 — so you capture the client while their need is urgent.',
   mailto: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Law%20Firm&body=Hi%20Sami%2C%0A%0AI\'d%20like%20to%20learn%20more%20about%20Sam%20for%20my%20law%20firm.%0A%0AFirm%20name%3A%20%0AWebsite%3A%20%0APractice%20areas%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0AThanks!',
-  metaTitle: 'Sam — AI for Small Law Firms',
+  metaTitle: 'Sam — AI for Law Firms',
   metaDescription: 'Sam answers questions about your practice areas, consultations, and process — instantly, 24/7 — so you capture clients while their need is urgent.',
   chatBusinessName: 'Davis & Associates Law',
   chatMessages: [
