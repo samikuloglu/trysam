@@ -5,6 +5,9 @@
   --teal-light: #E1F5EE;
   --teal-glow: rgba(15, 110, 86, 0.25);
 
+  /* Accent (used sparingly on /k-12) */
+  --accent-coral: #D63A4F;
+
   /* Warm Neutrals */
   --white: #FFFFFF;
   --warm-white: #FAFAF8;
