@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import VerticalPageShell from '@/components/site/VerticalPageShell';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI for Private K–12 Schools',
+  title: 'Sam — AI Admissions Assistant for Private Schools',
   description:
     'Sam turns prospective families browsing your admissions page at midnight into actual tour bookings — instantly, 24/7.',
 };
@@ -21,12 +21,12 @@ Profile:
 
 Off-topic or beyond data: politely route to admissions@oakridgedemo.org.`;
 
-export default function K12Page() {
+export default function PrivateSchoolsPage() {
   return (
     <VerticalPageShell
-      variant="k-12"
-      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20K%E2%80%9312"
-      heroEyebrow="For Private K–12 Schools"
+      variant="private"
+      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Private"
+      heroEyebrow="For Private Schools"
       heroHeading={
         <>
           Prospective families research schools{' '}
@@ -125,26 +125,11 @@ export default function K12Page() {
       testimonialName="James Whitfield"
       testimonialCategory="K–12"
       testimonialOrg="Director of Admissions, Oakridge Academy"
-      crossSell={[
-        {
-          href: '/daycare',
-          icon: 'C',
-          title: 'Childcare & Daycare',
-          body: 'Tuition, openings, tours — answered for parents 24/7.',
-        },
-        {
-          href: '/venues',
-          icon: 'V',
-          title: 'Wedding & Event Venues',
-          body: 'Pricing, dates, capacity. Tour bookings without the email thread.',
-        },
-        {
-          href: '/dental',
-          icon: 'D',
-          title: 'Dental & Orthodontics',
-          body: 'Insurance and pricing answers that free up your front desk.',
-        },
-      ]}
+      crossSellMode="two-model"
+      crossSellEyebrow="Run a charter school instead?"
+      crossSellHeading={<>Sam works for both. <em>Tuned to your model.</em></>}
+      crossSellHref="/charter"
+      crossSellLabel="See Sam for charter schools"
     />
   );
 }

@@ -62,7 +62,7 @@ export default function ROICalculator({
             <h4>Your business</h4>
             <div className={styles.input}>
               <div className={styles.row}>
-                <span className={styles.label}>Inquiries per month</span>
+                <span className={styles.label}>Inquiries / month</span>
                 <span className={styles.val}>{inq.toLocaleString()}</span>
               </div>
               <input

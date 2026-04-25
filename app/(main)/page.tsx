@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import SiteNav from '@/components/site/SiteNav';
 import SiteFooter from '@/components/site/SiteFooter';
 import HomeHero from '@/components/site/HomeHero';
@@ -14,6 +15,12 @@ import Testimonial from '@/components/site/Testimonial';
 import CaseStudy from '@/components/site/CaseStudy';
 import CTABanner from '@/components/site/CTABanner';
 
+export const metadata: Metadata = {
+  title: 'Sam — AI Admissions Assistant for Private & Charter Schools',
+  description:
+    "Sam answers admissions and enrollment questions for private and charter schools — capturing prospective families 24/7 so your team isn't chasing cold leads on Monday.",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -21,29 +28,57 @@ export default function HomePage() {
 
       <HomeHero />
 
+      <Industries
+        cols={2}
+        eyebrow="Which best describes your school?"
+        heading={
+          <>
+            Two paths. Same <em>Sam.</em>
+          </>
+        }
+        cta="Learn more"
+        industries={[
+          {
+            href: '/private',
+            icon: 'P',
+            title: 'Private & Independent Schools',
+            body:
+              'Tuition-supported. Admissions-driven. Sam answers tuition and financial aid questions, books campus tours, and captures inquiries from families researching at midnight.',
+            cta: 'See Sam for private schools',
+          },
+          {
+            href: '/charter',
+            icon: 'C',
+            title: 'Charter Schools & Networks',
+            body:
+              'Tuition-free. Lottery-based. Sam answers enrollment, lottery, and sibling-preference questions across one campus or an entire network — without bloating your enrollment team.',
+            cta: 'See Sam for charter schools',
+          },
+        ]}
+      />
+
       <OutcomeStats
         eyebrow="What changes for you"
         heading={
           <>
-            Answer more questions{' '}
-            <em>&amp; connect with customers faster.</em>
+            Built for the way schools <em>actually run.</em>
           </>
         }
         stats={[
           {
-            num: '24/7',
-            title: 'Availability',
-            body: 'Provide instant support around the clock — even when your office is closed.',
+            num: '3×',
+            title: 'More tour bookings',
+            body: "Capture families when they're browsing — not when your office happens to be staffed. Most inquiries come outside 9–5.",
           },
           {
-            num: '45+',
-            title: 'Languages',
-            body: 'Connect with your diverse community and reach a wider audience with multilingual support.',
+            num: '<2 min',
+            title: 'Average answer time',
+            body: 'Replace the back-and-forth email thread with one clear answer, on your site, the moment a parent asks.',
           },
           {
-            num: '0 clicks',
-            title: 'One question. Full support.',
-            body: 'Simplify the search and browsing experience by answering questions instantly and accurately.',
+            num: '100%',
+            title: 'Trained on your handbook',
+            body: 'Sam answers from your admissions or enrollment handbook, tuition or lottery info, and FAQ — and politely routes anything else to your team.',
           },
         ]}
       />
@@ -54,16 +89,15 @@ export default function HomePage() {
         eyebrow="Powered by Sam intelligence"
         heading={
           <>
-            Turn every website visit into a{' '}
-            <em>meaningful exchange.</em>
+            Turn every website visit into a <em>scheduled tour.</em>
           </>
         }
-        body="Finding the right information shouldn't be a struggle. Sam empowers your customers with immediate answers and effortless navigation, so they find what they need — when they need it."
+        body="Finding admissions information shouldn't be a struggle. Sam answers prospective families with immediate, accurate replies — pulled from your handbook, your tuition or lottery info, your FAQ — so they find what they need when they need it."
         cta={{ href: '#roi', label: 'See the ROI' }}
         visual={
           <div style={{ maxWidth: 480, margin: '0 auto' }}>
             <BrowserMockup
-              url="your-business.com"
+              url="westbrookacademy.org"
               bodyStyle={{
                 background:
                   'linear-gradient(135deg, #faf8f5 0%, #f0ebe4 100%)',
@@ -83,7 +117,7 @@ export default function HomePage() {
                     marginBottom: 16,
                   }}
                 >
-                  A warm welcome to your customers.
+                  A warm welcome to your prospective families.
                 </div>
                 <div style={{ display: 'flex', gap: 8, marginTop: 16 }}>
                   <div
@@ -92,24 +126,48 @@ export default function HomePage() {
                       height: 50,
                       background: 'var(--coral)',
                       borderRadius: 6,
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      padding: 8,
+                      color: '#fff',
+                      fontSize: 10,
+                      fontWeight: 600,
                     }}
-                  />
+                  >
+                    Admissions
+                  </div>
                   <div
                     style={{
                       width: 60,
                       height: 50,
                       background: 'var(--navy)',
                       borderRadius: 6,
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      padding: 8,
+                      color: '#fff',
+                      fontSize: 10,
+                      fontWeight: 600,
                     }}
-                  />
+                  >
+                    Tuition
+                  </div>
                   <div
                     style={{
                       width: 60,
                       height: 50,
                       background: '#c8b89a',
                       borderRadius: 6,
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      padding: 8,
+                      color: '#fff',
+                      fontSize: 10,
+                      fontWeight: 600,
                     }}
-                  />
+                  >
+                    Visit
+                  </div>
                 </div>
               </div>
               <MiniChat
@@ -126,10 +184,10 @@ export default function HomePage() {
       <ROICalculator
         heading={
           <>
-            How much staff time could Sam <em>recover?</em>
+            How much admissions team time could Sam <em>recover?</em>
           </>
         }
-        subtitle="Adjust the sliders to match your business's numbers. We'll estimate annual staff time saved."
+        subtitle="Adjust the sliders to match your school's numbers. We'll estimate annual staff time saved."
       />
 
       <BigStats
@@ -154,7 +212,7 @@ export default function HomePage() {
           {
             num: '3×',
             title: 'After-hours leads',
-            body: 'Captured before they shop your competitor. Late-night browsers get instant answers — and book a tour or consult.',
+            body: 'Captured before they shop your competitor school. Late-night browsers get instant answers — and book a tour or start an application.',
           },
         ]}
       />
@@ -179,13 +237,13 @@ export default function HomePage() {
                 className="h-1"
                 style={{ marginTop: 24, marginBottom: 24, maxWidth: '16ch' }}
               >
-                Your business&apos;s{' '}
+                Your admissions team&apos;s{' '}
                 <em>hardest-working teammate.</em>
               </h2>
               <p className="lede" style={{ marginBottom: 28 }}>
-                Sam provides real-time assistance and accurate answers directly from
-                your website and approved documents — creating a seamless,
-                efficient, and on-brand customer experience.
+                Sam provides real-time admissions and enrollment answers
+                directly from your website and approved documents — creating a
+                seamless, efficient, on-brand parent experience.
               </p>
               <FeatureTabs
                 tabs={[
@@ -199,7 +257,7 @@ export default function HomePage() {
                     label: 'Knowledge Base',
                     title: 'Comprehensive Knowledge Base',
                     body:
-                      "Trained on your handbook, FAQ, pricing sheet, policy docs — anything you've already written down. Updated whenever you change them.",
+                      "Trained on your handbook, FAQ, tuition or lottery info, policy docs — anything you've already written down. Updated whenever you change them.",
                   },
                   {
                     label: 'Customizable',
@@ -211,7 +269,7 @@ export default function HomePage() {
                     label: 'Insightful Analytics',
                     title: 'Insightful Admin Analytics',
                     body:
-                      'Understand customer behavior with a dashboard. Track top questions, identify gaps in your FAQ, measure engagement with metrics like CSAT, sessions, and ratings.',
+                      'Understand parent behavior with a dashboard. Track top questions, identify gaps in your FAQ, measure engagement with metrics like CSAT, sessions, and ratings.',
                   },
                 ]}
               />
@@ -220,66 +278,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Industries
-        id="industries"
-        eyebrow="Built for the businesses that repeat themselves"
-        heading={
-          <>
-            Sam is trained on <em>your specific operation.</em>
-          </>
-        }
-        industries={[
-          {
-            href: '/daycare',
-            icon: 'a',
-            title: 'Childcare & Daycare',
-            body:
-              'Enrollment, schedules, tuition, immunization policy, waitlist status — handled.',
-          },
-          {
-            href: '/k-12',
-            icon: 'b',
-            title: 'Private K–12 Schools',
-            body:
-              'Convert prospective parents into tour bookings, even when admissions is closed.',
-          },
-          {
-            href: '/venues',
-            icon: 'c',
-            title: 'Wedding & Event Venues',
-            body: 'Availability, packages, capacity. Couples decide fast — Sam answers faster.',
-          },
-          {
-            href: '/dental',
-            icon: 'd',
-            title: 'Dental & Orthodontics',
-            body:
-              'Insurance, pricing, availability for new patients — without burying the front desk.',
-          },
-          {
-            href: '/medical-aesthetics',
-            icon: 'e',
-            title: 'Medical Aesthetics',
-            body:
-              'Treatments, financing, expected results, consultation booking. All instant.',
-          },
-          {
-            href: '/law',
-            icon: 'f',
-            title: 'Law Firms',
-            body:
-              "Capture the 2 AM caller searching for legal help. Take the intake while it's hot.",
-          },
-        ]}
-      />
-
       <section className="section">
         <div className="frame">
           <Testimonial
-            quote='"Sam answers the questions our front desk used to spend half the day on. We can actually focus on the families in front of us. The transcripts are gold — we now know exactly what parents are confused about."'
-            name="Maria Chen"
-            category="Director"
-            org="Bright Horizons Daycare"
+            quote='"Our admissions team used to spend Monday mornings on email triage. Now they spend it on the families who actually want to enroll."'
+            name="James Whitfield"
+            category="Director of Admissions"
+            org="Westbrook Academy"
           />
           <CaseStudy />
         </div>
@@ -288,9 +293,10 @@ export default function HomePage() {
       <CTABanner
         heading={
           <>
-            Ready to give your customers <em>better answers?</em>
+            Ready to give your prospective families <em>better answers?</em>
           </>
         }
+        body="15 minutes on a call. We'll show you a live demo trained on your school's real info. No commitment, no slide deck."
         buttonHref="mailto:sami@trysam.co?subject=Sam%20Demo%20Request"
         buttonLabel="Get a free demo"
       />

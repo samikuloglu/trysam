@@ -5,7 +5,7 @@ export default function TrustStrip() {
     <div className={styles.trust}>
       <div className="frame">
         <div className={styles.inner}>
-          <span className={styles.pill}>Trusted by small businesses across NJ</span>
+          <span className={styles.pill}>Built for private and charter schools</span>
           <span><strong>Trained on your business</strong> — never makes things up</span>
           <span><strong>Live in 1 week</strong> — we do the setup</span>
           <span><strong>Cancel anytime</strong> — no long contracts</span>

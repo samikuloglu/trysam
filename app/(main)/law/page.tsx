@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Sam — AI for Law Firms',
   description:
     'Sam screens new matter inquiries 24/7, answers basic intake questions, and books consults — without your paralegals on the phone.',
+  robots: { index: false, follow: false },
 };
 
 const SAMPLE = `You are Sam, the AI assistant for "Harrington & Associates" — a sample family and estate law firm in Westfield, NJ used to demo this product. Answer prospective-client questions briefly (1–3 sentences) in a warm, professional tone. NEVER give legal advice; route to a consult.
@@ -23,7 +24,7 @@ Off-topic or beyond data: politely route to intake@harringtondemo.com. NEVER giv
 export default function LawPage() {
   return (
     <VerticalPageShell
-      variant="law"
+      variant="home"
       mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Law"
       heroEyebrow="For Law Firms"
       heroHeading={
@@ -125,26 +126,7 @@ export default function LawPage() {
       testimonialName="Megan Harrington"
       testimonialCategory="Law"
       testimonialOrg="Managing Partner, Harrington & Associates"
-      crossSell={[
-        {
-          href: '/daycare',
-          icon: 'C',
-          title: 'Childcare & Daycare',
-          body: 'Tuition, openings, tours — answered for parents 24/7.',
-        },
-        {
-          href: '/k-12',
-          icon: 'K',
-          title: 'Private K–12 Schools',
-          body: 'Admissions Q&A and tour booking that runs while you sleep.',
-        },
-        {
-          href: '/venues',
-          icon: 'V',
-          title: 'Wedding & Event Venues',
-          body: 'Pricing, dates, capacity. Tour bookings without the email thread.',
-        },
-      ]}
+      crossSellMode="pocket"
     />
   );
 }

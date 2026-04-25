@@ -16,6 +16,7 @@ interface Props {
   industries: Industry[];
   id?: string;
   cta?: string;
+  cols?: 2 | 3;
 }
 
 export default function Industries({
@@ -24,6 +25,7 @@ export default function Industries({
   industries,
   id,
   cta = 'Learn more',
+  cols = 3,
 }: Props) {
   return (
     <section className="section section-warm" id={id}>
@@ -32,7 +34,10 @@ export default function Industries({
           <div className="eyebrow">{eyebrow}</div>
           <h2 className={`h-1 ${styles.h1}`}>{heading}</h2>
         </div>
-        <div className={styles.grid}>
+        <div
+          className={styles.grid}
+          style={cols === 2 ? { gridTemplateColumns: 'repeat(2, 1fr)', maxWidth: 880, margin: '56px auto 0' } : undefined}
+        >
           {industries.map((ind) => (
             <Link key={ind.href} href={ind.href} className={styles.card}>
               <div className={styles.icon}>{ind.icon}</div>

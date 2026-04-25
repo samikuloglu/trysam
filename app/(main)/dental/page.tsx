@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Sam — AI for Dental & Orthodontic Practices',
   description:
     'Sam answers patient questions about insurance, pricing, and appointments — and books new-patient consults — without front-desk time.',
+  robots: { index: false, follow: false },
 };
 
 const SAMPLE = `You are Sam, the AI assistant for "Summit Orthodontics" — a sample family orthodontic practice in Summit, NJ used to demo this product. Answer patient questions briefly (1–3 sentences) in a warm, professional tone. NEVER provide clinical/medical advice; route to the office.
@@ -23,7 +24,7 @@ Off-topic or beyond data: politely route to hello@summitorthodemo.com. Never giv
 export default function DentalPage() {
   return (
     <VerticalPageShell
-      variant="dental"
+      variant="home"
       mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Dental"
       heroEyebrow="For Dental & Orthodontic Practices"
       heroHeading={
@@ -125,26 +126,7 @@ export default function DentalPage() {
       testimonialName="Dr. Anjali Patel"
       testimonialCategory="Dental"
       testimonialOrg="Owner, Summit Orthodontics"
-      crossSell={[
-        {
-          href: '/daycare',
-          icon: 'C',
-          title: 'Childcare & Daycare',
-          body: 'Tuition, openings, tours — answered for parents 24/7.',
-        },
-        {
-          href: '/k-12',
-          icon: 'K',
-          title: 'Private K–12 Schools',
-          body: 'Admissions Q&A and tour booking that runs while you sleep.',
-        },
-        {
-          href: '/venues',
-          icon: 'V',
-          title: 'Wedding & Event Venues',
-          body: 'Pricing, dates, capacity. Tour bookings without the email thread.',
-        },
-      ]}
+      crossSellMode="pocket"
     />
   );
 }

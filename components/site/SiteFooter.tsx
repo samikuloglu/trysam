@@ -11,25 +11,20 @@ export default function SiteFooter() {
             Sam
           </Link>
           <p className={styles.tag}>
-            An intelligent AI assistant trained on your business. Built and maintained
-            in New Jersey.
+            An AI admissions and enrollment assistant trained on your school.
+            Built and maintained in New Jersey.
           </p>
         </div>
         <div>
-          <h4>Industries</h4>
+          <h4>Built for</h4>
           <ul>
-            <li><Link href="/daycare">Childcare</Link></li>
-            <li><Link href="/k-12">K–12 Schools</Link></li>
-            <li><Link href="/venues">Wedding venues</Link></li>
-            <li><Link href="/dental">Dental &amp; ortho</Link></li>
-            <li><Link href="/medical-aesthetics">Medical aesthetics</Link></li>
-            <li><Link href="/law">Law firms</Link></li>
+            <li><Link href="/private">Private schools</Link></li>
+            <li><Link href="/charter">Charter schools</Link></li>
           </ul>
         </div>
         <div>
           <h4>Product</h4>
           <ul>
-            <li><Link href="/#what">What it does</Link></li>
             <li><Link href="/#how">How it works</Link></li>
             <li><Link href="/#roi">ROI calculator</Link></li>
           </ul>

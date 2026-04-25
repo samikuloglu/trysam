@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Sam — AI for Medical Aesthetics & Med Spas',
   description:
     'Sam answers client questions about treatments, pricing, and downtime — and books consults — instantly, 24/7.',
+  robots: { index: false, follow: false },
 };
 
 const SAMPLE = `You are Sam, the AI assistant for "Lume Aesthetics" — a sample medical aesthetics practice in Short Hills, NJ used to demo this product. Answer client questions briefly (1–3 sentences) in a discreet, professional tone. NEVER give medical advice or diagnose; route to a consult.
@@ -23,7 +24,7 @@ Off-topic or beyond data: politely route to hello@lumeaestheticsdemo.com. Never 
 export default function MedicalAestheticsPage() {
   return (
     <VerticalPageShell
-      variant="medical-aesthetics"
+      variant="home"
       mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Aesthetics"
       heroEyebrow="For Medical Aesthetics & Med Spas"
       heroHeading={
@@ -124,26 +125,7 @@ export default function MedicalAestheticsPage() {
       testimonialName="Dr. Rachel Voss"
       testimonialCategory="Aesthetics"
       testimonialOrg="Medical Director, Lume Aesthetics"
-      crossSell={[
-        {
-          href: '/daycare',
-          icon: 'C',
-          title: 'Childcare & Daycare',
-          body: 'Tuition, openings, tours — answered for parents 24/7.',
-        },
-        {
-          href: '/k-12',
-          icon: 'K',
-          title: 'Private K–12 Schools',
-          body: 'Admissions Q&A and tour booking that runs while you sleep.',
-        },
-        {
-          href: '/venues',
-          icon: 'V',
-          title: 'Wedding & Event Venues',
-          body: 'Pricing, dates, capacity. Tour bookings without the email thread.',
-        },
-      ]}
+      crossSellMode="pocket"
     />
   );
 }

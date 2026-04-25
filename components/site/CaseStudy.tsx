@@ -28,7 +28,7 @@ export default function CaseStudy() {
           surprise, Sam answered over 10,000 prospect questions in the first quarter
           — and saved the admissions team more than 1,000 hours of intake calls.
         </p>
-        <Link href="/k-12" className={styles.link}>
+        <Link href="/private" className={styles.link}>
           Read case study <span aria-hidden>→</span>
         </Link>
         <div className={styles.arrows}>

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Sam — AI for Childcare & Daycare',
   description:
     "Sam answers parent questions about tuition, openings, hours, and tours instantly — 24/7 — so your director isn't on the phone all day.",
+  robots: { index: false, follow: false },
 };
 
 const SAMPLE = `You are Sam, the AI assistant for "Bright Horizons Daycare" — a sample family-owned childcare center in Maplewood, NJ used to demo this product. Answer parent questions briefly (1–3 sentences) in a warm, professional tone.
@@ -25,7 +26,7 @@ Off-topic or beyond data: politely route to hello@brighthorizonsdemo.com.`;
 export default function DaycarePage() {
   return (
     <VerticalPageShell
-      variant="daycare"
+      variant="home"
       mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Childcare"
       heroEyebrow="For Childcare & Daycare"
       heroHeading={
@@ -125,26 +126,7 @@ export default function DaycarePage() {
       testimonialName="Maria Chen"
       testimonialCategory="Childcare"
       testimonialOrg="Director, Bright Horizons Daycare"
-      crossSell={[
-        {
-          href: '/k-12',
-          icon: 'K',
-          title: 'Private K–12 Schools',
-          body: 'Admissions Q&A and tour booking that runs while you sleep.',
-        },
-        {
-          href: '/venues',
-          icon: 'V',
-          title: 'Wedding & Event Venues',
-          body: 'Pricing, dates, capacity. Tour bookings without the email thread.',
-        },
-        {
-          href: '/dental',
-          icon: 'D',
-          title: 'Dental & Orthodontics',
-          body: 'Insurance and pricing answers that free up your front desk.',
-        },
-      ]}
+      crossSellMode="pocket"
     />
   );
 }

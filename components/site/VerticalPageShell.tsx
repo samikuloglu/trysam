@@ -9,12 +9,14 @@ import MiniChat, { MiniMsg } from './MiniChat';
 import QuestionBank, { QA } from './QuestionBank';
 import ROICalculator from './ROICalculator';
 import Testimonial from './Testimonial';
-import Industries, { Industry } from './Industries';
+import SchoolsCrossSell from './SchoolsCrossSell';
 import CTABanner from './CTABanner';
-import type { VerticalKey } from '@/data/site-verticals';
+
+type Variant = 'home' | 'private' | 'charter';
+type CrossSellMode = 'two-model' | 'pocket';
 
 interface Props {
-  variant: VerticalKey;
+  variant: Variant;
   mailto: string;
 
   // Hero
@@ -65,7 +67,11 @@ interface Props {
   testimonialOrg: string;
 
   // Cross-sell
-  crossSell: Industry[];
+  crossSellMode: CrossSellMode;
+  crossSellEyebrow?: string;
+  crossSellHeading?: ReactNode;
+  crossSellHref?: string;
+  crossSellLabel?: string;
 }
 
 export default function VerticalPageShell(p: Props) {
@@ -201,21 +207,18 @@ export default function VerticalPageShell(p: Props) {
         </div>
       </section>
 
-      <Industries
-        eyebrow="Other businesses Sam works for"
-        heading={
-          <>
-            Same product, <em>tuned to your industry.</em>
-          </>
-        }
-        industries={p.crossSell}
-        cta="See the page"
+      <SchoolsCrossSell
+        mode={p.crossSellMode}
+        eyebrow={p.crossSellEyebrow}
+        heading={p.crossSellHeading}
+        href={p.crossSellHref}
+        label={p.crossSellLabel}
       />
 
       <CTABanner
         heading={
           <>
-            Ready to give your customers <em>better answers?</em>
+            Ready to give your prospective families <em>better answers?</em>
           </>
         }
         buttonHref={p.mailto}

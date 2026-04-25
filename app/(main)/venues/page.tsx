@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Sam — AI for Wedding & Event Venues',
   description:
     "Sam answers couples' questions about pricing, dates, capacity, and amenities instantly — and books venue tours directly onto your calendar.",
+  robots: { index: false, follow: false },
 };
 
 const SAMPLE = `You are Sam, the AI assistant for "Stone River Estate" — a sample 1920s Hudson Valley wedding venue used to demo this product. Answer couples' questions briefly (1–3 sentences) in a warm, professional tone.
@@ -24,7 +25,7 @@ Off-topic or beyond data: politely route to events@stoneriverdemo.com.`;
 export default function VenuesPage() {
   return (
     <VerticalPageShell
-      variant="venues"
+      variant="home"
       mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Venues"
       heroEyebrow="For Wedding & Event Venues"
       heroHeading={
@@ -125,26 +126,7 @@ export default function VenuesPage() {
       testimonialName="Elena Russo"
       testimonialCategory="Venues"
       testimonialOrg="Events Director, Stone River Estate"
-      crossSell={[
-        {
-          href: '/daycare',
-          icon: 'C',
-          title: 'Childcare & Daycare',
-          body: 'Tuition, openings, tours — answered for parents 24/7.',
-        },
-        {
-          href: '/k-12',
-          icon: 'K',
-          title: 'Private K–12 Schools',
-          body: 'Admissions Q&A and tour booking that runs while you sleep.',
-        },
-        {
-          href: '/dental',
-          icon: 'D',
-          title: 'Dental & Orthodontics',
-          body: 'Insurance and pricing answers that free up your front desk.',
-        },
-      ]}
+      crossSellMode="pocket"
     />
   );
 }
