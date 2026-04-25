@@ -125,6 +125,71 @@ export default function PrivateSchoolsPage() {
       testimonialName="James Whitfield"
       testimonialCategory="K–12"
       testimonialOrg="Director of Admissions, Oakridge Academy"
+      featureChecklist={{
+        eyebrow: 'Built for private school admissions',
+        heading: <>Designed for the way enrollment <em>actually works.</em></>,
+        subhead:
+          "Sam isn't a generic chatbot pointed at your website. Every feature here was built because a private school admissions director asked for it.",
+        features: [
+          {
+            status: 'live',
+            title: 'Tour & open-house booking',
+            body:
+              'Sam books tours directly into your admissions calendar. Confirmation email to the family, calendar invite to your team.',
+          },
+          {
+            status: 'live',
+            title: 'Lead capture for prospective families',
+            body:
+              'Every family who asks more than one question becomes a soft lead in your dashboard, with their top questions and recommended next step. Export to CSV or push to your CRM.',
+          },
+          {
+            status: 'live',
+            title: 'Financial aid intake',
+            body:
+              'Sam answers FA questions the right way and routes interested families to your application — without bogging down your admissions team.',
+          },
+          {
+            status: 'live',
+            title: 'After-hours capture',
+            body:
+              "Most prospective families research after 8pm. Sam captures them when your office is closed and they're actively comparing schools.",
+          },
+          {
+            status: 'live',
+            title: 'Source-attributed answers',
+            body:
+              'Every answer links to the exact page it came from. No hallucinations. No wrong tuition figures.',
+          },
+          {
+            status: 'live',
+            title: 'Conversation transcripts & search',
+            body:
+              "Browse every question prospective families have asked. Find patterns. Spot what your viewbook isn't answering.",
+          },
+          {
+            status: 'live',
+            title: 'Knowledge gap reporting',
+            body:
+              "Weekly email of questions Sam couldn't answer, so you know what's missing from your site.",
+          },
+          {
+            status: 'live',
+            title: 'FERPA-aware data handling',
+            body:
+              'PII redaction, configurable data retention, full audit log. Your IT review will go smoothly.',
+          },
+          {
+            status: 'May 2026',
+            title: 'Multilingual (Spanish, Turkish, Arabic, Mandarin)',
+          },
+          {
+            status: 'May 2026',
+            title: 'Threat & safety alerts',
+            body: 'Real-time alerts on concerning messages.',
+          },
+        ],
+      }}
       crossSellMode="two-model"
       crossSellEyebrow="Run a charter school instead?"
       crossSellHeading={<>Sam works for both. <em>Tuned to your model.</em></>}

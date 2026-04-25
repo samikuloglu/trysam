@@ -10,6 +10,7 @@ import QuestionBank, { QA } from './QuestionBank';
 import ROICalculator from './ROICalculator';
 import Testimonial from './Testimonial';
 import SchoolsCrossSell from './SchoolsCrossSell';
+import FeatureChecklist, { ChecklistItem } from './FeatureChecklist';
 import CTABanner from './CTABanner';
 
 type Variant = 'home' | 'private' | 'charter';
@@ -65,6 +66,14 @@ interface Props {
   testimonialName: string;
   testimonialCategory: string;
   testimonialOrg: string;
+
+  // Feature checklist (optional)
+  featureChecklist?: {
+    eyebrow: string;
+    heading: ReactNode;
+    subhead: string;
+    features: ChecklistItem[];
+  };
 
   // Cross-sell
   crossSellMode: CrossSellMode;
@@ -174,6 +183,15 @@ export default function VerticalPageShell(p: Props) {
           </div>
         }
       />
+
+      {p.featureChecklist && (
+        <FeatureChecklist
+          eyebrow={p.featureChecklist.eyebrow}
+          heading={p.featureChecklist.heading}
+          subhead={p.featureChecklist.subhead}
+          features={p.featureChecklist.features}
+        />
+      )}
 
       <QuestionBank heading={p.qbankHeading} qa={p.qbank} />
 

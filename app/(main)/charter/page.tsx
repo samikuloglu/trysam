@@ -131,6 +131,74 @@ export default function CharterSchoolsPage() {
       testimonialName="Marcus Reed"
       testimonialCategory="Charter"
       testimonialOrg="Head of School, Lighthouse Charter Academy"
+      featureChecklist={{
+        eyebrow: 'Built for charter schools and networks',
+        heading: <>The features charter schools <em>actually need.</em></>,
+        subhead:
+          "Charter schools don't have admissions teams. They have front offices answering the same questions in three languages across four campuses. Sam was built for that.",
+        features: [
+          {
+            status: 'live',
+            title: 'Multilingual',
+            body:
+              'Spanish, Turkish, Arabic. Parents ask in their language. Sam answers in their language. No setup, no toggles.',
+          },
+          {
+            status: 'live',
+            title: 'Multi-campus routing',
+            body:
+              'Charter networks: each campus answers from its own knowledge. No cross-campus answer leakage. Network office sees everything in one view.',
+          },
+          {
+            status: 'live',
+            title: 'Conversation transcripts & search',
+            body:
+              "Browse every parent question across all campuses. Find what the front office is repeating. Find what the website isn't explaining.",
+          },
+          {
+            status: 'live',
+            title: 'Knowledge gap reporting',
+            body:
+              "Weekly email of questions Sam couldn't answer. Tells your network office what friction exists across all campuses.",
+          },
+          {
+            status: 'live',
+            title: 'After-hours mode',
+            body:
+              'Different greeting and behavior outside school hours, configurable per campus.',
+          },
+          {
+            status: 'live',
+            title: 'Source-attributed answers',
+            body:
+              'Every answer links to the page it came from. No hallucinations.',
+          },
+          {
+            status: 'live',
+            title: 'FERPA-aware data handling',
+            body:
+              'PII redaction, configurable data retention, full audit log. Built for public charter compliance review.',
+          },
+          {
+            status: 'May 2026',
+            title: 'Threat & safety alerts',
+            body:
+              'OpenAI moderation on every message. Real-time email + SMS to designated contacts when messages indicate self-harm, violence, or threats.',
+          },
+          {
+            status: 'May 2026',
+            title: 'Lottery & enrollment mode',
+            body:
+              'Seasonal mode that proactively captures lottery applicants and sends deadline reminders.',
+          },
+          {
+            status: 'June 2026',
+            title: 'Network admin dashboard',
+            body:
+              'Network directors see all campuses in one place, push updates, compare metrics.',
+          },
+        ],
+      }}
       crossSellMode="two-model"
       crossSellEyebrow="Run a private school instead?"
       crossSellHeading={<>Sam works for both. <em>Tuned to your model.</em></>}
