@@ -12,7 +12,7 @@ import DashboardCard from '@/components/site/DashboardCard';
 import FeatureTabs from '@/components/site/FeatureTabs';
 import Industries from '@/components/site/Industries';
 import Testimonial from '@/components/site/Testimonial';
-import CaseStudy from '@/components/site/CaseStudy';
+import IndustryStats from '@/components/site/IndustryStats';
 import CTABanner from '@/components/site/CTABanner';
 
 export const metadata: Metadata = {
@@ -286,7 +286,7 @@ export default function HomePage() {
             category="Director of Admissions"
             org="Westbrook Academy"
           />
-          <CaseStudy />
+          <IndustryStats />
         </div>
       </section>
 
