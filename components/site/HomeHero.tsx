@@ -22,15 +22,14 @@ export default function HomeHero() {
           <div className={styles.left}>
             <div className={styles.eyebrow}>For Private &amp; Charter Schools</div>
             <h1 className={styles.h1}>
-              Prospective families research schools{' '}
-              <em>after the kids go to bed.</em>
+              Meet your school&rsquo;s{' '}
+              <em>admissions and enrollment teammate.</em>
             </h1>
             <div className={styles.divider} />
             <p className={styles.lede}>
-              Sam is an AI assistant trained on your school. It answers
-              admissions and enrollment questions, books campus tours, and
-              captures interested families — including the ones browsing at
-              11pm — so your team isn&apos;t chasing cold leads on Monday.
+              Trained on your handbook, tuition, and lottery info — Sam answers
+              prospective-family questions on your website 24/7. Without your
+              team on the phone or buried in the inbox.
             </p>
             <div className={styles.ctaRow}>
               <a
