@@ -20,16 +20,13 @@ export default function HomeHero() {
       <div className="frame">
         <div className={styles.grid}>
           <div className={styles.left}>
-            <div className={styles.eyebrow}>For Private &amp; Charter Schools</div>
             <h1 className={styles.h1}>
-              Meet your school&rsquo;s{' '}
-              <em>admissions and enrollment teammate.</em>
+              Meet <em>Sam</em>
             </h1>
             <div className={styles.divider} />
             <p className={styles.lede}>
-              Trained on your handbook, tuition, and lottery info — Sam answers
-              prospective-family questions on your website 24/7. Without your
-              team on the phone or buried in the inbox.
+              An intelligent AI assistant designed to transform how your
+              customers interact with your school.
             </p>
             <div className={styles.ctaRow}>
               <a
@@ -37,9 +34,6 @@ export default function HomeHero() {
                 className="btn btn-on-dark"
               >
                 Book a free demo <span className="arr">→</span>
-              </a>
-              <a href="#roi" className="btn btn-ghost-on-dark">
-                See the ROI <span className="arr">→</span>
               </a>
             </div>
             <p className={styles.micro}>15 min · No commitment · Live in 1 week</p>
