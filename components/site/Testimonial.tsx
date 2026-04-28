@@ -3,12 +3,22 @@ import styles from './Testimonial.module.css';
 
 interface Props {
   quote: ReactNode;
-  name: string;
+  /** Pass a real name. Omit for anonymous "what we hear from operators" framing. */
+  name?: string;
   category?: string;
-  org: string;
+  org?: string;
+  /** Override the unattributed label (default: "What we hear from school operators"). */
+  anonymousLabel?: string;
 }
 
-export default function Testimonial({ quote, name, category, org }: Props) {
+export default function Testimonial({
+  quote,
+  name,
+  category,
+  org,
+  anonymousLabel = 'What we hear from school operators',
+}: Props) {
+  const attributed = Boolean(name);
   return (
     <div className={styles.block}>
       <div className={styles.mark}>
@@ -18,16 +28,22 @@ export default function Testimonial({ quote, name, category, org }: Props) {
       </div>
       <p className={styles.quote}>{quote}</p>
       <div className={styles.attribution}>
-        <div className={styles.name}>
-          {name}
-          {category && (
-            <>
-              <span className={styles.sep}>·</span>
-              {category}
-            </>
-          )}
-        </div>
-        <div className={styles.org}>{org}</div>
+        {attributed ? (
+          <>
+            <div className={styles.name}>
+              {name}
+              {category && (
+                <>
+                  <span className={styles.sep}>·</span>
+                  {category}
+                </>
+              )}
+            </div>
+            {org && <div className={styles.org}>{org}</div>}
+          </>
+        ) : (
+          <div className={styles.name}>{anonymousLabel}</div>
+        )}
       </div>
     </div>
   );

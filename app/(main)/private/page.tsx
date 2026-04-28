@@ -17,7 +17,6 @@ Profile:
 - Application deadline: Jan 31 for fall enrollment. Decisions Mar 10.
 - Class size avg 14. Six AP offerings. 100% 4-year college placement.
 - Bus service from Princeton, Hopewell, Lawrenceville.
-- Head of School: Dr. Anita Rao. Director of Admissions: James Whitfield.
 
 Off-topic or beyond data: politely route to admissions@oakridgedemo.org.`;
 
@@ -33,7 +32,9 @@ export default function PrivateSchoolsPage() {
           <em>after the kids go to bed.</em>
         </>
       }
-      heroBody="Sam is an AI assistant trained on your school. It answers admissions questions, books campus tours, and captures interested families — including the ones browsing at 11pm — so your enrollment team isn't chasing cold leads on Monday."
+      heroBody="Sam is an AI assistant trained on your school. It answers admissions questions, books campus tours, and captures interested families — including the ones browsing at 11pm — so your admissions team isn't chasing cold leads on Monday."
+      heroPrimaryCta={{ label: 'Book a 20-minute demo', href: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Private' }}
+      heroSecondaryCta={{ label: 'See the ROI', href: '#roi' }}
       heroUrl="oakridgeacademy.org"
       placeholderTitle="Welcome to Oakridge Academy"
       placeholderBody="Independent K–12 day school in Princeton, NJ. Founded 1958. Small classes, six AP courses, 100% college placement."
@@ -121,15 +122,17 @@ export default function PrivateSchoolsPage() {
       roiMinutesDefault={8}
       roiMinutesMin={2}
       roiMinutesMax={20}
+      roiInquiriesLabel="Inquiries / month"
+      roiRateLabel="Staff hourly rate"
+      roiOutputLabel="In recovered admissions team time, per year."
       testimonialQuote='"Our admissions team used to spend Monday mornings on email triage. Now they spend it on the families who actually want to enroll."'
-      testimonialName="James Whitfield"
-      testimonialCategory="K–12"
-      testimonialOrg="Director of Admissions, Oakridge Academy"
       featureChecklist={{
         eyebrow: 'Built for private school admissions',
         heading: <>Designed for the way enrollment <em>actually works.</em></>,
         subhead:
           "Sam isn't a generic chatbot pointed at your website. Every feature here was built because a private school admissions director asked for it.",
+        liveHeading: 'Available today',
+        roadmapHeading: 'On the roadmap',
         features: [
           {
             status: 'live',
@@ -141,7 +144,7 @@ export default function PrivateSchoolsPage() {
             status: 'live',
             title: 'Lead capture for prospective families',
             body:
-              'Every family who asks more than one question becomes a soft lead in your dashboard, with their top questions and recommended next step. Export to CSV or push to your CRM.',
+              'Every family who asks more than one question becomes a soft lead in your dashboard, with their top questions and recommended next step. CSV export today; CRM push on the roadmap.',
           },
           {
             status: 'live',
@@ -177,24 +180,26 @@ export default function PrivateSchoolsPage() {
             status: 'live',
             title: 'FERPA-aware data handling',
             body:
-              'PII redaction, configurable data retention, full audit log. Your IT review will go smoothly.',
+              'PII redaction, configurable data retention, full audit log. Designed for school IT review.',
           },
           {
             status: 'May 2026',
             title: 'Multilingual (Spanish, Turkish, Arabic, Mandarin)',
+            body: 'Parents ask in their language; Sam answers in their language.',
+          },
+          {
+            status: 'May 2026',
+            title: 'CRM push (Veracross, Blackbaud, Ravenna)',
+            body: 'Lead records flow directly into your admissions CRM. CSV export available today.',
           },
           {
             status: 'May 2026',
             title: 'Threat & safety alerts',
-            body: 'Real-time alerts on concerning messages.',
+            body: 'Flags concerning language for human review.',
           },
         ],
       }}
-      crossSellMode="two-model"
-      crossSellEyebrow="Run a charter school instead?"
-      crossSellHeading={<>Sam works for both. <em>Tuned to your model.</em></>}
-      crossSellHref="/charter"
-      crossSellLabel="See Sam for charter schools"
+      crossSellMode="none"
     />
   );
 }

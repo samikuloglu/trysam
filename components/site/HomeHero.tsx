@@ -25,8 +25,8 @@ export default function HomeHero() {
             </h1>
             <div className={styles.divider} />
             <p className={styles.lede}>
-              An intelligent AI assistant designed to transform how your
-              customers interact with your school.
+              An AI assistant trained on your school. Answers your families
+              accurately, around the clock, in their language.
             </p>
             <div className={styles.ctaRow}>
               <a

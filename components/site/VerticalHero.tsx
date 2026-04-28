@@ -4,11 +4,18 @@ import LiveChat from './LiveChat';
 import TrustStrip from './TrustStrip';
 import styles from './VerticalHero.module.css';
 
+interface CTA {
+  label: string;
+  href: string;
+}
+
 interface Props {
   eyebrow: string;
   heading: ReactNode;
   body: string;
   mailto: string;
+  primaryCta?: CTA;
+  secondaryCta?: CTA;
   url: string;
   placeholderTitle: string;
   placeholderBody: string;
@@ -24,6 +31,8 @@ export default function VerticalHero({
   heading,
   body,
   mailto,
+  primaryCta,
+  secondaryCta,
   url,
   placeholderTitle,
   placeholderBody,
@@ -33,6 +42,7 @@ export default function VerticalHero({
   chatSuggestions,
   chatSystemPrompt,
 }: Props) {
+  const primary = primaryCta ?? { label: 'Book a free demo', href: mailto };
   return (
     <section className={styles.hero}>
       <div className="frame">
@@ -43,14 +53,16 @@ export default function VerticalHero({
             <div className={styles.divider} />
             <p className={styles.lede}>{body}</p>
             <div className={styles.ctaRow}>
-              <a href={mailto} className="btn btn-on-dark">
-                Book a free demo <span className="arr">→</span>
+              <a href={primary.href} className="btn btn-on-dark">
+                {primary.label} <span className="arr">→</span>
               </a>
-              <a href="#roi" className="btn btn-ghost-on-dark">
-                See the ROI <span className="arr">→</span>
-              </a>
+              {secondaryCta && (
+                <a href={secondaryCta.href} className={styles.secondaryLink}>
+                  {secondaryCta.label} →
+                </a>
+              )}
             </div>
-            <p className={styles.micro}>15 min · No commitment · Live in 1 week</p>
+            <p className={styles.micro}>20 min · No commitment · Live in 1 week</p>
           </div>
           <div className={styles.right}>
             <div className={styles.product}>

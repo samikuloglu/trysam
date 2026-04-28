@@ -11,14 +11,13 @@ const SAMPLE = `You are Sam, the AI enrollment assistant for "Lighthouse Charter
 
 Profile:
 - Tuition-free public charter school, grades K–8.
-- Two campuses in Newark, NJ: North Ward (K–4) and Central Ward (5–8).
-- Founded 2008. ~480 students across both campuses.
+- Newark, NJ. Single campus serving K–8.
+- Founded 2008. ~480 students.
 - Lottery: applications open Jan 5, deadline Mar 1, drawing Mar 15.
 - Sibling preference: applies to siblings of currently enrolled students.
 - Waitlist: maintained year-round; movement varies by grade.
 - Open houses: Nov 14, Dec 6, Feb 8 (10am–noon).
-- Bus service: school bus pickup for both campuses.
-- Head of School: Dr. Marcus Reed.
+- Bus service: school bus pickup available.
 
 Off-topic or beyond data: politely route to enroll@lighthousedemo.org.`;
 
@@ -27,17 +26,19 @@ export default function CharterSchoolsPage() {
     <VerticalPageShell
       variant="charter"
       mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Charter"
-      heroEyebrow="For Charter Schools & Networks"
+      heroEyebrow="For Charter Schools"
       heroHeading={
         <>
           The lottery question doesn&apos;t wait until{' '}
           <em>Monday morning.</em>
         </>
       }
-      heroBody="Sam is an AI assistant trained on your school. It answers lottery, enrollment, and sibling-preference questions across one campus or an entire network — capturing interested families 24/7 so your enrollment team can focus on yield."
+      heroBody="Sam is an AI assistant trained on your school. It answers lottery, enrollment, and sibling-preference questions — in the languages your families speak — so your front office isn't drowning in repeat phone calls during lottery week."
+      heroPrimaryCta={{ label: 'Book a 20-minute demo', href: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Charter' }}
+      heroSecondaryCta={{ label: 'See the ROI', href: '#roi' }}
       heroUrl="lighthousecharter.org"
       placeholderTitle="Welcome to Lighthouse Charter Academy"
-      placeholderBody="Tuition-free public charter school. Grades K–8 across two campuses in Newark. Founded 2008."
+      placeholderBody="Tuition-free public charter school. Grades K–8 in Newark, NJ. Founded 2008."
       placeholderCards={['Apply', 'Lottery', 'Visit']}
       chatStatus="Online · answering for Lighthouse Charter"
       chatGreeting="Hi! I'm Sam, your enrollment assistant for Lighthouse Charter. How can I help?"
@@ -54,19 +55,19 @@ export default function CharterSchoolsPage() {
       }
       outcomes={[
         {
-          num: '3×',
-          title: 'More applications',
-          body: "Capture families when they're browsing — not when your office happens to be staffed. Most inquiries come outside 9–5.",
+          num: '70%',
+          title: 'Parent questions self-served',
+          body: 'The repeat questions your front office answers all day — lottery dates, sibling preference, bus routes — handled on your website, in the parent\u2019s language.',
         },
         {
           num: '<2 min',
-          title: 'Average answer time',
-          body: 'Replace the back-and-forth email thread with one clear answer, on your site, the moment a parent asks.',
+          title: 'Answers any hour',
+          body: 'Working parents who can\u2019t call during 9–5 office hours get the same answer at 10pm that they\u2019d get at the front desk.',
         },
         {
-          num: '100%',
-          title: 'One Sam per campus',
-          body: 'Charter networks: each campus gets its own Sam, trained on its own enrollment rules. No cross-campus answer leakage.',
+          num: '24/7',
+          title: 'Lottery-week relief',
+          body: 'When the phones used to be unusable, parents get their answers from your site — and your team gets to do the work that needs them.',
         },
       ]}
       featureHeading={
@@ -117,55 +118,51 @@ export default function CharterSchoolsPage() {
           a: 'Sam answers from your transportation map and shares pickup details if available.',
         },
       ]}
-      roiInquiriesDefault={180}
+      roiInquiriesDefault={300}
       roiInquiriesMin={50}
-      roiInquiriesMax={800}
+      roiInquiriesMax={1500}
       roiInquiriesStep={10}
-      roiRateDefault={35}
+      roiRateDefault={22}
       roiRateMin={18}
-      roiRateMax={80}
-      roiMinutesDefault={8}
+      roiRateMax={30}
+      roiMinutesDefault={6}
       roiMinutesMin={2}
       roiMinutesMax={20}
+      roiInquiriesLabel="Parent questions / month"
+      roiRateLabel="Front-office hourly rate"
+      roiOutputLabel="In front office hours recovered, per year."
       testimonialQuote='"Lottery week, our phones used to be unusable. This year, parents got their answers from the website and our team actually got work done."'
-      testimonialName="Marcus Reed"
-      testimonialCategory="Charter"
-      testimonialOrg="Head of School, Lighthouse Charter Academy"
       featureChecklist={{
-        eyebrow: 'Built for charter schools and networks',
+        eyebrow: 'Built for charter schools',
         heading: <>The features charter schools <em>actually need.</em></>,
         subhead:
-          "Charter schools don't have admissions teams. They have front offices answering the same questions in three languages across four campuses. Sam was built for that.",
+          "Charter schools don't have admissions teams. They have front offices answering the same questions in three languages all day. Sam was built for that.",
+        liveHeading: 'Available today',
+        roadmapHeading: 'On the roadmap',
         features: [
           {
             status: 'live',
             title: 'Multilingual',
             body:
-              'Spanish, Turkish, Arabic. Parents ask in their language. Sam answers in their language. No setup, no toggles.',
-          },
-          {
-            status: 'live',
-            title: 'Multi-campus routing',
-            body:
-              'Charter networks: each campus answers from its own knowledge. No cross-campus answer leakage. Network office sees everything in one view.',
-          },
-          {
-            status: 'live',
-            title: 'Conversation transcripts & search',
-            body:
-              "Browse every parent question across all campuses. Find what the front office is repeating. Find what the website isn't explaining.",
-          },
-          {
-            status: 'live',
-            title: 'Knowledge gap reporting',
-            body:
-              "Weekly email of questions Sam couldn't answer. Tells your network office what friction exists across all campuses.",
+              'Spanish, Turkish, Arabic. Parents ask in their language. Sam answers in their language. No setup, no toggles. Critical for working families who can\u2019t call during office hours.',
           },
           {
             status: 'live',
             title: 'After-hours mode',
             body:
-              'Different greeting and behavior outside school hours, configurable per campus.',
+              'Different greeting and behavior outside school hours, so the experience reads right whether a parent asks at 9am or 10pm.',
+          },
+          {
+            status: 'live',
+            title: 'Conversation transcripts & search',
+            body:
+              "Browse every parent question. Find what the front office is repeating. Find what your website isn't explaining.",
+          },
+          {
+            status: 'live',
+            title: 'Knowledge gap reporting',
+            body:
+              "Weekly email of questions Sam couldn't answer. Tells you what friction parents are hitting.",
           },
           {
             status: 'live',
@@ -177,33 +174,35 @@ export default function CharterSchoolsPage() {
             status: 'live',
             title: 'FERPA-aware data handling',
             body:
-              'PII redaction, configurable data retention, full audit log. Built for public charter compliance review.',
-          },
-          {
-            status: 'May 2026',
-            title: 'Threat & safety alerts',
-            body:
-              'OpenAI moderation on every message. Real-time email + SMS to designated contacts when messages indicate self-harm, violence, or threats.',
+              'PII redaction, configurable data retention, full audit log. Designed to support public charter compliance review.',
           },
           {
             status: 'May 2026',
             title: 'Lottery & enrollment mode',
             body:
-              'Seasonal mode that proactively captures lottery applicants and sends deadline reminders.',
+              'Seasonal mode that proactively captures lottery applicants and sends deadline reminders. The most charter-specific feature on the roadmap — ask us about timing if this is core to your buying decision.',
+          },
+          {
+            status: 'May 2026',
+            title: 'Threat & safety alerts',
+            body:
+              'Flags concerning language for human review. Real-time email + SMS to designated contacts.',
+          },
+          {
+            status: 'June 2026',
+            title: 'Multi-campus routing',
+            body:
+              'For networks: each campus answers from its own knowledge with no cross-campus answer leakage. Single-campus charters don\u2019t need this.',
           },
           {
             status: 'June 2026',
             title: 'Network admin dashboard',
             body:
-              'Network directors see all campuses in one place, push updates, compare metrics.',
+              'Network directors see all campuses in one place, push updates, compare metrics. For 3+ campus networks.',
           },
         ],
       }}
-      crossSellMode="two-model"
-      crossSellEyebrow="Run a private school instead?"
-      crossSellHeading={<>Sam works for both. <em>Tuned to your model.</em></>}
-      crossSellHref="/private"
-      crossSellLabel="See Sam for private schools"
+      crossSellMode="none"
     />
   );
 }

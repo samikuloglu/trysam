@@ -87,6 +87,19 @@
   color: rgba(255, 255, 255, 0.6);
   margin-top: 16px;
 }
+.secondaryLink {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  padding: 14px 8px;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.secondaryLink:hover {
+  color: #fff;
+  border-bottom-color: var(--coral);
+}
 .right {
   position: relative;
   z-index: 3;
