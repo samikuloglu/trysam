@@ -80,6 +80,35 @@
   color: var(--ink-3);
   line-height: 1.55;
 }
+.group {
+  margin-top: 48px;
+}
+.group:first-of-type {
+  margin-top: 0;
+}
+.groupRoadmap {
+  margin-top: 64px;
+}
+.groupHead {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.groupRoadmap .groupHead {
+  color: var(--ink-3);
+}
+.groupRoadmap .grid {
+  opacity: 0.92;
+}
+.groupRoadmap .item {
+  background: var(--bg-soft);
+}
 @media (max-width: 760px) {
   .grid {
     grid-template-columns: 1fr;

@@ -14,7 +14,12 @@ import FeatureChecklist, { ChecklistItem } from './FeatureChecklist';
 import CTABanner from './CTABanner';
 
 type Variant = 'home' | 'private' | 'charter';
-type CrossSellMode = 'two-model' | 'pocket';
+type CrossSellMode = 'two-model' | 'pocket' | 'none';
+
+interface CTA {
+  label: string;
+  href: string;
+}
 
 interface Props {
   variant: Variant;
@@ -25,6 +30,8 @@ interface Props {
   heroHeading: ReactNode;
   heroBody: string;
   heroUrl: string;
+  heroPrimaryCta?: CTA;
+  heroSecondaryCta?: CTA;
   placeholderTitle: string;
   placeholderBody: string;
   placeholderCards: [string, string, string];
@@ -60,12 +67,15 @@ interface Props {
   roiRateMax?: number;
   roiMinutesMin?: number;
   roiMinutesMax?: number;
+  roiInquiriesLabel?: string;
+  roiRateLabel?: string;
+  roiOutputLabel?: string;
 
-  // Testimonial
-  testimonialQuote: string;
-  testimonialName: string;
-  testimonialCategory: string;
-  testimonialOrg: string;
+  // Testimonial (optional — omit name/org for unattributed pull-quote)
+  testimonialQuote?: string;
+  testimonialName?: string;
+  testimonialCategory?: string;
+  testimonialOrg?: string;
 
   // Feature checklist (optional)
   featureChecklist?: {
@@ -73,6 +83,8 @@ interface Props {
     heading: ReactNode;
     subhead: string;
     features: ChecklistItem[];
+    liveHeading?: string;
+    roadmapHeading?: string;
   };
 
   // Cross-sell
@@ -93,6 +105,8 @@ export default function VerticalPageShell(p: Props) {
         heading={p.heroHeading}
         body={p.heroBody}
         mailto={p.mailto}
+        primaryCta={p.heroPrimaryCta}
+        secondaryCta={p.heroSecondaryCta}
         url={p.heroUrl}
         placeholderTitle={p.placeholderTitle}
         placeholderBody={p.placeholderBody}
@@ -152,30 +166,9 @@ export default function VerticalPageShell(p: Props) {
                   {p.placeholderBody}
                 </div>
                 <div style={{ display: 'flex', gap: 8, marginTop: 20 }}>
-                  <div
-                    style={{
-                      width: 60,
-                      height: 50,
-                      background: 'var(--coral)',
-                      borderRadius: 6,
-                    }}
-                  />
-                  <div
-                    style={{
-                      width: 60,
-                      height: 50,
-                      background: 'var(--navy)',
-                      borderRadius: 6,
-                    }}
-                  />
-                  <div
-                    style={{
-                      width: 60,
-                      height: 50,
-                      background: 'oklch(75% 0.05 60)',
-                      borderRadius: 6,
-                    }}
-                  />
+                  <div style={{ width: 60, height: 50, background: 'var(--coral)', borderRadius: 6 }} />
+                  <div style={{ width: 60, height: 50, background: 'var(--navy)', borderRadius: 6 }} />
+                  <div style={{ width: 60, height: 50, background: 'oklch(75% 0.05 60)', borderRadius: 6 }} />
                 </div>
               </div>
               <MiniChat messages={p.featureMiniMessages} />
@@ -190,6 +183,8 @@ export default function VerticalPageShell(p: Props) {
           heading={p.featureChecklist.heading}
           subhead={p.featureChecklist.subhead}
           features={p.featureChecklist.features}
+          liveHeading={p.featureChecklist.liveHeading}
+          roadmapHeading={p.featureChecklist.roadmapHeading}
         />
       )}
 
@@ -212,34 +207,42 @@ export default function VerticalPageShell(p: Props) {
         rateMax={p.roiRateMax}
         minutesMin={p.roiMinutesMin}
         minutesMax={p.roiMinutesMax}
+        inquiriesLabel={p.roiInquiriesLabel}
+        rateLabel={p.roiRateLabel}
+        outputLabel={p.roiOutputLabel}
       />
 
-      <section className="section">
-        <div className="frame">
-          <Testimonial
-            quote={p.testimonialQuote}
-            name={p.testimonialName}
-            category={p.testimonialCategory}
-            org={p.testimonialOrg}
-          />
-        </div>
-      </section>
+      {p.testimonialQuote && (
+        <section className="section">
+          <div className="frame">
+            <Testimonial
+              quote={p.testimonialQuote}
+              name={p.testimonialName}
+              category={p.testimonialCategory}
+              org={p.testimonialOrg}
+            />
+          </div>
+        </section>
+      )}
 
-      <SchoolsCrossSell
-        mode={p.crossSellMode}
-        eyebrow={p.crossSellEyebrow}
-        heading={p.crossSellHeading}
-        href={p.crossSellHref}
-        label={p.crossSellLabel}
-      />
+      {p.crossSellMode !== 'none' && (
+        <SchoolsCrossSell
+          mode={p.crossSellMode}
+          eyebrow={p.crossSellEyebrow}
+          heading={p.crossSellHeading}
+          href={p.crossSellHref}
+          label={p.crossSellLabel}
+        />
+      )}
 
       <CTABanner
         heading={
           <>
-            Ready to give your prospective families <em>better answers?</em>
+            Ready to give your families <em>better answers?</em>
           </>
         }
         buttonHref={p.mailto}
+        buttonLabel="Book a 20-minute demo"
       />
 
       <SiteFooter />

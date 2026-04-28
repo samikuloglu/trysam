@@ -4,16 +4,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from './SiteNav.module.css';
 
-type Variant = 'home' | 'private' | 'charter';
+type Variant = 'home' | 'private' | 'charter' | 'how';
 
-const SCHOOL_LINKS: { variant: Variant; href: string; label: string }[] = [
+const LINKS: { variant: Variant; href: string; label: string }[] = [
   { variant: 'private', href: '/private', label: 'Private' },
   { variant: 'charter', href: '/charter', label: 'Charter' },
-];
-
-const ANCHOR_LINKS = [
-  { href: '/#how', label: 'How it works' },
-  { href: '/#roi', label: 'ROI' },
+  { variant: 'how', href: '/how-it-works', label: 'How it works' },
 ];
 
 export default function SiteNav({ variant = 'home' }: { variant?: Variant }) {
@@ -28,7 +24,7 @@ export default function SiteNav({ variant = 'home' }: { variant?: Variant }) {
         </Link>
 
         <div className={`${styles.links} ${open ? styles.open : ''}`}>
-          {SCHOOL_LINKS.map((l) => (
+          {LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -37,11 +33,6 @@ export default function SiteNav({ variant = 'home' }: { variant?: Variant }) {
             >
               {l.label}
             </Link>
-          ))}
-          {ANCHOR_LINKS.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
-              {l.label}
-            </a>
           ))}
         </div>
 

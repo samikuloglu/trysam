@@ -18,12 +18,15 @@ interface Props {
   minutesMin?: number;
   minutesMax?: number;
   background?: 'soft' | 'plain';
+  inquiriesLabel?: string;
+  rateLabel?: string;
+  outputLabel?: string;
 }
 
 export default function ROICalculator({
   eyebrow = 'Your ROI Potential',
   heading,
-  subtitle = 'Adjust the inputs to match your business. Sam typically resolves 70% of inquiries without staff time.',
+  subtitle = 'Adjust the inputs to match your school. Sam typically resolves 70% of inquiries without staff time.',
   inquiriesDefault = 800,
   inquiriesMin = 50,
   inquiriesMax = 5000,
@@ -35,6 +38,9 @@ export default function ROICalculator({
   minutesMin = 2,
   minutesMax = 20,
   background = 'plain',
+  inquiriesLabel = 'Inquiries / month',
+  rateLabel = 'Staff hourly rate',
+  outputLabel = 'In recovered staff time, per year.',
 }: Props) {
   const [inq, setInq] = useState(inquiriesDefault);
   const [rate, setRate] = useState(rateDefault);
@@ -62,7 +68,7 @@ export default function ROICalculator({
             <h4>Your business</h4>
             <div className={styles.input}>
               <div className={styles.row}>
-                <span className={styles.label}>Inquiries / month</span>
+                <span className={styles.label}>{inquiriesLabel}</span>
                 <span className={styles.val}>{inq.toLocaleString()}</span>
               </div>
               <input
@@ -81,7 +87,7 @@ export default function ROICalculator({
             </div>
             <div className={styles.input}>
               <div className={styles.row}>
-                <span className={styles.label}>Staff hourly rate</span>
+                <span className={styles.label}>{rateLabel}</span>
                 <span className={styles.val}>${rate}/hr</span>
               </div>
               <input
@@ -129,7 +135,7 @@ export default function ROICalculator({
             </div>
             <div className={styles.savings}>${savings.toLocaleString()}</div>
             <div className={styles.savingsLabel}>
-              In recovered staff time, per year.
+              {outputLabel}
             </div>
             <div className={styles.statsRow}>
               <div>
