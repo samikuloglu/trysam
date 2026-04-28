@@ -1,18 +1,5 @@
-import Nav from '@/components/Nav/Nav';
-import Footer from '@/components/Footer/Footer';
-import SamWidget from '@/components/SamWidget/SamWidget';
+import { ReactNode } from 'react';
 
-export default function MainLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <>
-      <Nav />
-      <main>{children}</main>
-      <Footer />
-      <SamWidget />
-    </>
-  );
+export default function MainLayout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }

@@ -1,0 +1,52 @@
+.banner {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.banner::before,
+.banner::after {
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  background: var(--coral);
+  border-radius: 50%;
+  opacity: 0.13;
+  filter: blur(80px);
+}
+.banner::before {
+  top: -120px;
+  left: -120px;
+}
+.banner::after {
+  bottom: -120px;
+  right: -120px;
+}
+.banner :global(.frame) {
+  position: relative;
+  z-index: 2;
+}
+.h {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+.h em {
+  font-style: italic;
+}
+.p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 50ch;
+  margin: 0 auto 36px;
+}

@@ -1,0 +1,152 @@
+.hero {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 38%;
+  background: #fff;
+  z-index: 0;
+}
+.grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding: 80px 0 100px;
+  align-items: center;
+}
+.left {
+  padding-right: 40px;
+}
+.h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(56px, 7vw, 92px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #fff;
+}
+.h1 em {
+  font-style: italic;
+  color: #fff;
+}
+.divider {
+  width: 64px;
+  height: 4px;
+  background: var(--coral);
+  margin: 28px 0;
+}
+.lede {
+  font-family: var(--sans);
+  font-size: 21px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 32ch;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+.ctaRow {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.micro {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 16px;
+}
+.right {
+  position: relative;
+  z-index: 3;
+  margin-right: -10%;
+}
+.product {
+  position: relative;
+  width: 100%;
+}
+.productBody {
+  min-height: 460px;
+  background: linear-gradient(135deg, #f6f6f7 0%, #ebebed 100%);
+  position: relative;
+  overflow: hidden;
+}
+.placeholder {
+  padding: 40px;
+}
+.placeholder h3 {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 12px;
+  max-width: 280px;
+  line-height: 1.1;
+}
+.placeholder p {
+  font-size: 14px;
+  color: var(--ink-3);
+  max-width: 240px;
+  line-height: 1.5;
+}
+.cards {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.card {
+  width: 100px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+}
+.cardA {
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
+}
+.cardB {
+  background: linear-gradient(135deg, #e94b4b, #c83a3a);
+}
+.cardC {
+  background: linear-gradient(135deg, #4b9ce9, #3a7bc8);
+}
+.chatWrap :global(.chat-widget) {
+  top: 30px;
+  right: -50px;
+  width: 320px;
+  height: 410px;
+}
+@media (max-width: 880px) {
+  .hero::before {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 56px 0 80px;
+    gap: 48px;
+  }
+  .left {
+    padding-right: 0;
+  }
+  .right {
+    margin-right: 0;
+  }
+  .chatWrap :global(.chat-widget) {
+    right: 0;
+    width: 92%;
+    max-width: 320px;
+  }
+}

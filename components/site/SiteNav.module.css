@@ -1,0 +1,131 @@
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 50;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 18px var(--gutter);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+.brandMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.brandMark::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background: var(--coral);
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.links {
+  display: flex;
+  gap: 28px;
+  margin-left: 24px;
+}
+.links a {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+.links a:hover {
+  color: var(--coral);
+}
+.cta {
+  margin-left: auto;
+}
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border: 1.5px solid var(--coral);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--coral);
+  transition: all 0.2s;
+}
+.ctaBtn:hover {
+  background: var(--coral);
+  color: #fff;
+}
+.menuBtn {
+  display: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  background: #fff;
+}
+
+@media (max-width: 880px) {
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px var(--gutter);
+    border-bottom: 1px solid var(--line);
+    gap: 16px;
+    margin-left: 0;
+  }
+  .links.open {
+    display: flex;
+  }
+  .menuBtn {
+    display: inline-flex;
+    margin-left: auto;
+  }
+  .cta {
+    display: none;
+  }
+}
