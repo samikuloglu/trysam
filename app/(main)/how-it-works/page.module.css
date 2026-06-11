@@ -1,438 +1,531 @@
+/* ═══════════════════════════════════════════════════════════════
+   HOW IT WORKS — Procedure SAM-7, a chain-of-custody routing slip.
+   Seven stations descend the page, joined by a dotted carbon-blue
+   connector on the rail side. Static, pre-drawn — no scroll JS.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Hero ─────────────────────────────────────────────────────── */
 .hero {
-  background: var(--navy);
-  color: #fff;
-  padding: 120px 0 80px;
+  padding: 88px 0 80px;
 }
-.heroEyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--coral);
-  margin-bottom: 24px;
+.heroRail {
+  padding-top: 14px;
 }
 .heroH {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(40px, 5.4vw, 68px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: #fff;
-  max-width: 18ch;
-  margin-bottom: 32px;
-}
-.heroH em {
-  font-style: italic;
+  max-width: 22ch;
 }
 .heroLede {
-  font-family: var(--sans);
-  font-size: 19px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.78);
-  max-width: 64ch;
+  margin-top: 28px;
+}
+@media (max-width: 880px) {
+  .hero {
+    padding: 56px 0 48px;
+  }
+  .heroRail {
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+  .heroLede {
+    margin-top: 20px;
+  }
 }
 
-.sec {
-  border-bottom: 1px solid var(--line);
+/* ── The chain ────────────────────────────────────────────────── */
+.chainSec {
+  padding: 0 0 104px;
 }
-.row {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.rowReverse {
-  grid-template-columns: 1fr 1.05fr;
-}
-.rowReverse .rowText {
-  order: 2;
-}
-.rowReverse .rowVisual {
-  order: 1;
-}
-.rowText h2 {
-  margin: 12px 0 20px;
-  max-width: 18ch;
-}
-.rowText h2 em {
-  font-style: italic;
-}
-.step {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  color: var(--coral);
-  text-transform: uppercase;
-}
-.list {
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 56ch;
-}
-.list li {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--ink-2);
-  padding-left: 22px;
+.chain {
+  --gap: 88px;
   position: relative;
 }
-.list li::before {
+@media (max-width: 880px) {
+  .chainSec {
+    padding-bottom: 64px;
+  }
+  .chain {
+    --gap: 60px;
+  }
+}
+
+.station {
+  position: relative;
+  padding-top: var(--gap);
+  scroll-margin-top: 96px;
+}
+
+/* Connector segment: from this station's node down to the next.
+   Pre-drawn; the terminus is :last-child, so every station draws one. */
+.station:not(:last-child)::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 11px;
-  width: 10px;
-  height: 1px;
-  background: var(--coral);
+  left: 5px;
+  top: calc(var(--gap) + 19px);
+  bottom: calc(-1 * var(--gap));
+  border-left: 2px dotted var(--blue);
+  opacity: 0.45;
+  pointer-events: none;
 }
-.list strong {
+
+/* Checkpoint node, aligned to the rail's "Step NN / 07" line */
+.node {
+  position: absolute;
+  left: 0;
+  top: calc(var(--gap) + 4px);
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--blue);
+  background: var(--paper);
+  border-radius: 1px;
+  z-index: 1;
+}
+
+/* ── Rail ─────────────────────────────────────────────────────── */
+.rail {
+  padding-left: 30px;
+}
+.stationName {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 6px;
+}
+.railNote {
+  margin-top: 18px;
+  font-size: 16px;
+  max-width: 24ch;
+}
+@media (max-width: 880px) {
+  .stationGrid {
+    padding-left: 30px;
+  }
+  .rail {
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 16px;
+  }
+  .stationName {
+    margin-top: 0;
+  }
+  .railNote {
+    flex-basis: 100%;
+    margin-top: 6px;
+  }
+}
+
+/* ── Station body ─────────────────────────────────────────────── */
+.h {
+  margin-bottom: 16px;
+  max-width: 26ch;
+}
+.bodyLede {
+  max-width: 56ch;
+}
+
+/* Station 04 is carried on a stamp-red left border —
+   the failure story is the trust story. */
+.flagged {
+  border-left: 2px solid var(--red);
+  padding-left: clamp(20px, 3vw, 32px);
+}
+
+/* Lists: ledger rows with square ink bullets and strong leads */
+.ledgerList {
+  margin-top: 28px;
+  max-width: 60ch;
+}
+.ledgerList li {
+  position: relative;
+  padding: 13px 0 13px 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--graphite);
+}
+.ledgerList li + li {
+  border-top: 1px solid var(--rule);
+}
+.ledgerList li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 22px;
+  width: 5px;
+  height: 5px;
+  background: var(--ink);
+}
+.ledgerList strong {
   color: var(--ink);
   font-weight: 600;
 }
+
+/* Ordered steps with mono leading-zero counters */
 .steps {
-  margin-top: 24px;
+  margin-top: 28px;
+  max-width: 60ch;
   list-style: none;
   counter-reset: step;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 56ch;
 }
 .steps li {
   counter-increment: step;
-  padding-left: 44px;
   position: relative;
+  padding: 14px 0 14px 46px;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--ink-2);
+  color: var(--graphite);
+}
+.steps li + li {
+  border-top: 1px solid var(--rule);
 }
 .steps li::before {
   content: counter(step, decimal-leading-zero);
   position: absolute;
   left: 0;
-  top: 1px;
+  top: 17px;
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--coral);
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--graphite);
 }
 .steps strong {
   color: var(--ink);
   font-weight: 600;
 }
+
+/* Body notes */
 .note {
-  margin-top: 24px;
-  padding: 16px 20px;
-  border-left: 2px solid var(--coral);
-  background: var(--bg-soft);
-  font-size: 14px;
-  color: var(--ink-2);
-  line-height: 1.6;
-  max-width: 56ch;
+  margin-top: 28px;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 58ch;
+  color: var(--ink);
 }
-.inlineLink {
-  color: var(--coral);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.noteGround {
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 18px;
 }
 
-/* Visuals */
-.assetCard, .qaCard, .escCard, .secCard, .timelineCard, .pipeline, .dash {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  padding: 24px;
+/* ── Plates (shared sheet anatomy) ────────────────────────────── */
+.plate {
+  margin-top: 40px;
 }
-.assetLabel {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed var(--line);
-}
-.assetList {
+.sheetHead {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.assetList li {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding: 10px 16px;
+  background: var(--manila);
+  border-bottom: 1px solid var(--rule);
+  border-radius: 2px 2px 0 0;
   font-family: var(--mono);
-  font-size: 13px;
-  color: var(--ink-2);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.sheetHeadRight {
+  font-weight: 500;
+  color: var(--graphite);
+}
+.sheetFoot {
+  padding: 10px 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  line-height: 1.55;
+  color: var(--graphite);
+}
+/* Index-card variant: the sanctioned thin red top rule */
+.indexCard {
+  border-top: 2px solid var(--red);
+}
+
+/* Mono checklist (intake form, strongbox inventory) */
+.checkList li {
   display: flex;
   align-items: baseline;
   gap: 10px;
-}
-.assetList span {
-  color: var(--coral);
-  font-weight: 700;
-}
-.assetList em {
-  font-style: italic;
-  color: var(--ink-3);
-  font-size: 11px;
-  margin-left: auto;
-}
-
-.pipeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 0;
-}
-.pipeStep {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 24px;
-  border-bottom: 1px solid var(--line);
-}
-.pipeStep:last-child {
-  border-bottom: 0;
-}
-.pipeStep:nth-child(odd) {
-  background: var(--bg-soft);
-}
-.pipeNum {
+  padding: 10px 16px;
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--coral);
-  letter-spacing: 0.05em;
-}
-.pipeLabel {
-  font-family: var(--serif);
-  font-size: 22px;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
   color: var(--ink);
 }
-
-.qaQ {
-  font-family: var(--serif);
-  font-size: 22px;
-  line-height: 1.3;
-  color: var(--ink);
-  margin-bottom: 16px;
+.checkList li + li {
+  border-top: 1px solid var(--rule);
 }
-.qaSrc, .qaCite {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
-  margin: 12px 0;
-}
-.qaSrc span, .qaCite em {
-  color: var(--coral);
-  font-style: normal;
-}
-.qaA {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink-2);
-  padding: 14px 16px;
-  background: var(--bg-soft);
-  border-left: 2px solid var(--coral);
+.check {
+  color: var(--green);
+  font-weight: 600;
+  flex: 0 0 auto;
 }
 
-.escHead {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed var(--line);
+/* Plate 01 — intake form */
+.intake {
+  max-width: 480px;
 }
-.escList {
+
+/* Plate 02 — pipeline tabs joined by dotted leaders */
+.pipe {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.escList li {
-  display: grid;
-  grid-template-columns: 36px 1fr auto;
-  gap: 12px;
   align-items: center;
-  font-size: 14px;
-  color: var(--ink-2);
+  gap: 10px;
+  margin-top: 44px;
+  max-width: 640px;
 }
-.escCount {
+.pipeChip {
   font-family: var(--mono);
-  font-size: 14px;
-  color: var(--coral);
-  font-weight: 700;
-}
-.escTag {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--ink-3);
-  background: var(--bg-soft);
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-.escNote {
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--line);
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-3);
-}
-
-.dash {
-  padding: 0;
-  overflow: hidden;
-}
-.dashHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--line);
-  font-family: var(--mono);
+  font-weight: 600;
   font-size: 12px;
-  color: var(--ink-2);
-}
-.dashTag {
-  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--coral);
-  border: 1px dashed var(--coral);
-  padding: 3px 8px;
-  border-radius: 4px;
+  color: var(--ink);
+  background: var(--manila);
+  border: 1px solid var(--rule-strong);
+  border-radius: 4px 4px 0 0;
+  padding: 7px 13px;
+  box-shadow: var(--lift-1);
+  white-space: nowrap;
 }
-.dashGrid {
+.pipeChip:nth-child(1),
+.pipeChip:nth-child(5),
+.pipeChip:nth-child(9) {
+  transform: rotate(-1deg);
+}
+.pipeChip:nth-child(3),
+.pipeChip:nth-child(7) {
+  transform: rotate(0.75deg);
+}
+.pipeLeader {
+  flex: 1 1 16px;
+  min-width: 12px;
+  height: 0;
+  border-bottom: 2px dotted var(--rule-strong);
+  transform: translateY(-1px);
+}
+@media (max-width: 560px) {
+  .pipe {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .pipeLeader {
+    flex: 0 0 auto;
+    width: 0;
+    min-width: 0;
+    height: 18px;
+    border-bottom: 0;
+    border-left: 2px dotted var(--rule-strong);
+    margin-left: 24px;
+    transform: none;
+  }
+}
+
+/* Plate 03 — one exchange, as filed */
+.qcard {
+  max-width: 520px;
+}
+.qcardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+}
+.qQ {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--ink);
+  align-self: flex-end;
+  text-align: right;
+  max-width: 85%;
+}
+.qA {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 0 8px 8px 8px; /* squared top-left — an index card */
+  box-shadow: var(--lift-1);
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 95%;
+}
+.qStamp {
+  margin-top: -6px;
+  margin-left: 18px;
+}
+
+/* Plate 04 — the weekly knowledge-gap report */
+.gapReport {
+  max-width: 560px;
+}
+.gapRows li {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--line);
-}
-.dashTile {
-  background: #fff;
-  padding: 18px;
-  min-height: 110px;
-}
-.dashLabel {
+  grid-template-columns: 40px 1fr auto;
+  gap: 4px 14px;
+  align-items: baseline;
+  padding: 11px 16px;
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 14px;
-}
-.dashBar {
-  height: 8px;
-  background: var(--bg-soft);
-  border-radius: 4px;
-  margin-bottom: 6px;
-  overflow: hidden;
-}
-.dashBar span {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--coral) 0%, oklch(75% 0.10 32) 100%);
-}
-.dashSub {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--ink-4);
-  margin-top: 10px;
-  letter-spacing: 0.04em;
-}
-.dashFoot {
-  padding: 12px 20px;
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-3);
-  background: var(--bg-soft);
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 1.5;
 }
-
-.timeline {
-  margin-top: 24px;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 56ch;
+.gapRows li + li {
+  border-top: 1px solid var(--rule);
 }
-.timeline li {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--ink-2);
-  padding-left: 22px;
-  border-left: 2px solid var(--coral);
-}
-.timeline strong {
-  color: var(--ink);
+.gapCount {
   font-weight: 600;
+  color: var(--ink);
+  text-align: right;
 }
-.timelineCard {
+.gapQ {
+  color: var(--ink);
+}
+.gapAction {
+  color: var(--graphite);
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .gapRows li {
+    grid-template-columns: 40px 1fr;
+  }
+  .gapAction {
+    grid-column: 2;
+    white-space: normal;
+  }
+}
+
+/* Plate 05 — deliberately-typographic wireframe ledger */
+.wire {
+  max-width: 640px;
+}
+.wireHeadRow,
+.wireRow {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line);
-  padding: 0;
-  overflow: hidden;
+  grid-template-columns: 56px 44px 1fr 92px;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 16px;
 }
-.tlDay {
-  background: #fff;
-  padding: 18px 20px;
-}
-.tlDayNum {
+.wireHeadRow {
+  padding: 8px 16px;
   font-family: var(--mono);
-  font-size: 11px;
-  color: var(--coral);
+  font-size: 12px;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  color: var(--graphite);
+  border-bottom: 1px solid var(--rule);
 }
-.tlDayLabel {
-  font-family: var(--serif);
-  font-size: 20px;
+.wireRow + .wireRow {
+  border-top: 1px solid var(--rule);
+}
+.wireBar {
+  display: block;
+  width: 100%;
+  height: 8px;
+  background: var(--rule);
+  border-radius: 1px;
+}
+.wireLang {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   color: var(--ink);
 }
-
-.secCard {
-  background: var(--bg-soft);
+.wireStatus {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
-.secList {
+.wireFiled {
+  color: var(--red);
+}
+.wireEsc {
+  color: var(--graphite);
+}
+@media (max-width: 520px) {
+  .wireHeadRow,
+  .wireRow {
+    grid-template-columns: 40px 1fr 84px;
+    gap: 10px;
+  }
+  .wireWhen {
+    display: none;
+  }
+}
+
+/* Plate 06 — the routing slip is the plate */
+.routing {
+  max-width: 560px;
+}
+.slipList li {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   gap: 14px;
+  padding: 13px 16px;
 }
-.secList li {
-  font-size: 15px;
+.slipList li + li {
+  border-top: 1px solid var(--rule);
+}
+.slipBox {
+  flex: 0 0 13px;
+  width: 13px;
+  height: 13px;
+  margin-top: 4px;
+  border: 1.5px solid var(--ink);
+  border-radius: 1px;
+  background: var(--card);
+}
+.slipTitle {
+  display: block;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
   color: var(--ink);
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
 }
-.secCheck {
-  color: oklch(55% 0.14 150);
-  font-weight: 700;
+.slipDesc {
+  display: block;
+  margin-top: 2px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--graphite);
 }
 
-@media (max-width: 880px) {
-  .row, .rowReverse {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .rowReverse .rowText {
-    order: 1;
-  }
-  .rowReverse .rowVisual {
-    order: 2;
-  }
-  .timelineCard {
-    grid-template-columns: 1fr;
-  }
+/* Plate 07 — strongbox inventory */
+.strongbox {
+  max-width: 440px;
+}
+
+/* ── Terminus ─────────────────────────────────────────────────── */
+.terminus {
+  position: relative;
+  padding: var(--gap) 0 0 30px;
+}
+.terminusNode {
+  position: absolute;
+  left: 0;
+  top: calc(var(--gap) + 4px);
+  width: 11px;
+  height: 11px;
+  background: var(--blue);
+  border-radius: 1px;
+  z-index: 1;
 }

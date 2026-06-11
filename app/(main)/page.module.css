@@ -1,297 +1,443 @@
-/* Hero */
+/* ═══════════════════════════════════════════════════════════════
+   HOMEPAGE — "On File"
+   Hero case file · path-chooser folders · items on file · index
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 01 · Hero ─────────────────────────────────────────────── */
 .hero {
-  padding: 10rem 2rem 6rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  text-align: center;
+  padding: clamp(56px, 7vw, 88px) 0 clamp(64px, 8vw, 104px);
 }
 
-.heroBadge {
-  display: inline-block;
-  background: var(--teal-light);
-  color: var(--teal-dark);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.4rem 1.2rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 2rem;
-  letter-spacing: 0.03em;
-}
-
-.heroTitle {
-  font-size: clamp(2.4rem, 5.5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--heading);
-  margin-bottom: 1.5rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.heroTitleAccent {
-  color: var(--teal);
-}
-
-.heroSub {
-  font-size: 1.15rem;
-  color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
-}
-
-.heroCtas {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.heroBtn {
-  display: inline-flex;
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 48px 56px;
   align-items: center;
-  gap: 0.6rem;
-  background: var(--teal);
-  color: white;
-  padding: 1rem 2.2rem;
-  border-radius: var(--radius-full);
-  text-decoration: none;
+}
+
+.caseLabel {
+  margin-bottom: 22px;
+}
+
+.heroH {
+  margin-bottom: 24px;
+}
+
+/* Superscript footnote mark — carbon-blue, small, raised */
+.fnMark {
+  font-family: var(--mono);
   font-weight: 600;
-  font-size: 1.05rem;
-  transition: all 0.3s var(--ease);
-  box-shadow: var(--shadow-btn);
+  font-size: 0.36em;
+  line-height: 0;
+  color: var(--blue);
+  margin-left: 7px;
+  vertical-align: baseline;
+  position: relative;
+  top: -1.5em;
 }
 
-.heroBtn:hover {
-  background: var(--teal-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-btn-hover);
+.heroLede {
+  margin-bottom: 32px;
 }
 
-.heroBtnSecondary {
-  background: transparent;
-  color: var(--teal);
-  border: 2px solid var(--teal);
-  box-shadow: none;
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
-.heroBtnSecondary:hover {
-  background: var(--teal-light);
-  transform: translateY(-2px);
-  box-shadow: none;
+.footnote {
+  max-width: 52ch;
+  margin-bottom: 28px;
 }
 
 .heroNote {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-  opacity: 0.7;
+  max-width: 44ch;
 }
 
-.heroVisual {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 4rem;
-  flex-wrap: wrap;
+.noteSig {
+  white-space: nowrap;
 }
 
-/* Problem Cards */
-.problemSection {
-  padding: var(--section-padding);
-  background: var(--cream);
+/* room for the widget's slight overhang below the folder */
+.heroExhibit {
+  padding-bottom: 12px;
+  min-width: 0;
 }
 
-.problemInner {
-  max-width: 1000px;
-  margin: 0 auto;
+@media (max-width: 1023px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+  }
+  .heroExhibit {
+    max-width: 720px;
+  }
 }
 
-.problemGrid {
+/* ── Section furniture ─────────────────────────────────────── */
+.secRule {
+  margin-bottom: 48px;
+}
+
+.railNote {
+  margin-top: 14px;
+  max-width: 26ch;
+}
+
+@media (max-width: 880px) {
+  .secRule {
+    margin-bottom: 36px;
+  }
+  .railNote {
+    max-width: 48ch;
+  }
+}
+
+/* ── 02 · Choose your file — manila folders ────────────────── */
+.folderRow {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
 }
 
-.problemCard {
-  background: white;
-  padding: 1.8rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  transition: all 0.3s var(--ease);
-}
-
-.problemCard:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
-}
-
-.problemIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--teal-light);
+/* Reveal wrapper — lets the folder fill the grid cell */
+.folderCell {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: var(--teal);
+  min-width: 0;
 }
 
-.problemCard h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--heading);
-}
-
-.problemCard p {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* Who It's For */
-.verticalsSection {
-  padding: var(--section-padding);
-  background: var(--cream);
-}
-
-.verticalsInner {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.verticalsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-
-.verticalCard {
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  border: 1px solid var(--border);
-  transition: all 0.3s var(--ease);
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.verticalCard:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
-}
-
-.verticalIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--teal-light);
+.folder {
+  position: relative;
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: var(--teal);
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px; /* room for the die-cut tab */
+  background: var(--manila);
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px 8px 3px 3px;
+  padding: 24px 24px 20px;
+  box-shadow: var(--lift-2);
+  transition: transform 140ms ease, box-shadow 140ms ease;
 }
 
-.verticalCard h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--heading);
+.folder:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 var(--rule);
 }
 
-.verticalCard p {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-}
-
-.verticalLink {
-  color: var(--teal);
+.folderTab {
+  position: absolute;
+  top: -27px;
+  left: 16px;
+  max-width: calc(100% - 28px);
+  background: var(--manila);
+  border: 1px solid var(--rule-strong);
+  border-bottom: none;
+  border-radius: 4px 10px 0 0;
+  clip-path: polygon(0 100%, 4% 0, 96% 0, 100% 100%);
+  font-family: var(--mono);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 7px 20px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 140ms ease;
 }
 
-.verticalCard:hover .verticalLink {
-  text-decoration: underline;
+.folder:hover .folderTab {
+  background: var(--manila-deep);
 }
 
-/* Results/Social Proof */
-.resultsSection {
-  padding: var(--section-padding);
+.folderH {
+  color: var(--ink);
 }
 
-.resultsInner {
-  max-width: 1000px;
-  margin: 0 auto;
+.folderBody {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
 }
 
-.resultsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* The question slips peeking out of the folder */
+.folderSheet {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  box-shadow: var(--lift-1);
+  padding: 1px 16px 8px;
+  margin-top: 4px;
 }
 
-.resultCard {
-  background: white;
-  padding: 2rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  text-align: center;
-}
-
-.resultValue {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--teal);
-  margin-bottom: 0.5rem;
-  line-height: 1;
-}
-
-.resultLabel {
-  font-size: 0.9rem;
-  color: var(--muted);
+.folderQ {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
   line-height: 1.5;
+  color: var(--ink);
+  padding: 10px 0 8px;
+  border-bottom: 1px solid var(--rule); /* the ruled hairline */
 }
 
-.resultsNote {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-  font-style: italic;
+.folderOpen {
+  margin-top: auto;
+  padding-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero {
-    padding: 8rem 1.5rem 4rem;
-  }
+.folderArr {
+  transition: transform 160ms ease;
+}
 
-  .heroVisual {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
+.folder:hover .folderArr,
+.folder:focus-visible .folderArr {
+  transform: translateX(3px);
+}
 
-  .problemGrid,
-  .resultsGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 720px) {
+  .folderRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
+}
 
-  .verticalsGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 420px) {
+  .folderTab {
+    font-size: 11px;
+    padding: 6px 14px 4px;
   }
+  .folder {
+    padding: 20px 18px 18px;
+    margin-top: 26px;
+  }
+}
 
-  .problemSection,
-  .verticalsSection,
-  .resultsSection {
-    padding: var(--section-padding-mobile);
+/* ── 03 · The items on file ────────────────────────────────── */
+.items {
+  scroll-margin-top: 96px; /* sticky letterhead clearance for #items */
+}
+
+.itemRow {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) minmax(0, 300px);
+  gap: 24px 44px;
+  align-items: start;
+  padding: 44px 0;
+}
+
+.itemFirst {
+  padding-top: 0;
+}
+
+.itemLast {
+  padding-bottom: 0;
+}
+
+.itemIdx {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  padding-top: 9px; /* optically aligns with the h-2 cap height */
+}
+
+.itemH {
+  margin-bottom: 12px;
+}
+
+.itemBody {
+  max-width: 46ch;
+}
+
+.itemSpec {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  padding-top: 6px;
+  min-width: 0;
+}
+
+.specGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+}
+
+/* Sam's index-card bubble, as in the demo widget */
+.specBubble {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 0 8px 8px 8px; /* squared top-left — an index card */
+  box-shadow: var(--lift-1);
+  padding: 9px 13px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 290px;
+}
+
+.specTag {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+
+/* mini stamp under a specimen bubble */
+.itemSpec .stampMini {
+  font-size: 11px;
+  padding: 3px 8px;
+  margin-left: 10px;
+}
+
+/* the oversized FILED stamp of Item 02 */
+.itemSpec .stampBig {
+  font-size: 15px;
+  padding: 9px 15px;
+}
+
+/* carbon-blue hand annotation: curved arrow + caption */
+.annot {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-left: 38px;
+  color: var(--blue);
+}
+
+.annot svg {
+  flex-shrink: 0;
+  margin-top: -8px;
+}
+
+.annotText {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  max-width: 22ch;
+}
+
+@media (max-width: 1100px) {
+  .itemRow {
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+  .itemSpec {
+    grid-column: 2;
+    padding-top: 2px;
+  }
+}
+
+@media (max-width: 720px) {
+  .itemRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 36px 0;
+  }
+  .itemIdx {
+    padding-top: 0;
+  }
+  .itemSpec {
+    grid-column: auto;
+    padding-top: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .itemSpec .stampBig {
+    font-size: 13px;
+    padding: 7px 11px;
+  }
+}
+
+/* ── 04 · Index — table of contents ────────────────────────── */
+.index {
+  overflow: hidden; /* hover tint respects the sheet's radius */
+}
+
+.idxRow {
+  padding: 18px 22px;
+  transition: background 140ms ease;
+}
+
+.idxRow:not(:last-child) {
+  border-bottom: 1px solid var(--rule);
+}
+
+.idxRow:hover,
+.idxRow:focus-visible {
+  background: rgba(234, 224, 201, 0.5); /* manila tint */
+}
+
+.idxName {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.idxRef {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--graphite);
+  white-space: nowrap;
+}
+
+.idxGo {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--blue);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.idxRow:hover .idxGo,
+.idxRow:focus-visible .idxGo {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 480px) {
+  .idxRow {
+    padding: 15px 16px;
+  }
+  .idxName {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folder,
+  .folderArr,
+  .idxGo {
+    transition: none;
+  }
+  .idxGo {
+    opacity: 1;
+    transform: none;
   }
 }

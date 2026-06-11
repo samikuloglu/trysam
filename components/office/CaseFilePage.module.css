@@ -1,0 +1,106 @@
+/* ── The case-file cover sheet (hero) ──────────────────────── */
+
+.hero {
+  padding: 56px 0 104px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 11fr) minmax(0, 13fr);
+  gap: 48px 56px;
+  align-items: start;
+}
+
+.heroCopy {
+  padding-top: 32px;
+}
+
+.heroLabel {
+  margin-bottom: 20px;
+}
+.heroHeading {
+  margin-bottom: 24px;
+  max-width: 16ch;
+}
+.heroLede {
+  margin-bottom: 32px;
+  max-width: 46ch;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.honesty {
+  max-width: 44ch;
+}
+
+.heroExhibit {
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+  }
+  .heroCopy {
+    padding-top: 8px;
+  }
+}
+@media (max-width: 880px) {
+  .hero {
+    padding: 40px 0 80px;
+  }
+}
+
+/* ── Sec. 02 — What changes ────────────────────────────────── */
+
+.ruleGap {
+  margin-bottom: 48px;
+}
+
+/* First row aligns its title with the rail label */
+.changes {
+  margin-top: -26px;
+}
+
+.changeRow {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 24px;
+  padding: 26px 0;
+  align-items: start;
+}
+
+.changeIndex {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--graphite);
+  padding-top: 7px; /* optically align with the h-3 cap height */
+}
+
+.changeTitle {
+  margin-bottom: 8px;
+}
+
+.changeRow p {
+  max-width: 58ch;
+}
+
+@media (max-width: 640px) {
+  .changeRow {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 16px;
+    padding: 22px 0;
+  }
+  .changes {
+    margin-top: -22px;
+  }
+}

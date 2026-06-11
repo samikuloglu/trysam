@@ -104,7 +104,7 @@
 /* Problem Cards */
 .problemSection {
   padding: var(--section-padding);
-  background: var(--cream);
+  background: var(--cream-legacy);
 }
 
 .problemInner {
@@ -159,7 +159,7 @@
 /* Who It's For */
 .verticalsSection {
   padding: var(--section-padding);
-  background: var(--cream);
+  background: var(--cream-legacy);
 }
 
 .verticalsInner {

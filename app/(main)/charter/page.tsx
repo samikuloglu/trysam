@@ -1,208 +1,253 @@
 import type { Metadata } from 'next';
-import VerticalPageShell from '@/components/site/VerticalPageShell';
+import CaseFilePage from '@/components/office/CaseFilePage';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI Enrollment Assistant for Charter Schools',
+  title: 'Sam for Charter Schools — AI Enrollment Assistant',
   description:
-    'Sam answers lottery, enrollment, and sibling-preference questions for charter schools — across one campus or an entire network. 24/7, instantly.',
+    'Sam is an AI enrollment assistant trained on your own enrollment handbook. It answers lottery, enrollment, and sibling-preference questions 24/7 — in the languages your families speak — citing its sources and declining rather than guessing.',
 };
 
-const SAMPLE = `You are Sam, the AI enrollment assistant for "Lighthouse Charter Academy" — a sample tuition-free public charter school used to demo this product. Answer prospective-family questions briefly (1–3 sentences) in a warm, professional tone.
+const MAILTO =
+  'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Charter';
 
-Profile:
-- Tuition-free public charter school, grades K–8.
-- Newark, NJ. Single campus serving K–8.
-- Founded 2008. ~480 students.
-- Lottery: applications open Jan 5, deadline Mar 1, drawing Mar 15.
-- Sibling preference: applies to siblings of currently enrolled students.
+const LIGHTHOUSE_SYSTEM_PROMPT = `You are Sam, the enrollment assistant for Lighthouse Charter Academy — a FICTIONAL demo school used to show how Sam works. Never present Lighthouse as a real school or a real customer, and never invent customer results or outcome statistics.
+
+School profile (the only facts you may use):
+- Lighthouse Charter Academy: a tuition-free public charter school in Newark, New Jersey. Grades K–8, single campus, founded 2008, about 480 students.
+- Admission is by lottery: applications open January 5 and close March 1; the lottery drawing is March 15.
+- Sibling preference: siblings of currently-enrolled students receive preference in the drawing.
 - Waitlist: maintained year-round; movement varies by grade.
-- Open houses: Nov 14, Dec 6, Feb 8 (10am–noon).
-- Bus service: school bus pickup available.
+- Open houses: November 14, December 6, and February 8 (10am–noon).
+- Transportation: school bus service is available; routes and stops are published on the transportation page.
 
-Off-topic or beyond data: politely route to enroll@lighthousedemo.org.`;
+Behavior:
+- Answer warmly and concisely (1–3 sentences), only from the profile above. If a family writes in another language — Spanish, Turkish, Arabic, or any other — answer in that language.
+- If asked anything not covered here (class assignments, placement decisions, staff names, outcomes), say there is no record on file and offer to pass the question to the front office. Never improvise an answer or a statistic.`;
 
 export default function CharterSchoolsPage() {
   return (
-    <VerticalPageShell
+    <CaseFilePage
       variant="charter"
-      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Charter"
-      heroEyebrow="For Charter Schools"
-      heroHeading={
-        <>
-          The lottery question doesn&apos;t wait until{' '}
-          <em>Monday morning.</em>
-        </>
-      }
-      heroBody="Sam is an AI assistant trained on your school. It answers lottery, enrollment, and sibling-preference questions — in the languages your families speak — so your front office isn't drowning in repeat phone calls during lottery week."
-      heroPrimaryCta={{ label: 'Book a 20-minute demo', href: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Charter' }}
-      heroSecondaryCta={{ label: 'See the ROI', href: '#roi' }}
-      heroUrl="lighthousecharter.org"
-      placeholderTitle="Welcome to Lighthouse Charter Academy"
-      placeholderBody="Tuition-free public charter school. Grades K–8 in Newark, NJ. Founded 2008."
-      placeholderCards={['Apply', 'Lottery', 'Visit']}
-      chatStatus="Online · answering for Lighthouse Charter"
-      chatGreeting="Hi! I'm Sam, your enrollment assistant for Lighthouse Charter. How can I help?"
-      chatSuggestions={[
-        'When is the lottery?',
-        'How does sibling preference work?',
-        'What grades do you serve?',
-      ]}
-      chatSystemPrompt={SAMPLE}
-      outcomeHeading={
-        <>
-          Built for the way charter schools <em>actually run.</em>
-        </>
-      }
-      outcomes={[
+      mailto={MAILTO}
+      hero={{
+        label: 'File B — Charter schools & networks',
+        heading: (
+          <>
+            The front office closes at 4. <em>Questions don&rsquo;t.</em>
+          </>
+        ),
+        lede:
+          "Sam answers lottery, enrollment, and sibling-preference questions — in the languages your families speak — so lottery week doesn't take your front office down with it.",
+        secondaryLabel: 'See the worksheet ↓',
+      }}
+      exhibit={{
+        tab: 'Exhibit C — Charter school demo',
+        url: 'lighthousecharter.org',
+        school: {
+          name: 'Lighthouse Charter Academy',
+          initial: 'L',
+          tagline: 'Tuition-free public charter · K–8',
+          announcement: 'Lottery applications open Jan 5',
+          navItems: ['Enroll', 'Families', 'Academics', 'Calendar'],
+          heroTitle: 'A tuition-free public charter school in Newark',
+          heroText:
+            'Serving 480 K–8 students since 2008. Applications by lottery — sibling preference applies.',
+          cards: [
+            { title: 'Apply', sub: 'Lottery Jan 5–Mar 1' },
+            { title: 'Families', sub: 'Handbook & calendar' },
+            { title: 'Visit', sub: 'Open houses' },
+          ],
+          accent: '#1f4e79',
+          accentSoft: '#edf3f8',
+          gold: '#d99a2b',
+        },
+        chat: {
+          schoolName: 'Lighthouse Charter Academy',
+          greeting:
+            "Hi — I'm Sam, Lighthouse's enrollment assistant. Ask me what families ask during lottery season.",
+          script: [
+            {
+              q: 'When is the enrollment lottery?',
+              a: 'Applications open January 5 and close March 1; the lottery drawing is March 15. Want me to send a reminder before the deadline?',
+              cite: 'Enrollment — Lottery Rules',
+            },
+          ],
+          chips: [
+            {
+              label: '¿La escuela es gratuita?',
+              exchange: {
+                q: '¿La escuela es gratuita?',
+                a: 'Sí — Lighthouse es una escuela charter pública y gratuita. La admisión es por lotería; la solicitud abre el 5 de enero.',
+                cite: 'Inscripción — Reglas',
+                langTag: 'Specimen — ES',
+                lang: 'es',
+              },
+            },
+            {
+              label: 'How does sibling preference work?',
+              exchange: {
+                q: 'How does sibling preference work?',
+                a: 'Siblings of currently-enrolled students get preference in the drawing — if your older child already attends Lighthouse, your younger child moves up. The full rules are on the lottery page; want the link?',
+                cite: 'Lottery Rules, §3',
+              },
+            },
+            {
+              label: "Ask something that's not on file",
+              exchange: {
+                q: 'Which teacher will my son get?',
+                a: "Class assignments aren't in Lighthouse's published enrollment content, so I can't say — I've filed your question for the front office, who'll know.",
+                decline: true,
+              },
+            },
+          ],
+          systemPrompt: LIGHTHOUSE_SYSTEM_PROMPT,
+        },
+      }}
+      changes={[
         {
-          num: '70%',
-          title: 'Parent questions self-served',
-          body: 'The repeat questions your front office answers all day — lottery dates, sibling preference, bus routes — handled on your website, in the parent\u2019s language.',
+          title: 'Lottery week stops being phone week',
+          body: "The same twenty questions, answered on your website — in the parent's language — instead of on hold.",
         },
         {
-          num: '<2 min',
-          title: 'Answers any hour',
-          body: 'Working parents who can\u2019t call during 9–5 office hours get the same answer at 10pm that they\u2019d get at the front desk.',
+          title: 'Working parents get office-hours answers at night',
+          body: "The parent who can't call at 2pm gets the same answer at 10pm, from your own enrollment handbook.",
         },
         {
-          num: '24/7',
-          title: 'Lottery-week relief',
-          body: 'When the phones used to be unusable, parents get their answers from your site — and your team gets to do the work that needs them.',
-        },
-      ]}
-      featureHeading={
-        <>
-          From lottery question to submitted application,{' '}
-          <em>without phone tag.</em>
-        </>
-      }
-      featureBody="Lottery dates and rules. Sibling preference. Whether your school is tuition-free. Bus routes and zoning. Grade availability. Waitlist mechanics. Sam answers from your enrollment handbook, then walks the family right to your application form."
-      featureBrandTitle="Lighthouse Charter"
-      featureMiniMessages={[
-        { role: 'user', text: 'Lottery?' },
-        {
-          role: 'bot',
-          text: 'Sam pulls from your enrollment calendar and offers to send a reminder before the deadline.',
-        },
-        { role: 'user', text: 'Siblings?' },
-      ]}
-      qbankHeading={
-        <>
-          The kinds of enrollment questions Sam handles{' '}
-          <em>without staff time.</em>
-        </>
-      }
-      qbank={[
-        {
-          q: 'When is the lottery?',
-          a: 'Sam pulls from your enrollment calendar and offers to send a reminder before the deadline.',
-        },
-        {
-          q: 'How does sibling preference work?',
-          a: 'Sam explains your sibling rule, who qualifies, and how it affects placement odds.',
-        },
-        {
-          q: 'Is your school tuition-free?',
-          a: 'Sam confirms your charter status and explains how it differs from private and district schools.',
-        },
-        {
-          q: 'Is there a waitlist for 4th grade?',
-          a: 'Sam quotes your current waitlist length by grade and explains how movement typically works.',
-        },
-        {
-          q: 'Do I need to live in Newark to apply?',
-          a: 'Sam answers from your eligibility rules — district preference, state-wide, or otherwise.',
-        },
-        {
-          q: 'Is there a bus from East Orange?',
-          a: 'Sam answers from your transportation map and shares pickup details if available.',
+          title: 'You see the friction before it costs you families',
+          body: 'Transcripts plus a weekly report of unanswered questions show exactly where your enrollment content falls short.',
         },
       ]}
-      roiInquiriesDefault={300}
-      roiInquiriesMin={50}
-      roiInquiriesMax={1500}
-      roiInquiriesStep={10}
-      roiRateDefault={22}
-      roiRateMin={18}
-      roiRateMax={30}
-      roiMinutesDefault={6}
-      roiMinutesMin={2}
-      roiMinutesMax={20}
-      roiInquiriesLabel="Parent questions / month"
-      roiRateLabel="Front-office hourly rate"
-      roiOutputLabel="In front office hours recovered, per year."
-      testimonialQuote='"Lottery week, our phones used to be unusable. This year, parents got their answers from the website and our team actually got work done."'
-      featureChecklist={{
-        eyebrow: 'Built for charter schools',
-        heading: <>The features charter schools <em>actually need.</em></>,
+      ledger={{
+        eyebrow: 'Built for the front office',
+        heading: (
+          <>
+            The features charter schools <em>actually need.</em>
+          </>
+        ),
         subhead:
-          "Charter schools don't have admissions teams. They have front offices answering the same questions in three languages all day. Sam was built for that.",
-        liveHeading: 'Available today',
-        roadmapHeading: 'On the roadmap',
-        features: [
+          'Charter front offices answer the same questions in three languages all day. Sam was built for that.',
+        reviewed: 'June 2026',
+        items: [
           {
-            status: 'live',
             title: 'Multilingual',
-            body:
-              'Spanish, Turkish, Arabic. Parents ask in their language. Sam answers in their language. No setup, no toggles. Critical for working families who can\u2019t call during office hours.',
+            body: 'Spanish, Turkish, Arabic and more — no setup, no toggles.',
+            status: 'live',
           },
           {
-            status: 'live',
             title: 'After-hours mode',
-            body:
-              'Different greeting and behavior outside school hours, so the experience reads right whether a parent asks at 9am or 10pm.',
+            body: 'A different greeting and behavior outside school hours, so the experience reads right at 9am or 10pm.',
+            status: 'live',
           },
           {
-            status: 'live',
-            title: 'Conversation transcripts & search',
-            body:
-              "Browse every parent question. Find what the front office is repeating. Find what your website isn't explaining.",
-          },
-          {
-            status: 'live',
-            title: 'Knowledge gap reporting',
-            body:
-              "Weekly email of questions Sam couldn't answer. Tells you what friction parents are hitting.",
-          },
-          {
-            status: 'live',
             title: 'Source-attributed answers',
-            body:
-              'Every answer links to the page it came from. No hallucinations.',
-          },
-          {
+            body: 'Every answer links to its page; designed to decline rather than improvise.',
             status: 'live',
+          },
+          {
+            title: 'Transcripts & search',
+            body: 'Find what the front office keeps repeating.',
+            status: 'live',
+          },
+          {
+            title: 'Knowledge-gap reporting',
+            body: "A weekly email of what Sam couldn't answer.",
+            status: 'live',
+          },
+          {
             title: 'FERPA-aware data handling',
-            body:
-              'PII redaction, configurable data retention, full audit log. Designed to support public charter compliance review.',
+            body: 'PII redaction, configurable retention, audit log — built to support public charter compliance review.',
+            status: 'live',
           },
           {
-            status: 'May 2026',
             title: 'Lottery & enrollment mode',
-            body:
-              'Seasonal mode that proactively captures lottery applicants and sends deadline reminders. The most charter-specific feature on the roadmap — ask us about timing if this is core to your buying decision.',
+            body: 'A seasonal mode that captures applicants and sends deadline reminders — ask about timing if this is core to your decision.',
+            status: 'roadmap',
           },
           {
-            status: 'May 2026',
             title: 'Threat & safety alerts',
-            body:
-              'Flags concerning language for human review. Real-time email + SMS to designated contacts.',
+            body: 'Flags concerning language for human review.',
+            status: 'roadmap',
           },
           {
-            status: 'June 2026',
             title: 'Multi-campus routing',
-            body:
-              'For networks: each campus answers from its own knowledge with no cross-campus answer leakage. Single-campus charters don\u2019t need this.',
+            body: 'Each campus answers from its own knowledge — no cross-campus leakage.',
+            status: 'roadmap',
           },
           {
-            status: 'June 2026',
             title: 'Network admin dashboard',
-            body:
-              'Network directors see all campuses in one place, push updates, compare metrics. For 3+ campus networks.',
+            body: 'Every campus in one place, for networks of three campuses or more.',
+            status: 'roadmap',
           },
         ],
       }}
-      crossSellMode="none"
+      catalog={{
+        heading: (
+          <>
+            Enrollment questions, <em>answered off your plate.</em>
+          </>
+        ),
+        railNote:
+          'Lottery season generates the same twenty questions — here are six, plus one Sam refuses to guess at.',
+        cards: [
+          {
+            q: 'When is the enrollment lottery?',
+            a: 'Sam answers from your enrollment calendar — application window, drawing date — and offers to send the family a reminder.',
+            cite: 'Enrollment Calendar',
+          },
+          {
+            q: 'How does sibling preference work?',
+            a: 'Sam explains the rule in plain language — who qualifies, what it means for the drawing — and links the rules page.',
+            cite: 'Lottery Rules, §3',
+          },
+          {
+            q: 'Is the school really free?',
+            a: 'Sam confirms your charter status and explains the difference — tuition-free, publicly funded, admission by lottery.',
+            cite: 'About — Charter FAQ',
+          },
+          {
+            q: 'Is there a waitlist for 4th grade?',
+            a: 'Sam quotes your current waitlist process, grade by grade, instead of making a family call to find out.',
+            cite: 'Enrollment — Waitlist',
+          },
+          {
+            q: 'Do we have to live in the district?',
+            a: 'Answered from your eligibility rules — residency requirements, enrollment zones, and what counts as proof.',
+            cite: 'Enrollment — Eligibility',
+          },
+          {
+            q: 'Is there a bus from East Orange?',
+            a: 'Sam answers from your transportation map — route, stop, and pickup time.',
+            cite: 'Transportation Map',
+          },
+          {
+            q: 'Will my daughter get into the gifted track?',
+            a: "Placement decisions aren't in the enrollment handbook — Sam declines and routes the family to your team instead of speculating.",
+            noRecord: true,
+          },
+        ],
+      }}
+      worksheet={{
+        defaults: { questions: 300, rate: 22, minutes: 6, share: 60 },
+        ranges: {
+          questionsMin: 50,
+          questionsMax: 1500,
+          questionsStep: 10,
+          rateMin: 18,
+          rateMax: 40,
+        },
+        questionsLabel: 'Parent questions / month',
+        rateLabel: 'Front-office hourly rate',
+        outputLabel:
+          'in front-office time, per year — by your own assumptions.',
+      }}
+      slip={{
+        heading: (
+          <>
+            Lottery season is coming. <em>Sam doesn&rsquo;t mind.</em>
+          </>
+        ),
+        body: 'Twenty minutes. A live demo trained on your enrollment handbook — and an honest answer about whether Sam fits.',
+      }}
     />
   );
 }

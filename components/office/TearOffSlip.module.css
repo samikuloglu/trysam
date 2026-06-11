@@ -1,0 +1,109 @@
+.band {
+  padding: 96px 0;
+}
+
+.slip {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 0 0 4px 4px;
+  padding: 48px 52px 44px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Perforated top edge */
+.perforation {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--night) 0,
+    var(--night) 9px,
+    transparent 9px,
+    transparent 16px
+  );
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px 56px;
+  align-items: center;
+}
+
+.h {
+  max-width: 18ch;
+}
+
+.body {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--graphite);
+  max-width: 46ch;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* The email address as headline — the most important field on the form */
+.mailLine {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: clamp(18px, 2.4vw, 24px);
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 4px;
+  transition: color 160ms ease;
+}
+.mailLine:hover {
+  color: var(--blue);
+}
+
+.micro {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  color: var(--graphite);
+  max-width: 38ch;
+}
+
+.ghostStamp {
+  position: absolute;
+  right: 36px;
+  bottom: 26px;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  padding: 5px 12px;
+  opacity: 0.08;
+  transform: rotate(-2.5deg);
+  pointer-events: none;
+}
+
+@media (max-width: 880px) {
+  .band {
+    padding: 64px 0;
+  }
+  .slip {
+    padding: 36px 26px 32px;
+  }
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

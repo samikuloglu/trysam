@@ -1,0 +1,103 @@
+/* ── Sec. 04 — The card catalog ────────────────────────────── */
+
+.ruleGap {
+  margin-bottom: 48px;
+}
+
+.railNote {
+  margin-top: 16px;
+  max-width: 30ch;
+}
+
+.heading {
+  max-width: 26ch;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.cardWrap {
+  height: 100%;
+}
+
+/* ── The index card ────────────────────────────────────────── */
+/* Real index-card anatomy: a headline area, a 2px red rule, then
+   the ruled answer field. Orthogonal — only the Q-tab is rotated. */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: var(--lift-1);
+  padding: 26px 22px 18px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 0 var(--rule);
+}
+
+/* The catalog tab: a small manila chip on the card's upper edge.
+   The only rotated element on the card. */
+.qTab {
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  transform: rotate(-1.5deg);
+  background: var(--manila);
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  padding: 2px 8px 1px;
+  line-height: 1.5;
+}
+
+/* Question sits on the red headline rule */
+.q {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--ink);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--red);
+}
+
+/* Answer field: faint carbon-blue ruled lines, like the card stock */
+.aArea {
+  flex: 1;
+  padding: 13px 0 16px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 25px,
+    rgba(61, 90, 169, 0.1) 25px,
+    rgba(61, 90, 169, 0.1) 26px
+  );
+}
+.a {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.foot {
+  margin-top: auto;
+  padding-top: 2px;
+}

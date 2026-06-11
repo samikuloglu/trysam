@@ -1,0 +1,204 @@
+/* ── Sec. 05 — Worksheet SAM-2 ─────────────────────────────── */
+
+.ruleGap {
+  margin-bottom: 48px;
+}
+
+/* Hero CTAs deep-link to #roi; clear the sticky letterhead. */
+.anchor {
+  scroll-margin-top: 104px;
+}
+
+/* Manila form-header strip, like the tab on a carbon form */
+.strip {
+  display: inline-block;
+  background: var(--manila);
+  border: 1px solid var(--rule-strong);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 8px 16px 6px;
+}
+
+.card {
+  border-top-left-radius: 0;
+}
+
+.panes {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+}
+
+.inputs {
+  padding: 28px 28px 32px;
+  border-right: 1px solid var(--rule);
+}
+.outputs {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.paneHead {
+  margin-bottom: 28px;
+}
+
+/* ── Input sliders ─────────────────────────────────────────── */
+
+.sliderRow {
+  display: block;
+}
+.sliderRow + .sliderRow {
+  margin-top: 28px;
+}
+
+.sliderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+.sliderLabel {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.sliderValue {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* Hairline track, brass thumb. accent-color can't do brass —
+   the thumbs are drawn by hand for both engines. */
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+}
+.range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--rule-strong);
+  border-radius: 1px;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -9px; /* center a 20px thumb on a 2px track */
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 32%,
+    #cfa75e 0%,
+    var(--brass) 55%,
+    #6f5526 100%
+  );
+  border: 1px solid #6f5526;
+  box-shadow: 1px 1px 0 rgba(38, 34, 27, 0.25);
+}
+.range::-moz-range-track {
+  height: 2px;
+  background: var(--rule-strong);
+  border-radius: 1px;
+}
+.range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 32%,
+    #cfa75e 0%,
+    var(--brass) 55%,
+    #6f5526 100%
+  );
+  border: 1px solid #6f5526;
+  box-shadow: 1px 1px 0 rgba(38, 34, 27, 0.25);
+}
+
+/* ── Invoice-style totals ──────────────────────────────────── */
+
+.totals {
+  padding: 20px 0 24px;
+}
+
+.big {
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: clamp(56px, 6.5vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.bigSnug {
+  font-size: clamp(44px, 5vw, 64px);
+}
+
+.outLabel {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  color: var(--graphite);
+  text-transform: uppercase;
+  margin-top: 12px;
+  max-width: 40ch;
+}
+
+.stats {
+  margin-top: 24px;
+  display: grid;
+  gap: 10px;
+}
+.statLabel {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+.statValue {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.note {
+  border-top: 1px solid var(--rule);
+  padding: 14px 28px 18px;
+}
+
+/* ── Collapse ──────────────────────────────────────────────── */
+@media (max-width: 880px) {
+  .panes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .inputs {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 24px 20px 28px;
+  }
+  .outputs {
+    padding: 24px 20px 28px;
+  }
+  .note {
+    padding: 14px 20px 18px;
+  }
+}

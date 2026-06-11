@@ -1,99 +1,237 @@
-.hero {
-  background: var(--bg-soft);
-  padding: 120px 0 64px;
-  border-bottom: 1px solid var(--line);
+/* ═══════════════════════════════════════════════════════════════
+   /security — the memo.
+   The dark exception: the archive after hours, with one white
+   memo sheet under the desk lamp.
+   ═══════════════════════════════════════════════════════════════ */
+
+.page {
+  /* print-scoping wrapper — no visual role on screen */
+  display: contents;
 }
-.eyebrow {
+
+/* ── The after-hours band ──────────────────────────────────── */
+.band {
+  padding: clamp(72px, 9vw, 128px) 0;
+}
+
+/* ── The memo sheet ────────────────────────────────────────── */
+.memo {
+  background: var(--card);
+  color: var(--ink);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px;
+  border-radius: 2px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 640px) {
+  .memo {
+    padding: 28px;
+  }
+}
+
+/* Top line: the form's own metadata */
+.memoTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 0.16em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--coral);
-  margin-bottom: 24px;
+  color: var(--graphite);
+  margin-bottom: 12px;
 }
-.h {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+
+/* ── Header block: TO / FROM / RE / REVIEWED ───────────────── */
+.memoHead {
+  padding: 18px 0;
+  display: grid;
+  gap: 8px;
+}
+.memoRow {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.memoLabel {
+  color: var(--graphite);
+  letter-spacing: 0.08em;
+}
+.memoValue {
   color: var(--ink);
-  max-width: 20ch;
-  margin-bottom: 24px;
+  font-weight: 500;
 }
-.h em {
-  font-style: italic;
+@media (max-width: 480px) {
+  .memoRow {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 8px;
+  }
 }
-.lede {
+
+/* ── Opening paragraph ─────────────────────────────────────── */
+.opening {
   font-family: var(--sans);
   font-size: 17px;
   line-height: 1.7;
-  color: var(--ink-2);
-  max-width: 64ch;
-}
-.lede a {
-  color: var(--coral);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.body {
-  border-bottom: 1px solid var(--line);
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--line);
-}
-.card {
-  padding: 32px;
-  border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-}
-.card:nth-child(2n) {
-  border-right: 0;
-}
-.card h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 22px;
-  margin-bottom: 12px;
   color: var(--ink);
+  margin-top: 32px;
 }
-.card p {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ink-2);
+
+/* ── Numbered sections ─────────────────────────────────────── */
+.memoSec {
+  margin-top: 36px;
 }
-.note {
-  margin-top: 48px;
-  padding: 24px 28px;
-  background: var(--bg-soft);
-  border-left: 3px solid var(--coral);
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ink-2);
-  max-width: 72ch;
+.secHead {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
 }
-.note strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-.back {
-  margin-top: 48px;
-}
-.back a {
+.secNum {
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--coral);
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--graphite);
+  white-space: nowrap;
 }
-@media (max-width: 760px) {
-  .grid {
-    grid-template-columns: 1fr;
+.secTitle {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.secBody {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 62ch;
+}
+
+/* ── The not-a-certification aside ─────────────────────────── */
+.aside {
+  margin-top: 44px;
+  padding: 20px 22px;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 2px;
+  background: rgba(234, 224, 201, 0.45);
+}
+.asideHead {
+  margin-bottom: 8px;
+}
+.asideBody {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+/* ── Sign-off ──────────────────────────────────────────────── */
+.signoff {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+.seal {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--green);
+  box-shadow:
+    inset 0 0 0 3px var(--card),
+    inset 0 0 0 4.5px rgba(30, 77, 63, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+/* ── Foot row: print + back ────────────────────────────────── */
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 44px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+.footAction {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT — the memo on actual paper: no chrome, no night band,
+   black ink, full width.
+   ═══════════════════════════════════════════════════════════════ */
+@media print {
+  .page :global(header),
+  .page :global(footer),
+  .foot {
+    display: none !important;
   }
-  .card {
-    border-right: 0;
-    padding: 24px 0;
+  .page :global(.file)::before {
+    display: none !important;
+  }
+  .page :global(.reveal) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .band {
+    background: #fff !important;
+    color: #000 !important;
+    padding: 0 !important;
+  }
+  .bandFrame {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .memo {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  .memo,
+  .memo * {
+    color: #000 !important;
+  }
+  .memo :global(.pen-link) {
+    background-image: none !important;
+    text-decoration: underline;
+  }
+  .aside {
+    background: none !important;
+    border-color: #000 !important;
+  }
+  .seal {
+    border-color: #000 !important;
+    box-shadow:
+      inset 0 0 0 3px #fff,
+      inset 0 0 0 4.5px rgba(0, 0, 0, 0.6) !important;
+  }
+  .memoSec {
+    break-inside: avoid;
   }
 }

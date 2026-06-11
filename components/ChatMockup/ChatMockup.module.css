@@ -57,7 +57,7 @@
 }
 
 .msgUser {
-  background: var(--cream);
+  background: var(--cream-legacy);
   color: var(--body);
   align-self: flex-end;
   border-bottom-right-radius: 4px;

@@ -1,6 +1,6 @@
 .section {
   padding: 4rem 2rem;
-  background: var(--cream);
+  background: var(--cream-legacy);
 }
 
 .inner {
