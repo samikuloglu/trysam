@@ -1,0 +1,96 @@
+.hero {
+  padding: 9rem 2rem 5rem;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.copy {
+  max-width: 540px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.03em;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--heading);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.titleAccent {
+  color: var(--teal);
+  font-style: italic;
+}
+
+.sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2.25rem;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--teal);
+  color: white;
+  padding: 1rem 2.2rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s var(--ease);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.chatWrap {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 8rem 1.5rem 3rem;
+  }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .copy {
+    margin: 0 auto;
+  }
+}

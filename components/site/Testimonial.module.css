@@ -1,0 +1,55 @@
+.block {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.mark svg {
+  width: 24px;
+  height: 24px;
+  color: var(--coral);
+}
+.quote {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+.attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.sep {
+  color: var(--coral);
+  margin: 0 8px;
+}
+.org {
+  font-size: 13px;
+  color: var(--ink-3);
+}

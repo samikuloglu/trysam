@@ -1,0 +1,526 @@
+.section {
+  padding: var(--section-padding);
+  background: var(--warm-white);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ============ Tab strip ============ */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  position: relative;
+  padding: 0.6rem 0.4rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.25s var(--ease);
+  font-family: inherit;
+}
+
+.tab:hover {
+  color: var(--heading);
+}
+
+.tabActive {
+  color: var(--heading);
+  font-weight: 700;
+}
+
+.tabActive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: var(--accent-coral);
+  border-radius: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 4rem;
+}
+
+/* ============ Panel ============ */
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  animation: fadeInPanel 0.45s var(--ease);
+}
+
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.panelText {
+  max-width: 480px;
+}
+
+.panelLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.panelTitle {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.panelBody {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.panelAccent {
+  width: 56px;
+  height: 2px;
+  background: var(--accent-coral);
+  margin-top: 1.75rem;
+  border-radius: 2px;
+}
+
+.panelVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 360px;
+}
+
+/* ============ Knowledge Base visual ============ */
+.kbVisual {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 5 / 3.4;
+  background: linear-gradient(180deg, #F4F8FB 0%, #ECF1F6 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.kbArc {
+  position: absolute;
+  inset: 1.5rem 1.5rem 40% 1.5rem;
+  width: calc(100% - 3rem);
+  height: 60%;
+  pointer-events: none;
+}
+
+.kbChip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: var(--accent-coral);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 6px 16px rgba(214, 58, 79, 0.28);
+}
+
+.kbChipDot {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+.kbLaptop {
+  position: absolute;
+  left: 50%;
+  bottom: 1.75rem;
+  width: 70%;
+  transform: translateX(-50%);
+}
+
+.kbScreen {
+  background: #1E3A52;
+  color: white;
+  border-radius: 8px 8px 4px 4px;
+  padding: 0.85rem;
+  border: 3px solid #1B2330;
+}
+
+.kbScreenTitle {
+  background: #6FB7D9;
+  color: #0F2433;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.kbRow {
+  height: 12px;
+  background: #6FB7D9;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+}
+
+.kbRowSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+
+.kbRowSplit span {
+  display: block;
+  height: 12px;
+  background: #6FB7D9;
+  border-radius: 3px;
+}
+
+.kbBase {
+  height: 8px;
+  background: linear-gradient(180deg, #C9D2DA 0%, #9AA6B0 100%);
+  margin: -2px auto 0;
+  width: 116%;
+  margin-left: -8%;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* ============ Brand customization visual ============ */
+.brandVisual {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 5 / 3.4;
+  background: #F4F8FB;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.brandUpload {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 60%;
+  background: white;
+  border: 1px solid #1B2330;
+  border-radius: 6px;
+  padding: 0.85rem;
+  box-shadow: var(--shadow-md);
+}
+
+.brandUploadHeader {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: var(--heading);
+}
+
+.brandUploadZone {
+  border: 1.5px dashed #B9C3CD;
+  border-radius: 4px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.brandUploadIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+  color: #B9C3CD;
+}
+
+.brandUploadActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.brandBtn,
+.brandBtnGhost {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+  border: none;
+  cursor: default;
+}
+
+.brandBtn {
+  background: var(--accent-coral);
+  color: white;
+}
+
+.brandBtnGhost {
+  background: #E5E5E5;
+  color: var(--heading);
+}
+
+.brandSwatches {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  width: 36%;
+  background: white;
+  border: 1px solid #1B2330;
+  border-radius: 4px;
+  padding: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  box-shadow: var(--shadow-md);
+}
+
+.brandSwatch {
+  aspect-ratio: 1;
+  border-radius: 2px;
+}
+
+.brandSwatchActive {
+  outline: 2px solid #1B2330;
+  outline-offset: 1px;
+}
+
+.brandDropper {
+  position: absolute;
+  bottom: 0.55rem;
+  left: 50%;
+  transform: translateX(-30%);
+  color: var(--heading);
+}
+
+.brandChatBar {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1rem;
+  right: 1rem;
+  background: #2BA0DB;
+  color: white;
+  border-radius: 4px 4px 0 0;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brandChatAvatar {
+  width: 28px;
+  height: 28px;
+  background: #1B2330;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandChatName {
+  flex: 1;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  background: white;
+  color: var(--heading);
+  max-width: 130px;
+}
+
+.brandChatControls {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+
+/* ============ Analytics dashboard ============ */
+.dash {
+  width: 100%;
+  max-width: 480px;
+  background: #2BA0DB;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  color: white;
+}
+
+.dashTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.dashGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.dashCard {
+  background: white;
+  color: var(--heading);
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 90px;
+}
+
+.dashCardWide {
+  grid-column: span 2;
+}
+
+.dashLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.dashDonut {
+  display: flex;
+  justify-content: center;
+}
+
+.dashBig {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.dashTrend {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+}
+
+.dashTrendIcon {
+  color: #22C55E;
+  font-weight: 700;
+}
+
+.dashTrendValue {
+  color: #22C55E;
+  font-weight: 700;
+}
+
+.dashTrendNote {
+  color: var(--muted);
+}
+
+.dashRating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.dashRule {
+  height: 1px;
+  background: var(--border);
+}
+
+.dashTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.62rem;
+}
+
+.dashTable th {
+  font-weight: 600;
+  color: var(--muted);
+  text-align: left;
+  padding-bottom: 0.25rem;
+  font-size: 0.6rem;
+  text-transform: capitalize;
+}
+
+.dashTable td {
+  padding: 0.18rem 0;
+  color: var(--heading);
+  font-size: 0.62rem;
+}
+
+.dashChip {
+  color: var(--accent-coral);
+  font-size: 0.55rem;
+  margin-left: 0.25rem;
+}
+
+.dashSpark {
+  width: 100%;
+  height: 50px;
+  margin-top: 0.4rem;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 900px) {
+  .section {
+    padding: var(--section-padding-mobile);
+  }
+
+  .tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+  }
+
+  .divider {
+    margin-bottom: 2.5rem;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .panelVisual {
+    min-height: 280px;
+  }
+
+  .panelText {
+    max-width: none;
+  }
+}

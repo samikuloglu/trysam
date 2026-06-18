@@ -1,50 +1,79 @@
-import type { Metadata } from 'next';
-import Letterhead from '@/components/office/Letterhead';
-import ArchiveFooter from '@/components/office/ArchiveFooter';
+'use client';
+
+import { useState, type FormEvent } from 'react';
+import { Mail, Lock } from '@/components/Icons';
+import { PORTAL_RESET_MAILTO, DEMO_MAILTO } from '@/lib/constants';
 import styles from './page.module.css';
 
-export const metadata: Metadata = {
-  title: 'Client Portal',
-  robots: { index: false, follow: false },
-};
-
 export default function PortalPage() {
-  return (
-    <>
-      <Letterhead />
+  const [error, setError] = useState(false);
 
-      <main id="main" className="file">
-        <section className={`sec ${styles.sec}`}>
-          <div className="frame">
-            <div className={`sheet ${styles.card}`}>
-              <div className="mono-label">Client portal</div>
-              <h1 className={`h-2 ${styles.heading}`}>
-                Client logins open with the first cohort.
-              </h1>
-              <p className={styles.body}>
-                Sam is pre-launch — self-serve access to the dashboard
-                (transcripts, sources, knowledge-gap reports) opens as the
-                first schools come aboard. If you&apos;re evaluating Sam or
-                you&apos;re part of the first cohort, you have a direct line:
-              </p>
-              <div className={styles.action}>
-                <a className="btn" href="mailto:sami@trysam.co?subject=Sam%20Portal">
-                  Write to Sami{' '}
-                  <span className="arr" aria-hidden>
-                    →
-                  </span>
-                </a>
-              </div>
-              <p className={`mono-micro ${styles.micro}`}>
-                No login exists yet. We&apos;d rather tell you that than fake
-                one.
-              </p>
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    setError(true);
+  }
+
+  return (
+    <div className={styles.page}>
+      <div className={styles.card}>
+        <div className={styles.logo}>
+          <span className={styles.logoDot} />
+          <span className={styles.logoText}>Sam</span>
+        </div>
+        <h1 className={styles.heading}>Client Portal</h1>
+        <p className={styles.tagline}>Manage your AI assistant</p>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div>
+            <label className={styles.fieldLabel} htmlFor="email">Email</label>
+            <div className={styles.inputWrapper}>
+              <Mail size={18} className={styles.inputIcon} />
+              <input
+                className={styles.input}
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@company.com"
+                autoComplete="email"
+                required
+              />
             </div>
           </div>
-        </section>
-      </main>
-
-      <ArchiveFooter />
-    </>
+          <div>
+            <label className={styles.fieldLabel} htmlFor="password">Password</label>
+            <div className={styles.inputWrapper}>
+              <Lock size={18} className={styles.inputIcon} />
+              <input
+                className={styles.input}
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                autoComplete="current-password"
+                required
+              />
+            </div>
+          </div>
+          {error && (
+            <div className={styles.error}>
+              Invalid email or password.
+            </div>
+          )}
+          <button type="submit" className={styles.submitBtn}>
+            Log in
+          </button>
+          <div className={styles.forgot}>
+            <a href={PORTAL_RESET_MAILTO} className={styles.forgotLink}>
+              Forgot password?
+            </a>
+          </div>
+          <div className={styles.signup}>
+            Not a client yet?{' '}
+            <a href={DEMO_MAILTO} className={styles.signupLink}>
+              Book a demo
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
