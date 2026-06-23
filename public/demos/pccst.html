@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCSST — Paterson Charter School for Science and Technology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --blue: #25418A;
+            --blue-deep: #1a2f66;
+            --blue-light: #3356a8;
+            --gold: #EBAD20;
+            --gold-light: #f5cc5e;
+            --white: #ffffff;
+            --gray-50: #f8f9fc;
+            --gray-100: #eef1f6;
+            --gray-200: #d8dde8;
+            --gray-600: #5a6478;
+            --gray-900: #1a1d24;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--gray-900);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(26, 47, 102, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 900;
+            font-size: 13px;
+            color: var(--blue-deep);
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .nav-logo-text {
+            color: var(--white);
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--blue-deep) !important;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(235, 173, 32, 0.4);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 40%, var(--blue-light) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 70% 60%, rgba(235, 173, 32, 0.08), transparent),
+                radial-gradient(ellipse 60% 80% at 20% 80%, rgba(26, 47, 102, 0.5), transparent);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+        }
+
+        .hero-orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--gold);
+            top: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #4a7fff;
+            bottom: -50px;
+            left: 10%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(235, 173, 32, 0.15);
+            border: 1px solid rgba(235, 173, 32, 0.3);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--blue-deep);
+            box-shadow: 0 4px 20px rgba(235, 173, 32, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(235, 173, 32, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            transform: perspective(800px) rotateY(-5deg) rotateX(2deg);
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.3s;
+        }
+
+        .hero-card:hover { transform: translateY(-4px); }
+
+        .hero-card:nth-child(2) { margin-top: 30px; }
+        .hero-card:nth-child(3) { margin-top: -15px; }
+
+        .hero-card-number {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .hero-card-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .hero-card-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        /* ── CAMPUSES ── */
+        .campuses {
+            padding: 100px 2rem;
+            background: var(--gray-50);
+            position: relative;
+        }
+
+        .campuses::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--gold), var(--blue));
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--blue-deep);
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .campus-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .campus-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .campus-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(37, 65, 138, 0.12);
+        }
+
+        .campus-card-header {
+            padding: 32px 28px 24px;
+            background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .campus-card-header::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(235, 173, 32, 0.1);
+            border-radius: 50%;
+        }
+
+        .campus-card-grade {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--blue-deep);
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            padding: 5px 12px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .campus-card h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            letter-spacing: -0.3px;
+        }
+
+        .campus-card-body {
+            padding: 24px 28px 28px;
+        }
+
+        .campus-stat {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .campus-stat:last-child { border-bottom: none; }
+
+        .campus-stat-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .campus-stat strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        /* ── PROGRAMS ── */
+        .programs {
+            padding: 100px 2rem;
+            background: var(--white);
+        }
+
+        .programs-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .program-card {
+            position: relative;
+            padding: 36px 24px;
+            border-radius: 18px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .program-card:hover {
+            background: var(--blue-deep);
+            border-color: var(--blue-deep);
+            transform: translateY(-4px);
+        }
+
+        .program-card:hover .program-icon { background: rgba(235, 173, 32, 0.15); }
+        .program-card:hover h4 { color: var(--white); }
+        .program-card:hover p { color: rgba(255,255,255,0.65); }
+
+        .program-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: rgba(37, 65, 138, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px;
+            transition: background 0.3s;
+        }
+
+        .program-card h4 {
+            font-size: 1.1rem;
+            color: var(--blue-deep);
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+            transition: color 0.3s;
+        }
+
+        .program-card p {
+            font-size: 13.5px;
+            color: var(--gray-600);
+            line-height: 1.55;
+            transition: color 0.3s;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials {
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .testimonials .section-label { color: var(--gold-light); }
+        .testimonials .section-header h2 { color: var(--white); }
+        .testimonials .section-header p { color: rgba(255,255,255,0.6); }
+
+        .testimonial-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-quote {
+            font-size: 15px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-quote::before {
+            content: '\201C';
+            font-size: 3rem;
+            color: var(--gold);
+            font-family: 'Urbanist', serif;
+            font-weight: 900;
+            line-height: 0;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 800;
+            color: var(--blue-deep);
+            font-size: 16px;
+        }
+
+        .testimonial-name {
+            color: var(--white);
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            color: rgba(255,255,255,0.45);
+            font-size: 12.5px;
+            margin-top: 2px;
+        }
+
+        /* ── CTA ── */
+        .cta {
+            padding: 100px 2rem;
+            background: var(--gray-50);
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
+            padding: 60px 48px;
+            box-shadow: 0 8px 40px rgba(37, 65, 138, 0.08);
+            border: 1px solid var(--gray-100);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--gold));
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            color: var(--blue-deep);
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-blue {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .btn-blue:hover {
+            background: var(--blue-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 65, 138, 0.3);
+        }
+
+        .cta-contact {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .cta-contact a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-contact a:hover { color: var(--gold); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--gray-900);
+            padding: 60px 2rem 30px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.45);
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        .footer-col h5 {
+            color: var(--gold);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: var(--white); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-desc { margin: 0 auto 2.5rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { display: none; }
+            .campus-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .programs-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .programs-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+            .cta-box { padding: 40px 24px; }
+            .cta-contact { flex-direction: column; gap: 0.5rem; }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+
+        /* ── ANIMATIONS ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">PCS<br>ST</div>
+            <div class="nav-logo-text">PCSS<span>T</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#campuses">Campuses</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#enroll" class="nav-cta">Enroll Now</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-content">
+        <div>
+            <div class="hero-badge">Now Enrolling for 2026-2027</div>
+            <h1>Where <span>Science &amp; Technology</span> Shape the Future</h1>
+            <p class="hero-desc">Paterson Charter School for Science and Technology prepares students from Pre-K through 12th grade with a rigorous STEM-focused education across our three campuses in Paterson, NJ.</p>
+            <div class="hero-buttons">
+                <a href="#enroll" class="btn btn-gold">Apply Today &rarr;</a>
+                <a href="#campuses" class="btn btn-outline">Explore Campuses</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-cards">
+                <div class="hero-card">
+                    <div class="hero-card-icon">🎓</div>
+                    <div class="hero-card-number">98%</div>
+                    <div class="hero-card-label">Graduation Rate</div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-icon">🔬</div>
+                    <div class="hero-card-number">3</div>
+                    <div class="hero-card-label">Campus Locations</div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-icon">👨‍🎓</div>
+                    <div class="hero-card-number">2,800+</div>
+                    <div class="hero-card-label">Students Enrolled</div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-icon">🏆</div>
+                    <div class="hero-card-number">Pre-K&ndash;12</div>
+                    <div class="hero-card-label">Grade Levels Served</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CAMPUSES -->
+<section class="campuses" id="campuses">
+    <div class="section-header fade-up">
+        <div class="section-label">Our Campuses</div>
+        <h2>Three Campuses, One Mission</h2>
+        <p>Each campus provides a nurturing, technology-enhanced learning environment tailored to its grade levels.</p>
+    </div>
+    <div class="campus-grid">
+        <div class="campus-card fade-up">
+            <div class="campus-card-header">
+                <div class="campus-card-grade">PRE-K &ndash; 4TH GRADE</div>
+                <h3>Elementary Campus</h3>
+            </div>
+            <div class="campus-card-body">
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">📍</div>
+                    <span><strong>125 Broadway</strong>, Paterson, NJ</span>
+                </div>
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">👧</div>
+                    <span><strong>800+</strong> Students</span>
+                </div>
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">🧪</div>
+                    <span>STEM lab &amp; maker space</span>
+                </div>
+            </div>
+        </div>
+        <div class="campus-card fade-up" style="transition-delay: 0.1s;">
+            <div class="campus-card-header">
+                <div class="campus-card-grade">5TH &ndash; 8TH GRADE</div>
+                <h3>Middle School Campus</h3>
+            </div>
+            <div class="campus-card-body">
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">📍</div>
+                    <span><strong>459 Broadway</strong>, Paterson, NJ</span>
+                </div>
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">👦</div>
+                    <span><strong>900+</strong> Students</span>
+                </div>
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">💻</div>
+                    <span>Robotics &amp; coding programs</span>
+                </div>
+            </div>
+        </div>
+        <div class="campus-card fade-up" style="transition-delay: 0.2s;">
+            <div class="campus-card-header">
+                <div class="campus-card-grade">9TH &ndash; 12TH GRADE</div>
+                <h3>High School Campus</h3>
+            </div>
+            <div class="campus-card-body">
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">📍</div>
+                    <span><strong>131 Ellison St</strong>, Paterson, NJ</span>
+                </div>
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">🧑‍🎓</div>
+                    <span><strong>1,100+</strong> Students</span>
+                </div>
+                <div class="campus-stat">
+                    <div class="campus-stat-icon">📚</div>
+                    <span>AP courses &amp; college prep</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+    <div class="section-header fade-up">
+        <div class="section-label">STEM Programs</div>
+        <h2>Building Tomorrow's Innovators</h2>
+        <p>Our rigorous curriculum integrates science, technology, engineering, and mathematics across every grade level.</p>
+    </div>
+    <div class="programs-grid">
+        <div class="program-card fade-up">
+            <div class="program-icon">🔬</div>
+            <h4>Science</h4>
+            <p>Hands-on laboratory experiences from elementary through AP-level coursework.</p>
+        </div>
+        <div class="program-card fade-up" style="transition-delay: 0.08s;">
+            <div class="program-icon">💻</div>
+            <h4>Technology</h4>
+            <p>Computer science, coding, and digital literacy integrated across the curriculum.</p>
+        </div>
+        <div class="program-card fade-up" style="transition-delay: 0.16s;">
+            <div class="program-icon">⚙️</div>
+            <h4>Engineering</h4>
+            <p>Robotics, design thinking, and engineering challenges that foster problem-solving.</p>
+        </div>
+        <div class="program-card fade-up" style="transition-delay: 0.24s;">
+            <div class="program-icon">📐</div>
+            <h4>Mathematics</h4>
+            <p>Rigorous math program from foundations through AP Calculus and Statistics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+    <div class="section-header fade-up">
+        <div class="section-label">What Families Say</div>
+        <h2>Trusted by Our Community</h2>
+        <p>Hear from the families who have experienced the PCSST difference.</p>
+    </div>
+    <div class="testimonial-grid">
+        <div class="testimonial-card fade-up">
+            <div class="testimonial-quote">PCSST has given my daughter opportunities I never had. The STEM focus opened her eyes to engineering, and now she's headed to college with a full scholarship.</div>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">M</div>
+                <div>
+                    <div class="testimonial-name">Maria S.</div>
+                    <div class="testimonial-role">Parent, Class of 2025</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card fade-up" style="transition-delay: 0.1s;">
+            <div class="testimonial-quote">The teachers genuinely care about every student. My son went from struggling in math to loving it. The small class sizes make a real difference.</div>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">J</div>
+                <div>
+                    <div class="testimonial-name">James T.</div>
+                    <div class="testimonial-role">Parent, 7th Grade</div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card fade-up" style="transition-delay: 0.2s;">
+            <div class="testimonial-quote">I love the robotics program! We get to build real projects and compete in tournaments. PCSST makes learning actually fun and exciting.</div>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">A</div>
+                <div>
+                    <div class="testimonial-name">Aisha K.</div>
+                    <div class="testimonial-role">Student, 10th Grade</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="enroll">
+    <div class="cta-box fade-up">
+        <h2>Begin Your Child's Journey</h2>
+        <p>Enrollment is open for the 2026-2027 school year. Discover why families across Paterson choose PCSST for a world-class STEM education.</p>
+        <div class="cta-buttons">
+            <a href="https://www.pcsst.org" class="btn btn-gold">Start Application &rarr;</a>
+            <a href="https://www.pcsst.org" class="btn btn-blue">Schedule a Tour</a>
+        </div>
+        <div class="cta-contact">
+            <span>📞 <a href="tel:+19737427882">(973) 742-7882</a></span>
+            <span>📧 <a href="mailto:info@pcsst.org">info@pcsst.org</a></span>
+            <span>📍 Paterson, New Jersey</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3>PCSST</h3>
+            <p>Paterson Charter School for Science and Technology. Empowering students through STEM education since 1999.</p>
+        </div>
+        <div class="footer-col">
+            <h5>Academics</h5>
+            <a href="#">STEM Programs</a>
+            <a href="#">AP Courses</a>
+            <a href="#">Extracurriculars</a>
+            <a href="#">Athletics</a>
+        </div>
+        <div class="footer-col">
+            <h5>Admissions</h5>
+            <a href="#">Apply Now</a>
+            <a href="#">Tuition Info</a>
+            <a href="#">School Tours</a>
+            <a href="#">FAQs</a>
+        </div>
+        <div class="footer-col">
+            <h5>Connect</h5>
+            <a href="#">Parent Portal</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Careers</a>
+            <a href="#">News</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Paterson Charter School for Science and Technology</span>
+        <span>Privacy Policy &middot; Terms</span>
+    </div>
+</footer>
+
+<!-- SCROLL ANIMATIONS -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+<!-- SAM CHATBOT WIDGET -->
+<script
+    src="https://widget.trysam.co/chat.js"
+    data-tenant="pcsst"
+    data-color="#0433ff"
+    data-name="PCSST"
+    data-welcome="Hi! Ask me anything about PCSST — admissions, programs, tuition, or school life."
+    defer></script>
+
+</body>
+</html>
