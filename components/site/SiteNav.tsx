@@ -19,8 +19,8 @@ export default function SiteNav({ variant = 'home' }: { variant?: Variant }) {
     <nav className={styles.nav}>
       <div className={styles.inner}>
         <Link href="/" className={styles.brand}>
-          <span className={styles.brandMark}>S</span>
-          Sam
+          <img src="/sam-icon.png" alt="" width={32} height={32} className={styles.brandImg} />
+          SamAI
         </Link>
 
         <div className={`${styles.links} ${open ? styles.open : ''}`}>

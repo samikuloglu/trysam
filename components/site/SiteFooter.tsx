@@ -7,8 +7,8 @@ export default function SiteFooter() {
       <div className={styles.inner}>
         <div>
           <Link href="/" className={styles.brand}>
-            <span className={styles.brandMark}>S</span>
-            Sam
+            <img src="/sam-icon.png" alt="" width={32} height={32} className={styles.brandImg} />
+            SamAI
           </Link>
           <p className={styles.tag}>
             An AI assistant trained on your school. Built and maintained in

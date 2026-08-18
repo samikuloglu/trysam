@@ -394,13 +394,15 @@ input, textarea { font-family: inherit; }
   border: 0;
 }
 
-/* ─── Legacy compatibility (portal / widget / property pages) ─── */
+/* ─── Legacy compatibility (older pages that still reference --teal*) ───
+   Repointed to the SamAI navy so nothing renders the retired teal; kept as
+   aliases so those pages don't need per-file edits. */
 :root {
-  --teal: #0F6E56;
-  --teal-dark: #085041;
-  --teal-light: #E1F5EE;
-  --teal-glow: rgba(15, 110, 86, 0.25);
-  --accent-coral: #D63A4F;
+  --teal: #122947;
+  --teal-dark: #0d1f38;
+  --teal-light: #e8ecf4;
+  --teal-glow: rgba(18, 41, 71, 0.25);
+  --accent-coral: #C4634E;
 
   --warm-white: #FAFAF8;
   --cream: #F3F1EE;
@@ -416,8 +418,8 @@ input, textarea { font-family: inherit; }
   --surface-raised: #FFFFFF;
 
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-btn: 0 4px 16px rgba(15, 110, 86, 0.25);
-  --shadow-btn-hover: 0 6px 24px rgba(15, 110, 86, 0.35);
+  --shadow-btn: 0 4px 16px rgba(18, 41, 71, 0.25);
+  --shadow-btn-hover: 0 6px 24px rgba(18, 41, 71, 0.35);
 
   --font-body: var(--font-sans), 'Mulish', sans-serif;
   --text-xs: 0.75rem;

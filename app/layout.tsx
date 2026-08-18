@@ -27,16 +27,22 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sam — An intelligent assistant for small businesses',
-    template: '%s | Sam',
+    default: 'SamAI — An assistant that only answers from your school',
+    template: '%s | SamAI',
   },
   description:
-    'Sam is an AI assistant trained on your business that answers customer questions instantly — 24/7 — so your team can focus on the people in front of them.',
-  icons: { icon: '/favicon.svg' },
+    'SamAI is an AI assistant trained on your school’s own documents. It answers families instantly, 24/7, and is designed to decline rather than guess when the answer isn’t in your sources.',
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: '64x64', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     url: 'https://trysam.co',
-    siteName: 'Sam',
+    siteName: 'SamAI',
   },
 };
 

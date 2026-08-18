@@ -25,6 +25,11 @@
   letter-spacing: -0.02em;
   color: var(--navy);
 }
+.brandImg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
 .brandMark {
   width: 32px;
   height: 32px;

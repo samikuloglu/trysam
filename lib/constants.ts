@@ -1,7 +1,7 @@
 export const COMPANY = {
-  name: 'Sam',
+  name: 'SamAI',
   domain: 'trysam.co',
-  tagline: 'AI That Answers Questions So Your Team Doesn\'t Have To',
+  tagline: 'The assistant that only answers from your school\'s own documents',
   location: 'Built in New Jersey',
   year: 2026,
 };
