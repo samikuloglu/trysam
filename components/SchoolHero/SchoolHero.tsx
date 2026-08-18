@@ -26,7 +26,7 @@ export default function SchoolHero({ mailto }: SchoolHeroProps) {
           </h1>
           <p className={styles.sub}>
             When families can&apos;t find answers fast, they turn to unverified social
-            media groups, call your school, or just give up. Sam answers families
+            media groups, call your school, or just give up. SamAI answers families
             instantly &mdash; straight from the source &mdash; so you never lose a
             prospective family to silence.
           </p>
@@ -37,7 +37,7 @@ export default function SchoolHero({ mailto }: SchoolHeroProps) {
           <p className={styles.note}>Free demo &middot; No commitment &middot; We handle everything</p>
         </ScrollReveal>
         <ScrollReveal delay={0.2} direction="right" className={styles.chatWrap}>
-          <ChatMockup businessName="Ask Sam" messages={heroChat} />
+          <ChatMockup businessName="Ask SamAI" messages={heroChat} />
         </ScrollReveal>
       </div>
     </section>

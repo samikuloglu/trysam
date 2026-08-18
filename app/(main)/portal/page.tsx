@@ -18,7 +18,7 @@ export default function PortalPage() {
       <div className={styles.card}>
         <div className={styles.logo}>
           <span className={styles.logoDot} />
-          <span className={styles.logoText}>Sam</span>
+          <span className={styles.logoText}>SamAI</span>
         </div>
         <h1 className={styles.heading}>Client Portal</h1>
         <p className={styles.tagline}>Manage your AI assistant</p>

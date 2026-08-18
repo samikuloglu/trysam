@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import VerticalPageShell from '@/components/site/VerticalPageShell';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI for Medical Aesthetics & Med Spas',
+  title: 'SamAI — AI for Medical Aesthetics & Med Spas',
   description:
-    'Sam answers client questions about treatments, pricing, and downtime — and books consults — instantly, 24/7.',
+    'SamAI answers client questions about treatments, pricing, and downtime — and books consults — instantly, 24/7.',
   robots: { index: false, follow: false },
 };
 
-const SAMPLE = `You are Sam, the AI assistant for "Lume Aesthetics" — a sample medical aesthetics practice in Short Hills, NJ used to demo this product. Answer client questions briefly (1–3 sentences) in a discreet, professional tone. NEVER give medical advice or diagnose; route to a consult.
+const SAMPLE = `You are SamAI, the AI assistant for "Lume Aesthetics" — a sample medical aesthetics practice in Short Hills, NJ used to demo this product. Answer client questions briefly (1–3 sentences) in a discreet, professional tone. NEVER give medical advice or diagnose; route to a consult.
 
 Profile:
 - Medical Director: Dr. Rachel Voss, MD. NPs: Sara Lin, Megan O'Brien.
@@ -25,20 +25,20 @@ export default function MedicalAestheticsPage() {
   return (
     <VerticalPageShell
       variant="home"
-      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Aesthetics"
+      mailto="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request%20-%20Aesthetics"
       heroEyebrow="For Medical Aesthetics & Med Spas"
       heroHeading={
         <>
           Your clients research treatments <em>at 11pm in bed.</em>
         </>
       }
-      heroBody="Sam is an AI assistant trained on your practice. It answers questions about Botox, fillers, lasers, downtime, and pricing — discreetly and accurately — and books consults directly onto your calendar, even when your front desk is closed."
+      heroBody="SamAI is an AI assistant trained on your practice. It answers questions about Botox, fillers, lasers, downtime, and pricing — discreetly and accurately — and books consults directly onto your calendar, even when your front desk is closed."
       heroUrl="lumeaesthetics.com"
       placeholderTitle="Welcome to Lume Aesthetics"
       placeholderBody="Medical aesthetics in Short Hills, NJ. Board-certified physician oversight. Tox, filler, laser, microneedling, IV therapy."
       placeholderCards={['Treatments', 'Pricing', 'Consult']}
       chatStatus="Online · answering for Lume Aesthetics"
-      chatGreeting="Hi! I'm Sam, your assistant for Lume Aesthetics. How can I help today?"
+      chatGreeting="Hi! I'm SamAI, your assistant for Lume Aesthetics. How can I help today?"
       chatSuggestions={['How much is Botox?', "What's the downtime for fillers?", 'Free consult?']}
       chatSystemPrompt={SAMPLE}
       outcomeHeading={
@@ -50,17 +50,17 @@ export default function MedicalAestheticsPage() {
         {
           num: '3×',
           title: 'More booked consults',
-          body: "Clients won't call to ask about downtime — but they'll ask Sam. And they'll book the consult right after.",
+          body: "Clients won't call to ask about downtime — but they'll ask SamAI. And they'll book the consult right after.",
         },
         {
           num: '100%',
           title: 'On-brand voice',
-          body: 'Sam matches the tone of your practice — discreet, clinical, never salesy. We tune it on your existing copy and review every answer.',
+          body: 'SamAI matches the tone of your practice — discreet, clinical, never salesy. We tune it on your existing copy and review every answer.',
         },
         {
           num: '24/7',
           title: 'Available when clients are looking',
-          body: 'Most aesthetics research happens 9pm–midnight. Sam answers — and books — when your front desk is asleep.',
+          body: 'Most aesthetics research happens 9pm–midnight. SamAI answers — and books — when your front desk is asleep.',
         },
       ]}
       featureHeading={
@@ -69,46 +69,46 @@ export default function MedicalAestheticsPage() {
           <em>All the awkward questions, answered.</em>
         </>
       }
-      featureBody="How much is a syringe of filler? How long is downtime for a CO2 laser? Am I a candidate for Sculptra at 32? Can I get Botox while breastfeeding? Sam answers from your clinical guide — accurately, discreetly, and never with medical advice — and books the consult."
+      featureBody="How much is a syringe of filler? How long is downtime for a CO2 laser? Am I a candidate for Sculptra at 32? Can I get Botox while breastfeeding? SamAI answers from your clinical guide — accurately, discreetly, and never with medical advice — and books the consult."
       featureBrandTitle="Lume Aesthetics"
       featureMiniMessages={[
         { role: 'user', text: 'Botox?' },
         {
           role: 'bot',
-          text: 'Sam quotes from your menu and notes that final pricing is set at consult based on units needed.',
+          text: 'SamAI quotes from your menu and notes that final pricing is set at consult based on units needed.',
         },
         { role: 'user', text: 'Downtime?' },
       ]}
       qbankHeading={
         <>
-          The kinds of questions Sam handles for med spas{' '}
+          The kinds of questions SamAI handles for med spas{' '}
           <em>discreetly, 24/7.</em>
         </>
       }
       qbank={[
         {
           q: 'How much is a syringe of Restylane?',
-          a: 'Sam quotes from your menu and notes that final pricing is set at consult based on units needed.',
+          a: 'SamAI quotes from your menu and notes that final pricing is set at consult based on units needed.',
         },
         {
           q: "What's the downtime for fractional CO2?",
-          a: 'Sam answers from your post-care guide — typical 5–7 days social downtime — and offers a consult.',
+          a: 'SamAI answers from your post-care guide — typical 5–7 days social downtime — and offers a consult.',
         },
         {
           q: 'Am I a candidate for Botox?',
-          a: 'Sam explains general candidacy and routes to a complimentary consult with your nurse practitioner — never medical advice.',
+          a: 'SamAI explains general candidacy and routes to a complimentary consult with your nurse practitioner — never medical advice.',
         },
         {
           q: 'Do you offer payment plans for laser packages?',
-          a: 'Sam describes your Cherry/Affirm options and the deposit terms.',
+          a: 'SamAI describes your Cherry/Affirm options and the deposit terms.',
         },
         {
           q: 'How soon can I get a consult?',
-          a: 'Sam shows the next 3 open consult slots and books directly.',
+          a: 'SamAI shows the next 3 open consult slots and books directly.',
         },
         {
           q: 'Do you have weekend appointments?',
-          a: 'Sam answers from your schedule — typically alternating Saturdays — and offers to add to the waitlist if full.',
+          a: 'SamAI answers from your schedule — typically alternating Saturdays — and offers to add to the waitlist if full.',
         },
       ]}
       roiInquiriesDefault={200}
@@ -121,7 +121,7 @@ export default function MedicalAestheticsPage() {
       roiMinutesDefault={9}
       roiMinutesMin={2}
       roiMinutesMax={20}
-      testimonialQuote={"\"Sam answers the questions clients won't ask a person. Our consult bookings doubled in the first month.\""}
+      testimonialQuote={"\"SamAI answers the questions clients won't ask a person. Our consult bookings doubled in the first month.\""}
       testimonialName="Dr. Rachel Voss"
       testimonialCategory="Aesthetics"
       testimonialOrg="Medical Director, Lume Aesthetics"

@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import VerticalPageShell from '@/components/site/VerticalPageShell';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI for Wedding & Event Venues',
+  title: 'SamAI — AI for Wedding & Event Venues',
   description:
-    "Sam answers couples' questions about pricing, dates, capacity, and amenities instantly — and books venue tours directly onto your calendar.",
+    "SamAI answers couples' questions about pricing, dates, capacity, and amenities instantly — and books venue tours directly onto your calendar.",
   robots: { index: false, follow: false },
 };
 
-const SAMPLE = `You are Sam, the AI assistant for "Stone River Estate" — a sample 1920s Hudson Valley wedding venue used to demo this product. Answer couples' questions briefly (1–3 sentences) in a warm, professional tone.
+const SAMPLE = `You are SamAI, the AI assistant for "Stone River Estate" — a sample 1920s Hudson Valley wedding venue used to demo this product. Answer couples' questions briefly (1–3 sentences) in a warm, professional tone.
 
 Profile:
 - Stone barn (180 seated) + lawn (240 standing). 12-acre garden estate.
@@ -26,20 +26,20 @@ export default function VenuesPage() {
   return (
     <VerticalPageShell
       variant="home"
-      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Venues"
+      mailto="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request%20-%20Venues"
       heroEyebrow="For Wedding & Event Venues"
       heroHeading={
         <>
           Couples plan their wedding <em>on a Sunday at midnight.</em>
         </>
       }
-      heroBody="Sam is an AI assistant trained on your venue. It answers questions about availability, capacity, packages, and what's included — and books tour appointments directly onto your calendar — so your event manager isn't drowning in repeat emails."
+      heroBody="SamAI is an AI assistant trained on your venue. It answers questions about availability, capacity, packages, and what's included — and books tour appointments directly onto your calendar — so your event manager isn't drowning in repeat emails."
       heroUrl="stoneriverestate.com"
       placeholderTitle="Welcome to Stone River Estate"
       placeholderBody="A 1920s Hudson Valley estate with a 12-acre garden, restored stone barn, and 180-guest capacity. Hosting weddings since 1998."
       placeholderCards={['Tour', 'Packages', 'Dates']}
       chatStatus="Online · answering for Stone River Estate"
-      chatGreeting="Hi! I'm Sam, your assistant for Stone River Estate. How can I help today?"
+      chatGreeting="Hi! I'm SamAI, your assistant for Stone River Estate. How can I help today?"
       chatSuggestions={['Is May 2026 available?', 'What does the package include?', 'How many guests fit?']}
       chatSystemPrompt={SAMPLE}
       outcomeHeading={
@@ -56,60 +56,60 @@ export default function VenuesPage() {
         {
           num: '$0',
           title: 'Lost weekend inquiries',
-          body: 'Most venue research happens Friday–Sunday. Sam answers it all instead of letting it sit in your inbox until Monday.',
+          body: 'Most venue research happens Friday–Sunday. SamAI answers it all instead of letting it sit in your inbox until Monday.',
         },
         {
           num: '1 hr',
           title: 'Saved per couple',
-          body: 'Sam handles the first 8 questions every couple asks. Your event manager only joins for the conversation that\'s actually ready to book.',
+          body: 'SamAI handles the first 8 questions every couple asks. Your event manager only joins for the conversation that\'s actually ready to book.',
         },
       ]}
       featureHeading={
         <>
           Pricing, dates, capacity, the bar.{' '}
-          <em>Sam handles the first ten questions.</em>
+          <em>SamAI handles the first ten questions.</em>
         </>
       }
-      featureBody="Is October 12th still open? What does the off-season package include? Is there a bridal suite? Can we bring our own caterer? Do you have liability insurance for fireworks? Sam answers all of it from your packet — and books a tour for the couples who are actually ready."
+      featureBody="Is October 12th still open? What does the off-season package include? Is there a bridal suite? Can we bring our own caterer? Do you have liability insurance for fireworks? SamAI answers all of it from your packet — and books a tour for the couples who are actually ready."
       featureBrandTitle="Stone River Estate"
       featureMiniMessages={[
         { role: 'user', text: 'Oct 12?' },
         {
           role: 'bot',
-          text: 'Sam checks your booking calendar and confirms availability — or suggests the closest open Saturdays.',
+          text: 'SamAI checks your booking calendar and confirms availability — or suggests the closest open Saturdays.',
         },
         { role: 'user', text: 'Tour?' },
       ]}
       qbankHeading={
         <>
-          The kinds of questions Sam handles for venues{' '}
+          The kinds of questions SamAI handles for venues{' '}
           <em>while you&apos;re running an event.</em>
         </>
       }
       qbank={[
         {
           q: 'Is October 12, 2026 still available?',
-          a: 'Sam checks your booking calendar and confirms availability — or suggests the closest open Saturdays.',
+          a: 'SamAI checks your booking calendar and confirms availability — or suggests the closest open Saturdays.',
         },
         {
           q: 'What does the Saturday package include?',
-          a: 'Sam itemizes from your contract: rental hours, tables and chairs, prep kitchen, ceremony rehearsal, day-of coordinator.',
+          a: 'SamAI itemizes from your contract: rental hours, tables and chairs, prep kitchen, ceremony rehearsal, day-of coordinator.',
         },
         {
           q: "What's your max guest count?",
-          a: 'Sam answers by space — barn 180 seated, lawn 240 standing — and notes the over-200 surcharge if relevant.',
+          a: 'SamAI answers by space — barn 180 seated, lawn 240 standing — and notes the over-200 surcharge if relevant.',
         },
         {
           q: 'Can we use our own caterer?',
-          a: 'Sam explains your preferred-caterer list, the off-list policy, and the licensing requirements you require.',
+          a: 'SamAI explains your preferred-caterer list, the off-list policy, and the licensing requirements you require.',
         },
         {
           q: 'Is there a bridal suite?',
-          a: 'Sam describes the room, the prep time included, and offers to share photos.',
+          a: 'SamAI describes the room, the prep time included, and offers to share photos.',
         },
         {
           q: 'Can we tour next Saturday?',
-          a: 'Sam offers tour slots (Saturdays 11am and 2pm by appointment) and books directly into your calendar.',
+          a: 'SamAI offers tour slots (Saturdays 11am and 2pm by appointment) and books directly into your calendar.',
         },
       ]}
       roiInquiriesDefault={140}

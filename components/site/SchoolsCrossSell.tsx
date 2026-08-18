@@ -22,7 +22,7 @@ export default function SchoolsCrossSell({
       <section className="section section-warm">
         <div className="frame">
           <div className={styles.block}>
-            <div className="eyebrow">Sam now focuses on</div>
+            <div className="eyebrow">SamAI now focuses on</div>
             <h2 className={`h-1 ${styles.h}`}>Private and charter schools.</h2>
             <div className={styles.btns}>
               <Link href="/private" className="btn">

@@ -10,11 +10,11 @@ import { DEMO_MAILTO } from '@/lib/constants';
 import styles from './page.module.css';
 
 const features = [
-  { icon: <MessageCircle />, title: 'Natural Conversations', desc: 'Sam chats like a real team member — warm, specific, and helpful. Not a robotic FAQ bot.' },
+  { icon: <MessageCircle />, title: 'Natural Conversations', desc: 'SamAI chats like a real team member — warm, specific, and helpful. Not a robotic FAQ bot.' },
   { icon: <Zap />, title: 'Instant Responses', desc: 'Customers get accurate answers in seconds, not hours. No waiting for callbacks or email replies.' },
-  { icon: <Shield />, title: 'Trained on Your Business', desc: 'Sam only answers from your approved content. It doesn\'t guess, hallucinate, or go off-script.' },
-  { icon: <UserPlus />, title: 'Lead Capture', desc: 'Sam naturally collects names, emails, and phone numbers during conversations. Every chat is a warm lead.' },
-  { icon: <Globe />, title: 'Works 24/7', desc: 'Nights, weekends, holidays. Sam never sleeps, never calls in sick, never puts anyone on hold.' },
+  { icon: <Shield />, title: 'Trained on Your Business', desc: 'SamAI only answers from your approved content. It doesn\'t guess, hallucinate, or go off-script.' },
+  { icon: <UserPlus />, title: 'Lead Capture', desc: 'SamAI naturally collects names, emails, and phone numbers during conversations. Every chat is a warm lead.' },
+  { icon: <Globe />, title: 'Works 24/7', desc: 'Nights, weekends, holidays. SamAI never sleeps, never calls in sick, never puts anyone on hold.' },
   { icon: <BarChart />, title: 'Conversation Analytics', desc: 'See what customers are asking, which questions come up most, and where they drop off.' },
 ];
 
@@ -27,9 +27,9 @@ const integrations = [
 ];
 
 const howItWorksSteps = [
-  { title: 'Give us your website URL', description: 'That\'s all we need to get started. We pull your hours, services, pricing, and policies directly from your site. Want Sam to know something that isn\'t on your website? Just send it over — but it\'s completely optional.' },
-  { title: 'We customize your widget', description: 'We match Sam\'s appearance to your brand — colors, tone, greeting message. You approve before it goes live.' },
-  { title: 'Paste one line of code', description: 'Add a single script tag to your site. Sam appears as a chat bubble in the corner. That\'s it — you\'re live.' },
+  { title: 'Give us your website URL', description: 'That\'s all we need to get started. We pull your hours, services, pricing, and policies directly from your site. Want SamAI to know something that isn\'t on your website? Just send it over — but it\'s completely optional.' },
+  { title: 'We customize your widget', description: 'We match SamAI\'s appearance to your brand — colors, tone, greeting message. You approve before it goes live.' },
+  { title: 'Paste one line of code', description: 'Add a single script tag to your site. SamAI appears as a chat bubble in the corner. That\'s it — you\'re live.' },
 ];
 
 export default function WidgetPage() {
@@ -38,16 +38,16 @@ export default function WidgetPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <ScrollReveal>
-          <div className={styles.heroBadge}>The Sam Widget</div>
+          <div className={styles.heroBadge}>The SamAI Widget</div>
           <h1 className={styles.heroTitle}>
             A chat widget that actually knows{' '}
             <span className={styles.heroTitleAccent}>your business.</span>
           </h1>
           <p className={styles.heroSub}>
-            Not a generic chatbot. Sam is trained on your specific content — your policies, your pricing, your hours — and answers questions exactly the way you would.
+            Not a generic chatbot. SamAI is trained on your specific content — your policies, your pricing, your hours — and answers questions exactly the way you would.
           </p>
           <a href={DEMO_MAILTO} className={styles.heroBtn}>
-            Ask Sam About Pricing
+            Ask SamAI About Pricing
             <ArrowRight size={18} />
           </a>
           <p className={styles.heroNote}>Custom-built for your business · We handle everything</p>
@@ -73,7 +73,7 @@ export default function WidgetPage() {
           <SectionHeader
             label="Features"
             title="Everything you need. Nothing you don't."
-            subtitle="Sam is designed to be simple, accurate, and genuinely useful for small businesses."
+            subtitle="SamAI is designed to be simple, accurate, and genuinely useful for small businesses."
           />
           <div className={styles.featuresGrid}>
             {features.map((f, i) => (
@@ -97,7 +97,7 @@ export default function WidgetPage() {
               <h3>Customization</h3>
               <h2>Matches your brand. Speaks your tone.</h2>
               <p>
-                Sam isn&rsquo;t a one-size-fits-all chatbot. We customize the widget colors, greeting message, and conversational tone to match your brand. It feels like a natural part of your website, not a bolted-on tool.
+                SamAI isn&rsquo;t a one-size-fits-all chatbot. We customize the widget colors, greeting message, and conversational tone to match your brand. It feels like a natural part of your website, not a bolted-on tool.
               </p>
             </div>
           </ScrollReveal>
@@ -119,7 +119,7 @@ export default function WidgetPage() {
         <SectionHeader
           label="Integrations"
           title="Works with any website."
-          subtitle="One line of code. That's all it takes to add Sam to your site."
+          subtitle="One line of code. That's all it takes to add SamAI to your site."
         />
         <div className={styles.integrationsGrid}>
           {integrations.map((int, i) => (
@@ -138,9 +138,9 @@ export default function WidgetPage() {
 
       {/* Final CTA */}
       <CTASection
-        title="Curious about pricing? Ask Sam."
-        subtitle="We don't list pricing on our website because every business is different. Ask Sam — it knows our plans inside and out."
-        buttonText="Ask Sam About Pricing"
+        title="Curious about pricing? Ask SamAI."
+        subtitle="We don't list pricing on our website because every business is different. Ask SamAI — it knows our plans inside and out."
+        buttonText="Ask SamAI About Pricing"
         buttonHref={DEMO_MAILTO}
         variant="teal"
       />

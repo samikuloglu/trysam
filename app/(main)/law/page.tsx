@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import VerticalPageShell from '@/components/site/VerticalPageShell';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI for Law Firms',
+  title: 'SamAI — AI for Law Firms',
   description:
-    'Sam screens new matter inquiries 24/7, answers basic intake questions, and books consults — without your paralegals on the phone.',
+    'SamAI screens new matter inquiries 24/7, answers basic intake questions, and books consults — without your paralegals on the phone.',
   robots: { index: false, follow: false },
 };
 
-const SAMPLE = `You are Sam, the AI assistant for "Harrington & Associates" — a sample family and estate law firm in Westfield, NJ used to demo this product. Answer prospective-client questions briefly (1–3 sentences) in a warm, professional tone. NEVER give legal advice; route to a consult.
+const SAMPLE = `You are SamAI, the AI assistant for "Harrington & Associates" — a sample family and estate law firm in Westfield, NJ used to demo this product. Answer prospective-client questions briefly (1–3 sentences) in a warm, professional tone. NEVER give legal advice; route to a consult.
 
 Profile:
 - Founded 2004. Three partners: Megan Harrington (managing), David Cho, Lisa Pereira.
@@ -25,7 +25,7 @@ export default function LawPage() {
   return (
     <VerticalPageShell
       variant="home"
-      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Law"
+      mailto="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request%20-%20Law"
       heroEyebrow="For Law Firms"
       heroHeading={
         <>
@@ -33,13 +33,13 @@ export default function LawPage() {
           <em>the night something goes wrong.</em>
         </>
       }
-      heroBody="Sam is an AI assistant trained on your firm. It answers practice-area questions, screens new matter inquiries, and books consults — 24/7, in plain English — so your paralegals aren't on the phone with people who aren't actually a fit."
+      heroBody="SamAI is an AI assistant trained on your firm. It answers practice-area questions, screens new matter inquiries, and books consults — 24/7, in plain English — so your paralegals aren't on the phone with people who aren't actually a fit."
       heroUrl="harringtonlaw.com"
       placeholderTitle="Welcome to Harrington & Associates"
       placeholderBody="Family and estate law in Westfield, NJ. Founded 2004. Three partners, plain-English advice, fixed-fee planning available."
       placeholderCards={['Practice Areas', 'Fees', 'Consult']}
       chatStatus="Online · answering for Harrington & Associates"
-      chatGreeting="Hi! I'm Sam, your assistant for Harrington & Associates. How can I help today?"
+      chatGreeting="Hi! I'm SamAI, your assistant for Harrington & Associates. How can I help today?"
       chatSuggestions={['Do you do divorce?', "What's a consult cost?", 'Estate planning fees?']}
       chatSystemPrompt={SAMPLE}
       outcomeHeading={
@@ -51,17 +51,17 @@ export default function LawPage() {
         {
           num: '60%',
           title: 'Of intake calls deflected',
-          body: 'Most inquiries are about practice areas, fees, and how a consult works. Sam handles them so paralegals only join the calls that matter.',
+          body: 'Most inquiries are about practice areas, fees, and how a consult works. SamAI handles them so paralegals only join the calls that matter.',
         },
         {
           num: '24/7',
           title: 'Coverage for the moments that matter',
-          body: "Family law and estate inquiries don't happen 9–5. Sam captures the lead, answers the obvious questions, and routes urgency correctly.",
+          body: "Family law and estate inquiries don't happen 9–5. SamAI captures the lead, answers the obvious questions, and routes urgency correctly.",
         },
         {
           num: '0',
           title: 'Legal advice given',
-          body: 'Sam never gives legal advice — by design. It explains practice areas, fees, and process; everything else routes to a consult with an attorney.',
+          body: 'SamAI never gives legal advice — by design. It explains practice areas, fees, and process; everything else routes to a consult with an attorney.',
         },
       ]}
       featureHeading={
@@ -70,46 +70,46 @@ export default function LawPage() {
           <em>Never legal advice.</em>
         </>
       }
-      featureBody="Do you handle contested divorces? What does an estate plan cost? Can you take a personal injury case in PA? What's involved in a free 15-minute consult? Sam answers from your firm overview — and books a consult — without ever crossing into advice. Privileged questions route straight to an attorney."
+      featureBody="Do you handle contested divorces? What does an estate plan cost? Can you take a personal injury case in PA? What's involved in a free 15-minute consult? SamAI answers from your firm overview — and books a consult — without ever crossing into advice. Privileged questions route straight to an attorney."
       featureBrandTitle="Harrington & Associates"
       featureMiniMessages={[
         { role: 'user', text: 'Estate?' },
         {
           role: 'bot',
-          text: 'Sam confirms practice areas, explains your typical scope of representation, and offers a 15-minute screening consult.',
+          text: 'SamAI confirms practice areas, explains your typical scope of representation, and offers a 15-minute screening consult.',
         },
         { role: 'user', text: 'Fees?' },
       ]}
       qbankHeading={
         <>
-          The kinds of questions Sam handles for firms{' '}
+          The kinds of questions SamAI handles for firms{' '}
           <em>without ever giving legal advice.</em>
         </>
       }
       qbank={[
         {
           q: 'Do you handle contested divorces?',
-          a: 'Sam confirms practice areas, explains your typical scope of representation, and offers a 15-minute screening consult.',
+          a: 'SamAI confirms practice areas, explains your typical scope of representation, and offers a 15-minute screening consult.',
         },
         {
           q: 'How much does an estate plan cost?',
-          a: "Sam quotes your fixed-fee package range, what's included, and the consult that finalizes the quote.",
+          a: "SamAI quotes your fixed-fee package range, what's included, and the consult that finalizes the quote.",
         },
         {
           q: 'Can you take a slip-and-fall case in Pennsylvania?',
-          a: "Sam confirms jurisdiction, refers out where you don't practice, and books a consult where you do.",
+          a: "SamAI confirms jurisdiction, refers out where you don't practice, and books a consult where you do.",
         },
         {
           q: 'How does the free consult work?',
-          a: 'Sam explains the 15-minute screening — non-privileged scope discussion — and books the slot directly.',
+          a: 'SamAI explains the 15-minute screening — non-privileged scope discussion — and books the slot directly.',
         },
         {
           q: 'Do you offer payment plans?',
-          a: 'Sam answers from your fee policy — fixed-fee for planning, retainer for litigation, plans available case-by-case.',
+          a: 'SamAI answers from your fee policy — fixed-fee for planning, retainer for litigation, plans available case-by-case.',
         },
         {
           q: 'How long does a typical divorce take?',
-          a: 'Sam gives general timing ranges from your firm overview, and notes that the actual answer depends on facts only an attorney can review.',
+          a: 'SamAI gives general timing ranges from your firm overview, and notes that the actual answer depends on facts only an attorney can review.',
         },
       ]}
       roiInquiriesDefault={110}
@@ -122,7 +122,7 @@ export default function LawPage() {
       roiMinutesDefault={12}
       roiMinutesMin={2}
       roiMinutesMax={20}
-      testimonialQuote='"Our paralegals were screening eight calls to find one real client. Sam handles the seven, and we get the one."'
+      testimonialQuote='"Our paralegals were screening eight calls to find one real client. SamAI handles the seven, and we get the one."'
       testimonialName="Megan Harrington"
       testimonialCategory="Law"
       testimonialOrg="Managing Partner, Harrington & Associates"

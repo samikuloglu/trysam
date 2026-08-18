@@ -126,7 +126,7 @@ export default function VerticalPageShell(p: Props) {
       <FeatureBlock
         background="soft"
         reverse
-        eyebrow="What Sam handles"
+        eyebrow="What SamAI handles"
         heading={p.featureHeading}
         body={p.featureBody}
         cta={{ href: '#roi', label: 'See the ROI' }}
@@ -194,7 +194,7 @@ export default function VerticalPageShell(p: Props) {
         background="soft"
         heading={
           <>
-            See what Sam saves you <em>every month.</em>
+            See what SamAI saves you <em>every month.</em>
           </>
         }
         inquiriesDefault={p.roiInquiriesDefault}

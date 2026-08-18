@@ -38,7 +38,7 @@ export default function SiteNav({ variant = 'home' }: { variant?: Variant }) {
 
         <div className={styles.cta}>
           <a
-            href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request"
+            href="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request"
             className={styles.ctaBtn}
           >
             Get Started

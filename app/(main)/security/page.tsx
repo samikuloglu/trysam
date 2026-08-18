@@ -5,9 +5,9 @@ import SiteFooter from '@/components/site/SiteFooter';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Security & Privacy — Sam',
+  title: 'Security & Privacy — SamAI',
   description:
-    'How Sam handles your school\u2019s data. FERPA-aware design, PII redaction, configurable retention, audit logs.',
+    'How SamAI handles your school\u2019s data. FERPA-aware design, PII redaction, configurable retention, audit logs.',
 };
 
 export default function SecurityPage() {
@@ -22,10 +22,10 @@ export default function SecurityPage() {
             Designed for FERPA-aware <em>data handling.</em>
           </h1>
           <p className={styles.lede}>
-            Sam is in active development. The page below is a working summary
+            SamAI is in active development. The page below is a working summary
             of how we handle data today &mdash; not a marketing sheet, not a
-            certification claim. If you&apos;re reviewing Sam for IT, email{' '}
-            <a href="mailto:sami@trysam.co?subject=Sam%20Security%20Review">
+            certification claim. If you&apos;re reviewing SamAI for IT, email{' '}
+            <a href="mailto:sami@trysam.co?subject=SamAI%20Security%20Review">
               sami@trysam.co
             </a>{' '}
             and we&apos;ll send the current write-up with full details.
@@ -88,7 +88,7 @@ export default function SecurityPage() {
           </div>
 
           <div className={styles.note}>
-            <strong>What this page is not.</strong> Sam does not currently
+            <strong>What this page is not.</strong> SamAI does not currently
             advertise SOC&nbsp;2 or other formal certifications. We&apos;re
             happy to walk through our current controls in detail and to scope
             additional requirements with your school. Final compliance review

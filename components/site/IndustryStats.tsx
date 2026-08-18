@@ -41,7 +41,7 @@ export default function IndustryStats() {
         </h3>
         <p className={styles.lede}>
           Public benchmarks from NAIS and the Enrollment Management
-          Association — the gap Sam is built to close.
+          Association — the gap SamAI is built to close.
         </p>
       </div>
       <div className={styles.grid}>
@@ -62,7 +62,7 @@ export default function IndustryStats() {
         ))}
       </div>
       <p className={styles.note}>
-        Numbers above are public industry benchmarks, not Sam customer
+        Numbers above are public industry benchmarks, not SamAI customer
         results. We&rsquo;ll publish first-customer outcomes once they&rsquo;re
         verifiable on the customer&rsquo;s own letterhead.
       </p>

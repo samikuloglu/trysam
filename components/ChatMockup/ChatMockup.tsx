@@ -67,7 +67,7 @@ export default function ChatMockup({ businessName, messages, className }: ChatMo
       <div className={styles.header}>
         <div className={styles.avatar}>S</div>
         <div>
-          <div className={styles.headerName}>Sam &middot; {businessName}</div>
+          <div className={styles.headerName}>SamAI &middot; {businessName}</div>
           <div className={styles.headerStatus}>Online now</div>
         </div>
       </div>

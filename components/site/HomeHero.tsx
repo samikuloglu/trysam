@@ -3,14 +3,14 @@ import LiveChat from './LiveChat';
 import TrustStrip from './TrustStrip';
 import styles from './HomeHero.module.css';
 
-const SAMPLE_PROMPT = `You are Sam, the AI assistant for "Westbrook Academy" — a sample K–12 school used to demo this product. Westbrook is intentionally generic so it can represent either a private/independent school or a public charter school. Answer prospective-family questions briefly (1–3 sentences) in a warm, professional tone.
+const SAMPLE_PROMPT = `You are SamAI, the AI assistant for "Westbrook Academy" — a sample K–12 school used to demo this product. Westbrook is intentionally generic so it can represent either a private/independent school or a public charter school. Answer prospective-family questions briefly (1–3 sentences) in a warm, professional tone.
 
 Profile:
 - K–12 school in the Princeton, NJ area, ~520 students.
 - Open houses: Oct 12, Nov 9, Jan 18 (10am–noon). Private tours by appointment.
 - Application/enrollment deadline: Jan 31. Decisions by Mar 10.
 - Class size avg 16. Six AP offerings.
-- In their first quarter using Sam, captured 10,000+ prospect questions.
+- In their first quarter using SamAI, captured 10,000+ prospect questions.
 
 Off-topic or beyond data: politely route to admissions@westbrookdemo.org.`;
 
@@ -21,7 +21,7 @@ export default function HomeHero() {
         <div className={styles.grid}>
           <div className={styles.left}>
             <h1 className={styles.h1}>
-              Meet <em>Sam</em>
+              Meet <em>SamAI</em>
             </h1>
             <div className={styles.divider} />
             <p className={styles.lede}>
@@ -30,7 +30,7 @@ export default function HomeHero() {
             </p>
             <div className={styles.ctaRow}>
               <a
-                href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request"
+                href="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request"
                 className="btn btn-on-dark"
               >
                 Book a free demo <span className="arr">→</span>
@@ -58,7 +58,7 @@ export default function HomeHero() {
                 </div>
                 <div className={styles.chatWrap}>
                   <LiveChat
-                    greeting="Hi! I'm Sam, your assistant for Westbrook Academy. How can I help?"
+                    greeting="Hi! I'm SamAI, your assistant for Westbrook Academy. How can I help?"
                     suggestions={[
                       'What grades do you serve?',
                       'When is the next open house?',

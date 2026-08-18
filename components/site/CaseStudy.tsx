@@ -24,8 +24,8 @@ export default function CaseStudy() {
       <div className={styles.body}>
         <h3 className={styles.h3}>Westbrook Academy</h3>
         <p className={styles.p}>
-          Westbrook launched Sam as an after-hours admissions tool. To the school&apos;s
-          surprise, Sam answered over 10,000 prospect questions in the first quarter
+          Westbrook launched SamAI as an after-hours admissions tool. To the school&apos;s
+          surprise, SamAI answered over 10,000 prospect questions in the first quarter
           — and saved the admissions team more than 1,000 hours of intake calls.
         </p>
         <Link href="/private" className={styles.link}>

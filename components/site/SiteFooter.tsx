@@ -33,17 +33,17 @@ export default function SiteFooter() {
           <h4>Get in touch</h4>
           <ul>
             <li><a href="mailto:sami@trysam.co">sami@trysam.co</a></li>
-            <li><a href="mailto:sami@trysam.co?subject=Sam%20Demo%20Request">Book a demo</a></li>
+            <li><a href="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request">Book a demo</a></li>
           </ul>
         </div>
       </div>
       <div className={styles.compliance}>
-        Sam is designed for FERPA-aware data handling. PII redaction,
+        SamAI is designed for FERPA-aware data handling. PII redaction,
         configurable retention, audit logs. Final compliance review with your
         school before any production deployment.
       </div>
       <div className={styles.bottom}>
-        <span>© 2026 Sam · trysam.co</span>
+        <span>© 2026 SamAI · trysam.co</span>
         <span>Made in New Jersey</span>
       </div>
     </footer>

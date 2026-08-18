@@ -48,7 +48,7 @@ function KnowledgeBaseVisual() {
       ))}
       <div className={styles.kbLaptop}>
         <div className={styles.kbScreen}>
-          <div className={styles.kbScreenTitle}>Sam Knowledge Base</div>
+          <div className={styles.kbScreenTitle}>SamAI Knowledge Base</div>
           <div className={styles.kbRow} />
           <div className={styles.kbRow} />
           <div className={styles.kbRowSplit}>
@@ -234,7 +234,7 @@ const tabs: Tab[] = [
     panelTitle: 'Conversations That Make Sense',
     panelBody: (
       <>
-        Unlike other chatbots, Sam is context-aware. It remembers conversation
+        Unlike other chatbots, SamAI is context-aware. It remembers conversation
         details, understands user intent, and personalizes responses for a natural,
         human-like interaction that supports engagement.
       </>
@@ -248,9 +248,9 @@ const tabs: Tab[] = [
     panelTitle: 'Unmatched Information Access',
     panelBody: (
       <>
-        There&apos;s no limit to the number of webpages Sam can index, and with the
+        There&apos;s no limit to the number of webpages SamAI can index, and with the
         ability to understand diverse file formats like PDFs, iCals, PPTs, and
-        more, Sam provides comprehensive and accurate answers &mdash; taking the
+        more, SamAI provides comprehensive and accurate answers &mdash; taking the
         burden off your administrative staff.
       </>
     ),
@@ -263,7 +263,7 @@ const tabs: Tab[] = [
     panelTitle: 'Your Brand, Your Bot',
     panelBody: (
       <>
-        Tailor Sam to your school&apos;s brand. Customize the name (e.g., your
+        Tailor SamAI to your school&apos;s brand. Customize the name (e.g., your
         mascot), colors, fonts, and even the tone of responses to create a
         seamless and on-brand experience for <strong>your</strong> audience.
       </>
@@ -293,7 +293,7 @@ export default function FeatureTabs() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.tabs} role="tablist" aria-label="Sam features">
+        <div className={styles.tabs} role="tablist" aria-label="SamAI features">
           {tabs.map((t, i) => (
             <button
               key={t.key}

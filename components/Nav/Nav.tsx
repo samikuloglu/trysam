@@ -42,7 +42,7 @@ export default function Nav() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <Link href="/" className={styles.logo}>
         <span className={styles.logoDot} />
-        Sam
+        SamAI
       </Link>
       <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
         <Link

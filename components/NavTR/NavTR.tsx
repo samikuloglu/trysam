@@ -17,7 +17,7 @@ export default function NavTR() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <Link href="/tr/giris" className={styles.logo}>
         <span className={styles.logoDot} />
-        Sam
+        SamAI
       </Link>
       <Link href="/portal" className={styles.link}>
         Müşteri Portalı

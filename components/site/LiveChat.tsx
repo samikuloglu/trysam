@@ -71,7 +71,7 @@ export default function LiveChat({ greeting, suggestions, systemPrompt, status }
       <div className="cw-head">
         <div className="cw-avatar">S</div>
         <div>
-          <div className="cw-title">Sam</div>
+          <div className="cw-title">SamAI</div>
           <div className="cw-status">{status}</div>
         </div>
         <div className="cw-actions">
@@ -122,7 +122,7 @@ export default function LiveChat({ greeting, suggestions, systemPrompt, status }
         />
         <button type="submit" disabled={busy} aria-label="Send">→</button>
       </form>
-      <div className="cw-foot">Powered by Sam · trysam.co</div>
+      <div className="cw-foot">Powered by SamAI · trysam.co</div>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export default function MiniChat({
       <div className={`cw-head ${styles.head}`}>
         <div className={`cw-avatar ${styles.avatar}`}>S</div>
         <div>
-          <div className={`cw-title ${styles.title}`}>Sam</div>
+          <div className={`cw-title ${styles.title}`}>SamAI</div>
           <div className={`cw-status ${styles.status}`}>Online</div>
         </div>
       </div>

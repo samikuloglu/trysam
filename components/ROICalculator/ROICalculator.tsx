@@ -35,7 +35,7 @@ export default function ROICalculator() {
       <div className={styles.inner}>
         <ScrollReveal className={styles.header}>
           <div className={styles.eyebrow}>Your ROI Potential</div>
-          <h2 className={styles.title}>How much staff time could Sam recover?</h2>
+          <h2 className={styles.title}>How much staff time could SamAI recover?</h2>
           <p className={styles.subtitle}>
             Adjust the sliders to match your school&apos;s numbers and see your
             estimated annual savings.
@@ -92,12 +92,12 @@ export default function ROICalculator() {
 
             <div className={styles.note}>
               Based on <strong>{fmtNum(questionsPerMonth)} parent questions/month</strong>{' '}
-              resolved by Sam for a school your size.
+              resolved by SamAI for a school your size.
             </div>
           </div>
 
           <div className={styles.right}>
-            <div className={styles.rightLabel}>Estimated Savings With Sam</div>
+            <div className={styles.rightLabel}>Estimated Savings With SamAI</div>
             <p className={styles.rightSub}>
               Based on industry benchmark data &mdash; 10 min saved per resolved
               question.
@@ -122,7 +122,7 @@ export default function ROICalculator() {
             {beatsAverage && (
               <div className={styles.callout}>
                 Your projected <strong>{fmtNum(hrsPerMonth)} hrs/month</strong> exceeds
-                the average of 53 hrs saved by schools using Sam.
+                the average of 53 hrs saved by schools using SamAI.
               </div>
             )}
 

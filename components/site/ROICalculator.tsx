@@ -26,7 +26,7 @@ interface Props {
 export default function ROICalculator({
   eyebrow = 'Your ROI Potential',
   heading,
-  subtitle = 'Adjust the inputs to match your school. Sam typically resolves 70% of inquiries without staff time.',
+  subtitle = 'Adjust the inputs to match your school. SamAI typically resolves 70% of inquiries without staff time.',
   inquiriesDefault = 800,
   inquiriesMin = 50,
   inquiriesMax = 5000,
@@ -124,7 +124,7 @@ export default function ROICalculator({
               </div>
             </div>
             <div className={styles.callout}>
-              <strong>Sam handles 70%</strong> of these without staff time.
+              <strong>SamAI handles 70%</strong> of these without staff time.
             </div>
           </div>
 
@@ -149,7 +149,7 @@ export default function ROICalculator({
             </div>
             <div className={styles.note}>
               <strong>{resolved.toLocaleString()}</strong> inquiries / month
-              resolved by Sam without staff time. Plus the ones you would have lost
+              resolved by SamAI without staff time. Plus the ones you would have lost
               overnight or on weekends.
             </div>
           </div>

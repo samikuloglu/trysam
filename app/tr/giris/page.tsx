@@ -30,14 +30,14 @@ const howItWorksSteps = [
   {
     /* TRANSLATE: Give us your website URL */
     title: 'Web sitenizin adresini verin',
-    /* TRANSLATE: That's all we need to get started. We pull your hours, services, pricing, and policies directly from your site. Want Sam to know something that isn't on your website? Just send it over — but it's completely optional. */
+    /* TRANSLATE: That's all we need to get started. We pull your hours, services, pricing, and policies directly from your site. Want SamAI to know something that isn't on your website? Just send it over — but it's completely optional. */
     description: 'Başlamak için tek ihtiyacımız bu. Çalışma saatlerinizi, hizmetlerinizi, fiyatlarınızı ve politikalarınızı doğrudan sitenizden alıyoruz. Web sitenizde olmayan bir bilgi mi var? Gönderin yeter — ama tamamen isteğe bağlı.',
   },
   {
     /* TRANSLATE: We build your assistant */
     title: 'Asistanınızı biz kurarız',
-    /* TRANSLATE: Sam learns your rates, policies, hours, services — everything. It answers questions exactly the way you would. */
-    description: 'Sam fiyatlarınızı, politikalarınızı, çalışma saatlerinizi ve hizmetlerinizi öğrenir. Soruları tıpkı sizin gibi yanıtlar.',
+    /* TRANSLATE: SamAI learns your rates, policies, hours, services — everything. It answers questions exactly the way you would. */
+    description: 'SamAI fiyatlarınızı, politikalarınızı, çalışma saatlerinizi ve hizmetlerinizi öğrenir. Soruları tıpkı sizin gibi yanıtlar.',
   },
   {
     /* TRANSLATE: One line of code */
@@ -60,12 +60,12 @@ export default function TurkishLandingPage() {
               {/* TRANSLATE: Your customers have questions. */}
               Müşterilerinizin soruları var.
               <br />
-              {/* TRANSLATE: Sam has the answers. */}
-              <span className={styles.heroTitleAccent}>Sam yanıtlıyor.</span>
+              {/* TRANSLATE: SamAI has the answers. */}
+              <span className={styles.heroTitleAccent}>SamAI yanıtlıyor.</span>
             </h1>
-            {/* TRANSLATE: Sam is an AI assistant that lives on your website and answers customer questions about your business — accurately, 24/7 — so your team can focus on what matters. */}
+            {/* TRANSLATE: SamAI is an AI assistant that lives on your website and answers customer questions about your business — accurately, 24/7 — so your team can focus on what matters. */}
             <p className={styles.heroSub}>
-              Sam, web sitenizde yaşayan ve işletmenizle ilgili müşteri sorularını 7/24 doğru şekilde yanıtlayan bir yapay zeka asistanıdır. Ekibiniz önemli işlere odaklanabilir.
+              SamAI, web sitenizde yaşayan ve işletmenizle ilgili müşteri sorularını 7/24 doğru şekilde yanıtlayan bir yapay zeka asistanıdır. Ekibiniz önemli işlere odaklanabilir.
             </p>
             <div className={styles.heroCtas}>
               <a
@@ -79,7 +79,7 @@ export default function TurkishLandingPage() {
                 WhatsApp ile Yazın
               </a>
               <a
-                href="mailto:PLACEHOLDER_EMAIL?subject=Sam%20Demo%20Talebi"
+                href="mailto:PLACEHOLDER_EMAIL?subject=SamAI%20Demo%20Talebi"
                 className={`${styles.heroBtn} ${styles.heroBtnEmail}`}
               >
                 <Mail size={18} />
@@ -141,11 +141,11 @@ export default function TurkishLandingPage() {
       {/* Who It's For — Turkish Verticals */}
       <section className={styles.verticalsSection}>
         <div className={styles.verticalsInner}>
-          {/* TRANSLATE: label="Who It's For" title="Built for businesses that answer the same questions every day." subtitle="Sam is trained on your specific business, so it answers questions exactly the way you would." */}
+          {/* TRANSLATE: label="Who It's For" title="Built for businesses that answer the same questions every day." subtitle="SamAI is trained on your specific business, so it answers questions exactly the way you would." */}
           <SectionHeader
             label="Kimler İçin"
             title="Her gün aynı soruları yanıtlayan işletmeler için."
-            subtitle="Sam, sizin işletmenize özel eğitilir. Soruları tıpkı sizin yanıtlayacağınız gibi yanıtlar."
+            subtitle="SamAI, sizin işletmenize özel eğitilir. Soruları tıpkı sizin yanıtlayacağınız gibi yanıtlar."
           />
           <ScrollReveal staggerChildren={0.1} className={styles.verticalsGrid}>
             <div className={styles.verticalCard}>
@@ -193,8 +193,8 @@ export default function TurkishLandingPage() {
       <section className={styles.ctaSection}>
         <ScrollReveal>
           <div className={styles.ctaInner}>
-            {/* TRANSLATE: See what Sam looks like for your business. */}
-            <h2 className={styles.ctaTitle}>Sam&apos;in işletmeniz için nasıl çalıştığını görün.</h2>
+            {/* TRANSLATE: See what SamAI looks like for your business. */}
+            <h2 className={styles.ctaTitle}>SamAI&apos;in işletmeniz için nasıl çalıştığını görün.</h2>
             {/* TRANSLATE: Write to us. We'll show you a live demo built with your real business info — no commitment. */}
             <p className={styles.ctaSubtitle}>Bize yazın. İşletmenize özel canlı bir demo gösterelim — hiçbir taahhüt yok.</p>
             <div className={styles.ctaCtas}>
@@ -209,7 +209,7 @@ export default function TurkishLandingPage() {
                 WhatsApp ile Yazın
               </a>
               <a
-                href="mailto:PLACEHOLDER_EMAIL?subject=Sam%20Demo%20Talebi"
+                href="mailto:PLACEHOLDER_EMAIL?subject=SamAI%20Demo%20Talebi"
                 className={styles.ctaBtnEmail}
               >
                 <Mail size={18} />

@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import VerticalPageShell from '@/components/site/VerticalPageShell';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI Admissions Assistant for Private Schools',
+  title: 'SamAI — AI Admissions Assistant for Private Schools',
   description:
-    'Sam turns prospective families browsing your admissions page at midnight into actual tour bookings — instantly, 24/7.',
+    'SamAI turns prospective families browsing your admissions page at midnight into actual tour bookings — instantly, 24/7.',
 };
 
-const SAMPLE = `You are Sam, the AI admissions assistant for "Oakridge Academy" — a sample independent K–12 day school in Princeton, NJ used to demo this product. Answer prospective-family questions briefly (1–3 sentences) in a warm, professional tone.
+const SAMPLE = `You are SamAI, the AI admissions assistant for "Oakridge Academy" — a sample independent K–12 day school in Princeton, NJ used to demo this product. Answer prospective-family questions briefly (1–3 sentences) in a warm, professional tone.
 
 Profile:
 - Founded 1958. K–12 day school, ~480 students.
@@ -24,7 +24,7 @@ export default function PrivateSchoolsPage() {
   return (
     <VerticalPageShell
       variant="private"
-      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Private"
+      mailto="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request%20-%20Private"
       heroEyebrow="For Private Schools"
       heroHeading={
         <>
@@ -32,15 +32,15 @@ export default function PrivateSchoolsPage() {
           <em>after the kids go to bed.</em>
         </>
       }
-      heroBody="Sam is an AI assistant trained on your school. It answers admissions questions, books campus tours, and captures interested families — including the ones browsing at 11pm — so your admissions team isn't chasing cold leads on Monday."
-      heroPrimaryCta={{ label: 'Book a 20-minute demo', href: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Private' }}
+      heroBody="SamAI is an AI assistant trained on your school. It answers admissions questions, books campus tours, and captures interested families — including the ones browsing at 11pm — so your admissions team isn't chasing cold leads on Monday."
+      heroPrimaryCta={{ label: 'Book a 20-minute demo', href: 'mailto:sami@trysam.co?subject=SamAI%20Demo%20Request%20-%20Private' }}
       heroSecondaryCta={{ label: 'See the ROI', href: '#roi' }}
       heroUrl="oakridgeacademy.org"
       placeholderTitle="Welcome to Oakridge Academy"
       placeholderBody="Independent K–12 day school in Princeton, NJ. Founded 1958. Small classes, six AP courses, 100% college placement."
       placeholderCards={['Admissions', 'Tuition', 'Visit']}
       chatStatus="Online · answering for Oakridge Academy"
-      chatGreeting="Hi! I'm Sam, your admissions assistant for Oakridge Academy. How can I help?"
+      chatGreeting="Hi! I'm SamAI, your admissions assistant for Oakridge Academy. How can I help?"
       chatSuggestions={['What is tuition?', 'When is the next open house?', 'Do you offer aid?']}
       chatSystemPrompt={SAMPLE}
       outcomeHeading={
@@ -62,7 +62,7 @@ export default function PrivateSchoolsPage() {
         {
           num: '100%',
           title: 'Trained on your viewbook',
-          body: 'Sam answers from your admissions handbook, tuition sheet, and FAQ — and politely routes anything else to your team.',
+          body: 'SamAI answers from your admissions handbook, tuition sheet, and FAQ — and politely routes anything else to your team.',
         },
       ]}
       featureHeading={
@@ -70,46 +70,46 @@ export default function PrivateSchoolsPage() {
           From inquiry to scheduled tour, <em>without a single email.</em>
         </>
       }
-      featureBody="Tuition by grade band. Application deadlines. Financial aid availability. Whether you offer transportation from a specific town. The next open house date. Sam answers from your handbook, then offers to book the family directly onto your tour calendar."
+      featureBody="Tuition by grade band. Application deadlines. Financial aid availability. Whether you offer transportation from a specific town. The next open house date. SamAI answers from your handbook, then offers to book the family directly onto your tour calendar."
       featureBrandTitle="Oakridge Academy"
       featureMiniMessages={[
         { role: 'user', text: 'Tuition?' },
         {
           role: 'bot',
-          text: 'Sam pulls from your admissions calendar and offers to RSVP the family directly.',
+          text: 'SamAI pulls from your admissions calendar and offers to RSVP the family directly.',
         },
         { role: 'user', text: 'Tours?' },
       ]}
       qbankHeading={
         <>
-          The kinds of admissions questions Sam handles{' '}
+          The kinds of admissions questions SamAI handles{' '}
           <em>without staff time.</em>
         </>
       }
       qbank={[
         {
           q: 'When is your next open house?',
-          a: 'Sam pulls from your admissions calendar and offers to RSVP the family directly.',
+          a: 'SamAI pulls from your admissions calendar and offers to RSVP the family directly.',
         },
         {
           q: 'How much is tuition for 7th grade?',
-          a: 'Sam quotes the right grade band and notes sibling discounts or aid eligibility.',
+          a: 'SamAI quotes the right grade band and notes sibling discounts or aid eligibility.',
         },
         {
           q: 'Do you offer financial aid?',
-          a: 'Sam explains your aid program, average award, and links to the application process.',
+          a: 'SamAI explains your aid program, average award, and links to the application process.',
         },
         {
           q: "What's the application deadline for fall 2026?",
-          a: 'Sam answers from your admissions calendar and offers to send a reminder.',
+          a: 'SamAI answers from your admissions calendar and offers to send a reminder.',
         },
         {
           q: 'Do you have a bus from Hopewell?',
-          a: 'Sam answers from your transportation map and shares the morning pickup time if available.',
+          a: 'SamAI answers from your transportation map and shares the morning pickup time if available.',
         },
         {
           q: "What's your average class size?",
-          a: 'Sam quotes the number from your viewbook and adds context — student-teacher ratio, advisory size, etc.',
+          a: 'SamAI quotes the number from your viewbook and adds context — student-teacher ratio, advisory size, etc.',
         },
       ]}
       roiInquiriesDefault={180}
@@ -130,7 +130,7 @@ export default function PrivateSchoolsPage() {
         eyebrow: 'Built for private school admissions',
         heading: <>Designed for the way enrollment <em>actually works.</em></>,
         subhead:
-          "Sam isn't a generic chatbot pointed at your website. Every feature here was built because a private school admissions director asked for it.",
+          "SamAI isn't a generic chatbot pointed at your website. Every feature here was built because a private school admissions director asked for it.",
         liveHeading: 'Available today',
         roadmapHeading: 'On the roadmap',
         features: [
@@ -138,7 +138,7 @@ export default function PrivateSchoolsPage() {
             status: 'live',
             title: 'Tour & open-house booking',
             body:
-              'Sam books tours directly into your admissions calendar. Confirmation email to the family, calendar invite to your team.',
+              'SamAI books tours directly into your admissions calendar. Confirmation email to the family, calendar invite to your team.',
           },
           {
             status: 'live',
@@ -150,13 +150,13 @@ export default function PrivateSchoolsPage() {
             status: 'live',
             title: 'Financial aid intake',
             body:
-              'Sam answers FA questions the right way and routes interested families to your application — without bogging down your admissions team.',
+              'SamAI answers FA questions the right way and routes interested families to your application — without bogging down your admissions team.',
           },
           {
             status: 'live',
             title: 'After-hours capture',
             body:
-              "Most prospective families research after 8pm. Sam captures them when your office is closed and they're actively comparing schools.",
+              "Most prospective families research after 8pm. SamAI captures them when your office is closed and they're actively comparing schools.",
           },
           {
             status: 'live',
@@ -174,7 +174,7 @@ export default function PrivateSchoolsPage() {
             status: 'live',
             title: 'Knowledge gap reporting',
             body:
-              "Weekly email of questions Sam couldn't answer, so you know what's missing from your site.",
+              "Weekly email of questions SamAI couldn't answer, so you know what's missing from your site.",
           },
           {
             status: 'live',
@@ -185,7 +185,7 @@ export default function PrivateSchoolsPage() {
           {
             status: 'May 2026',
             title: 'Multilingual (Spanish, Turkish, Arabic, Mandarin)',
-            body: 'Parents ask in their language; Sam answers in their language.',
+            body: 'Parents ask in their language; SamAI answers in their language.',
           },
           {
             status: 'May 2026',

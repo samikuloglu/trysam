@@ -3,7 +3,7 @@ import styles from './DashboardCard.module.css';
 export default function DashboardCard() {
   return (
     <div className={styles.card}>
-      <div className={styles.head}>Sam Dashboard · This week</div>
+      <div className={styles.head}>SamAI Dashboard · This week</div>
       <div className={styles.grid}>
         <div className={styles.tile}>
           <h5>CSAT Score</h5>

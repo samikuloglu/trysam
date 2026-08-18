@@ -4,16 +4,16 @@ import FooterTR from '@/components/FooterTR/FooterTR';
 import SamWidget from '@/components/SamWidget/SamWidget';
 
 export const metadata: Metadata = {
-  title: 'Sam — Müşteri Sorularını Yapay Zeka ile Yanıtlayın',
+  title: 'SamAI — Müşteri Sorularını Yapay Zeka ile Yanıtlayın',
   description:
-    'Sam, web sitenizde yaşayan ve müşteri sorularını 7/24 doğru şekilde yanıtlayan bir yapay zeka asistanıdır.',
+    'SamAI, web sitenizde yaşayan ve müşteri sorularını 7/24 doğru şekilde yanıtlayan bir yapay zeka asistanıdır.',
   openGraph: {
     type: 'website',
     url: 'https://trysam.co/tr/giris',
-    siteName: 'Sam',
-    title: 'Sam — Müşteri Sorularını Yapay Zeka ile Yanıtlayın',
+    siteName: 'SamAI',
+    title: 'SamAI — Müşteri Sorularını Yapay Zeka ile Yanıtlayın',
     description:
-      'Sam, web sitenizde yaşayan ve müşteri sorularını 7/24 doğru şekilde yanıtlayan bir yapay zeka asistanıdır.',
+      'SamAI, web sitenizde yaşayan ve müşteri sorularını 7/24 doğru şekilde yanıtlayan bir yapay zeka asistanıdır.',
   },
 };
 

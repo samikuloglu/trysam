@@ -7,9 +7,9 @@ import OutcomeStats from '@/components/site/OutcomeStats';
 import CTABanner from '@/components/site/CTABanner';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI Assistant for Private & Charter Schools',
+  title: 'SamAI — AI Assistant for Private & Charter Schools',
   description:
-    "Sam is an AI assistant trained on your school. It answers your families accurately, around the clock, in their language — grounded in your handbook, calendar, and policies.",
+    "SamAI is an AI assistant trained on your school. It answers your families accurately, around the clock, in their language — grounded in your handbook, calendar, and policies.",
 };
 
 export default function HomePage() {
@@ -24,7 +24,7 @@ export default function HomePage() {
         eyebrow="Which best describes your school?"
         heading={
           <>
-            Two paths. Same <em>Sam.</em>
+            Two paths. Same <em>SamAI.</em>
           </>
         }
         cta="Learn more"
@@ -34,16 +34,16 @@ export default function HomePage() {
             icon: 'P',
             title: 'For Private Schools',
             body:
-              'Tuition-supported. Admissions-driven. Sam answers tuition and financial aid questions, books campus tours, and captures inquiries from families researching at midnight.',
-            cta: 'See Sam for private schools',
+              'Tuition-supported. Admissions-driven. SamAI answers tuition and financial aid questions, books campus tours, and captures inquiries from families researching at midnight.',
+            cta: 'See SamAI for private schools',
           },
           {
             href: '/charter',
             icon: 'C',
             title: 'For Charter Schools',
             body:
-              'Tuition-free. Lottery-based. Sam answers enrollment, lottery, and sibling-preference questions across one campus or an entire network — without bloating your front office.',
-            cta: 'See Sam for charter schools',
+              'Tuition-free. Lottery-based. SamAI answers enrollment, lottery, and sibling-preference questions across one campus or an entire network — without bloating your front office.',
+            cta: 'See SamAI for charter schools',
           },
         ]}
       />
@@ -52,19 +52,19 @@ export default function HomePage() {
         eyebrow="What you get"
         heading={
           <>
-            Three things Sam does, <em>for every school.</em>
+            Three things SamAI does, <em>for every school.</em>
           </>
         }
         stats={[
           {
             num: '01',
             title: 'Grounded in your school',
-            body: "Sam answers from your handbook, calendar, and policy pages — and politely says “I don't know” when it's not confident, instead of guessing.",
+            body: "SamAI answers from your handbook, calendar, and policy pages — and politely says “I don't know” when it's not confident, instead of guessing.",
           },
           {
             num: '02',
             title: 'Multilingual for your families',
-            body: 'Parents ask in their language; Sam answers in their language. Spanish, Turkish, Arabic, Mandarin and more — no toggles, no setup.',
+            body: 'Parents ask in their language; SamAI answers in their language. Spanish, Turkish, Arabic, Mandarin and more — no toggles, no setup.',
           },
           {
             num: '03',
@@ -81,7 +81,7 @@ export default function HomePage() {
           </>
         }
         body="20 minutes on a call. We'll show you a live demo trained on your school's real info. No commitment, no slide deck."
-        buttonHref="mailto:sami@trysam.co?subject=Sam%20Demo%20Request"
+        buttonHref="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request"
         buttonLabel="Book a 20-minute demo"
       />
 

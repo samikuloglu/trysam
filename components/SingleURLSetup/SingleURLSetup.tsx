@@ -9,7 +9,7 @@ export default function SingleURLSetup() {
           <div className={styles.eyebrow}>Effortless Setup</div>
           <h2 className={styles.title}>Built from a single URL.</h2>
           <p className={styles.body}>
-            Your knowledge base can be built straight from your website. Sam pulls
+            Your knowledge base can be built straight from your website. SamAI pulls
             your tuition, programs, admissions, and campus life &mdash; and keeps
             learning from every conversation.
           </p>
@@ -27,7 +27,7 @@ export default function SingleURLSetup() {
             </svg>
           </div>
           <div className={styles.kbCard}>
-            <div className={styles.kbCardTitle}>Sam Knowledge Base</div>
+            <div className={styles.kbCardTitle}>SamAI Knowledge Base</div>
             <div className={styles.kbRow} />
             <div className={styles.kbRow} />
             <div className={styles.kbRowSplit}>

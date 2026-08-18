@@ -6,9 +6,9 @@ import CTABanner from '@/components/site/CTABanner';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'How Sam Works — Sam',
+  title: 'How SamAI Works — SamAI',
   description:
-    'How Sam ingests your school content, answers a question, escalates when it doesn\u2019t know, and what you see on your end.',
+    'How SamAI ingests your school content, answers a question, escalates when it doesn\u2019t know, and what you see on your end.',
 };
 
 export default function HowItWorksPage() {
@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
             <em>traceable end-to-end.</em>
           </h1>
           <p className={styles.heroLede}>
-            Sam isn&apos;t a generic LLM pointed at your website. It&apos;s a
+            SamAI isn&apos;t a generic LLM pointed at your website. It&apos;s a
             retrieval pipeline built from scratch around what schools
             actually need: grounded answers, source citations, escalation when
             confidence is low, and a transcript of every conversation. Here&apos;s
@@ -38,13 +38,13 @@ export default function HowItWorksPage() {
           <div className={styles.row}>
             <div className={styles.rowText}>
               <div className={styles.step}>01</div>
-              <h2 className="h-1">What Sam needs from your school <em>to get started.</em></h2>
+              <h2 className="h-1">What SamAI needs from your school <em>to get started.</em></h2>
               <p className="lede">
-                Most schools already have everything Sam needs. We start from
+                Most schools already have everything SamAI needs. We start from
                 the content you&apos;ve already written.
               </p>
               <ul className={styles.list}>
-                <li>Your school website (Sam crawls and re-crawls automatically)</li>
+                <li>Your school website (SamAI crawls and re-crawls automatically)</li>
                 <li>Your admissions or enrollment handbook (PDF is fine)</li>
                 <li>Your academic and admissions calendars</li>
                 <li>Policy documents you want answered: tuition sheets, lottery rules, dress code, transportation, FA, etc.</li>
@@ -56,7 +56,7 @@ export default function HowItWorksPage() {
             </div>
             <div className={styles.rowVisual}>
               <div className={styles.assetCard}>
-                <div className={styles.assetLabel}>Sources Sam ingests</div>
+                <div className={styles.assetLabel}>Sources SamAI ingests</div>
                 <ul className={styles.assetList}>
                   <li><span>·</span> yourschool.org <em>(crawled)</em></li>
                   <li><span>·</span> Admissions handbook.pdf</li>
@@ -77,7 +77,7 @@ export default function HowItWorksPage() {
           <div className={`${styles.row} ${styles.rowReverse}`}>
             <div className={styles.rowText}>
               <div className={styles.step}>02</div>
-              <h2 className="h-1">How Sam <em>learns your school.</em></h2>
+              <h2 className="h-1">How SamAI <em>learns your school.</em></h2>
               <p className="lede">
                 We don&apos;t just point an LLM at your website and call it a
                 day. The retrieval pipeline was built from scratch — no
@@ -86,7 +86,7 @@ export default function HowItWorksPage() {
               </p>
               <ol className={styles.steps}>
                 <li>
-                  <strong>Crawl.</strong> Sam crawls your website and the documents you&apos;ve uploaded. Every page becomes a source.
+                  <strong>Crawl.</strong> SamAI crawls your website and the documents you&apos;ve uploaded. Every page becomes a source.
                 </li>
                 <li>
                   <strong>Chunk.</strong> Long pages are split semantically — by section, not by character count — so a tuition table doesn&apos;t get cut in half.
@@ -98,7 +98,7 @@ export default function HowItWorksPage() {
                   <strong>Manual review.</strong> Before you go live, we walk through edge cases — what should happen if a parent asks about something not in your handbook, what should never be answered, what should always escalate.
                 </li>
                 <li>
-                  <strong>Re-index.</strong> When you update your website or upload new policies, Sam re-indexes automatically. No re-training, no downtime.
+                  <strong>Re-index.</strong> When you update your website or upload new policies, SamAI re-indexes automatically. No re-training, no downtime.
                 </li>
               </ol>
             </div>
@@ -121,18 +121,18 @@ export default function HowItWorksPage() {
           <div className={styles.row}>
             <div className={styles.rowText}>
               <div className={styles.step}>03</div>
-              <h2 className="h-1">How Sam <em>answers a question.</em></h2>
+              <h2 className="h-1">How SamAI <em>answers a question.</em></h2>
               <p className="lede">
-                Every answer is retrieval-augmented and source-attributed. If Sam isn&apos;t confident, it says so — instead of guessing.
+                Every answer is retrieval-augmented and source-attributed. If SamAI isn&apos;t confident, it says so — instead of guessing.
               </p>
               <ol className={styles.steps}>
-                <li><strong>Parent asks a question</strong> in any language Sam supports.</li>
-                <li><strong>Sam retrieves</strong> the most relevant chunks from your indexed content.</li>
-                <li><strong>Sam answers</strong> in the parent&apos;s language, citing the source page the answer came from.</li>
-                <li><strong>If confidence is low</strong>, Sam declines politely and offers to escalate to your team.</li>
+                <li><strong>Parent asks a question</strong> in any language SamAI supports.</li>
+                <li><strong>SamAI retrieves</strong> the most relevant chunks from your indexed content.</li>
+                <li><strong>SamAI answers</strong> in the parent&apos;s language, citing the source page the answer came from.</li>
+                <li><strong>If confidence is low</strong>, SamAI declines politely and offers to escalate to your team.</li>
               </ol>
               <p className={styles.note}>
-                This is the part that earns the no-hallucinations claim. Sam can only answer from sources you&apos;ve approved. It cannot make up tuition figures, application deadlines, or policies that don&apos;t exist in your content.
+                This is the part that earns the no-hallucinations claim. SamAI can only answer from sources you&apos;ve approved. It cannot make up tuition figures, application deadlines, or policies that don&apos;t exist in your content.
               </p>
             </div>
             <div className={styles.rowVisual}>
@@ -144,7 +144,7 @@ export default function HowItWorksPage() {
                   <span>Source:</span> Tuition &amp; aid sheet, p. 2
                 </div>
                 <div className={styles.qaA}>
-                  Sam quotes the Middle School band, notes the sibling discount, and links the family to the financial aid application.
+                  SamAI quotes the Middle School band, notes the sibling discount, and links the family to the financial aid application.
                 </div>
                 <div className={styles.qaCite}>
                   Cited: <em>tuition-2026.pdf · oakridge.org/admissions/aid</em>
@@ -160,15 +160,15 @@ export default function HowItWorksPage() {
           <div className={`${styles.row} ${styles.rowReverse}`}>
             <div className={styles.rowText}>
               <div className={styles.step}>04</div>
-              <h2 className="h-1">When Sam doesn&apos;t know, <em>or gets it wrong.</em></h2>
+              <h2 className="h-1">When SamAI doesn&apos;t know, <em>or gets it wrong.</em></h2>
               <p className="lede">
                 The fear &mdash; &ldquo;what if this embarrasses our school?&rdquo; &mdash; is the right fear. Here&apos;s how we address it.
               </p>
               <ul className={styles.list}>
-                <li><strong>Polite decline.</strong> If Sam&apos;s confidence is low, it says so plainly and offers to route the parent to your team.</li>
+                <li><strong>Polite decline.</strong> If SamAI&apos;s confidence is low, it says so plainly and offers to route the parent to your team.</li>
                 <li><strong>Escalation routing.</strong> Configurable handoff to email or your front office, with the parent&apos;s question and contact info attached.</li>
-                <li><strong>Knowledge gap reporting.</strong> Weekly email of every question Sam couldn&apos;t answer, so you know what&apos;s missing from your site.</li>
-                <li><strong>Transcript review.</strong> Every conversation is browsable. You can search, flag, and correct &mdash; the corrections feed back into Sam&apos;s sources.</li>
+                <li><strong>Knowledge gap reporting.</strong> Weekly email of every question SamAI couldn&apos;t answer, so you know what&apos;s missing from your site.</li>
+                <li><strong>Transcript review.</strong> Every conversation is browsable. You can search, flag, and correct &mdash; the corrections feed back into SamAI&apos;s sources.</li>
               </ul>
             </div>
             <div className={styles.rowVisual}>
@@ -218,7 +218,7 @@ export default function HowItWorksPage() {
             <div className={styles.rowVisual}>
               <div className={styles.dash}>
                 <div className={styles.dashHead}>
-                  <span>Sam · Admin</span>
+                  <span>SamAI · Admin</span>
                   <span className={styles.dashTag}>Wireframe placeholder</span>
                 </div>
                 <div className={styles.dashGrid}>
@@ -273,7 +273,7 @@ export default function HowItWorksPage() {
                   <strong>Day 5 &mdash; Review.</strong> We walk you through the dashboard and a transcript of test conversations. You flag anything that should never be said and anything that should always escalate.
                 </li>
                 <li>
-                  <strong>Day 6&ndash;7 &mdash; Launch.</strong> Single line of script on your site. Sam is live. You watch the first day of real conversations from the dashboard.
+                  <strong>Day 6&ndash;7 &mdash; Launch.</strong> Single line of script on your site. SamAI is live. You watch the first day of real conversations from the dashboard.
                 </li>
               </ol>
               <p className={styles.note}>
@@ -301,7 +301,7 @@ export default function HowItWorksPage() {
               <div className={styles.step}>07</div>
               <h2 className="h-1">Data, FERPA, <em>and security.</em></h2>
               <p className="lede">
-                Sam is designed for FERPA-aware data handling. Final compliance review with your school before any production deployment.
+                SamAI is designed for FERPA-aware data handling. Final compliance review with your school before any production deployment.
               </p>
               <ul className={styles.list}>
                 <li><strong>PII redaction</strong> on inbound messages before they hit logs.</li>
@@ -341,7 +341,7 @@ export default function HowItWorksPage() {
           </>
         }
         body="20 minutes on a call. We'll show you a live demo trained on your school's real info. No commitment, no slide deck."
-        buttonHref="mailto:sami@trysam.co?subject=Sam%20Demo%20Request"
+        buttonHref="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request"
         buttonLabel="Book a 20-minute demo"
       />
 

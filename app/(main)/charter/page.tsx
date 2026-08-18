@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import VerticalPageShell from '@/components/site/VerticalPageShell';
 
 export const metadata: Metadata = {
-  title: 'Sam — AI Enrollment Assistant for Charter Schools',
+  title: 'SamAI — AI Enrollment Assistant for Charter Schools',
   description:
-    'Sam answers lottery, enrollment, and sibling-preference questions for charter schools — across one campus or an entire network. 24/7, instantly.',
+    'SamAI answers lottery, enrollment, and sibling-preference questions for charter schools — across one campus or an entire network. 24/7, instantly.',
 };
 
-const SAMPLE = `You are Sam, the AI enrollment assistant for "Lighthouse Charter Academy" — a sample tuition-free public charter school used to demo this product. Answer prospective-family questions briefly (1–3 sentences) in a warm, professional tone.
+const SAMPLE = `You are SamAI, the AI enrollment assistant for "Lighthouse Charter Academy" — a sample tuition-free public charter school used to demo this product. Answer prospective-family questions briefly (1–3 sentences) in a warm, professional tone.
 
 Profile:
 - Tuition-free public charter school, grades K–8.
@@ -25,7 +25,7 @@ export default function CharterSchoolsPage() {
   return (
     <VerticalPageShell
       variant="charter"
-      mailto="mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Charter"
+      mailto="mailto:sami@trysam.co?subject=SamAI%20Demo%20Request%20-%20Charter"
       heroEyebrow="For Charter Schools"
       heroHeading={
         <>
@@ -33,15 +33,15 @@ export default function CharterSchoolsPage() {
           <em>Monday morning.</em>
         </>
       }
-      heroBody="Sam is an AI assistant trained on your school. It answers lottery, enrollment, and sibling-preference questions — in the languages your families speak — so your front office isn't drowning in repeat phone calls during lottery week."
-      heroPrimaryCta={{ label: 'Book a 20-minute demo', href: 'mailto:sami@trysam.co?subject=Sam%20Demo%20Request%20-%20Charter' }}
+      heroBody="SamAI is an AI assistant trained on your school. It answers lottery, enrollment, and sibling-preference questions — in the languages your families speak — so your front office isn't drowning in repeat phone calls during lottery week."
+      heroPrimaryCta={{ label: 'Book a 20-minute demo', href: 'mailto:sami@trysam.co?subject=SamAI%20Demo%20Request%20-%20Charter' }}
       heroSecondaryCta={{ label: 'See the ROI', href: '#roi' }}
       heroUrl="lighthousecharter.org"
       placeholderTitle="Welcome to Lighthouse Charter Academy"
       placeholderBody="Tuition-free public charter school. Grades K–8 in Newark, NJ. Founded 2008."
       placeholderCards={['Apply', 'Lottery', 'Visit']}
       chatStatus="Online · answering for Lighthouse Charter"
-      chatGreeting="Hi! I'm Sam, your enrollment assistant for Lighthouse Charter. How can I help?"
+      chatGreeting="Hi! I'm SamAI, your enrollment assistant for Lighthouse Charter. How can I help?"
       chatSuggestions={[
         'When is the lottery?',
         'How does sibling preference work?',
@@ -76,46 +76,46 @@ export default function CharterSchoolsPage() {
           <em>without phone tag.</em>
         </>
       }
-      featureBody="Lottery dates and rules. Sibling preference. Whether your school is tuition-free. Bus routes and zoning. Grade availability. Waitlist mechanics. Sam answers from your enrollment handbook, then walks the family right to your application form."
+      featureBody="Lottery dates and rules. Sibling preference. Whether your school is tuition-free. Bus routes and zoning. Grade availability. Waitlist mechanics. SamAI answers from your enrollment handbook, then walks the family right to your application form."
       featureBrandTitle="Lighthouse Charter"
       featureMiniMessages={[
         { role: 'user', text: 'Lottery?' },
         {
           role: 'bot',
-          text: 'Sam pulls from your enrollment calendar and offers to send a reminder before the deadline.',
+          text: 'SamAI pulls from your enrollment calendar and offers to send a reminder before the deadline.',
         },
         { role: 'user', text: 'Siblings?' },
       ]}
       qbankHeading={
         <>
-          The kinds of enrollment questions Sam handles{' '}
+          The kinds of enrollment questions SamAI handles{' '}
           <em>without staff time.</em>
         </>
       }
       qbank={[
         {
           q: 'When is the lottery?',
-          a: 'Sam pulls from your enrollment calendar and offers to send a reminder before the deadline.',
+          a: 'SamAI pulls from your enrollment calendar and offers to send a reminder before the deadline.',
         },
         {
           q: 'How does sibling preference work?',
-          a: 'Sam explains your sibling rule, who qualifies, and how it affects placement odds.',
+          a: 'SamAI explains your sibling rule, who qualifies, and how it affects placement odds.',
         },
         {
           q: 'Is your school tuition-free?',
-          a: 'Sam confirms your charter status and explains how it differs from private and district schools.',
+          a: 'SamAI confirms your charter status and explains how it differs from private and district schools.',
         },
         {
           q: 'Is there a waitlist for 4th grade?',
-          a: 'Sam quotes your current waitlist length by grade and explains how movement typically works.',
+          a: 'SamAI quotes your current waitlist length by grade and explains how movement typically works.',
         },
         {
           q: 'Do I need to live in Newark to apply?',
-          a: 'Sam answers from your eligibility rules — district preference, state-wide, or otherwise.',
+          a: 'SamAI answers from your eligibility rules — district preference, state-wide, or otherwise.',
         },
         {
           q: 'Is there a bus from East Orange?',
-          a: 'Sam answers from your transportation map and shares pickup details if available.',
+          a: 'SamAI answers from your transportation map and shares pickup details if available.',
         },
       ]}
       roiInquiriesDefault={300}
@@ -136,7 +136,7 @@ export default function CharterSchoolsPage() {
         eyebrow: 'Built for charter schools',
         heading: <>The features charter schools <em>actually need.</em></>,
         subhead:
-          "Charter schools don't have admissions teams. They have front offices answering the same questions in three languages all day. Sam was built for that.",
+          "Charter schools don't have admissions teams. They have front offices answering the same questions in three languages all day. SamAI was built for that.",
         liveHeading: 'Available today',
         roadmapHeading: 'On the roadmap',
         features: [
@@ -144,7 +144,7 @@ export default function CharterSchoolsPage() {
             status: 'live',
             title: 'Multilingual',
             body:
-              'Spanish, Turkish, Arabic. Parents ask in their language. Sam answers in their language. No setup, no toggles. Critical for working families who can\u2019t call during office hours.',
+              'Spanish, Turkish, Arabic. Parents ask in their language. SamAI answers in their language. No setup, no toggles. Critical for working families who can\u2019t call during office hours.',
           },
           {
             status: 'live',
@@ -162,7 +162,7 @@ export default function CharterSchoolsPage() {
             status: 'live',
             title: 'Knowledge gap reporting',
             body:
-              "Weekly email of questions Sam couldn't answer. Tells you what friction parents are hitting.",
+              "Weekly email of questions SamAI couldn't answer. Tells you what friction parents are hitting.",
           },
           {
             status: 'live',
